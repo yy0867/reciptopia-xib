@@ -13,5 +13,22 @@ internal enum NetworkError: LocalizedError {
     case badResponse(code: Int)
     case encode
     case decode
-    case emptyData
+    case nilData
+    
+    var errorDescription: String? {
+        switch self {
+            case .unknown:
+                return "Unknown error."
+            case .badURL(let url):
+                return "Cannot use this URL: \(url?.absoluteString ?? "URL is empty.")"
+            case .badResponse(let code):
+                return "Bad Response from Server, code: \(code)"
+            case .encode:
+                return "Encode failed."
+            case .decode:
+                return "Decode failed."
+            case .nilData:
+                return "Data is nil."
+        }
+    }
 }
