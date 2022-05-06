@@ -19,6 +19,6 @@ final class AnalyzePictureUseCase: AnalyzePictureUseCaseProtocol {
     }
     
     func execute(_ pictures: [Data]) -> Observable<[String]> {
-        
+        return repository.analyze(pictures)
     }
 }
