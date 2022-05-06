@@ -15,6 +15,8 @@
 		A5078DF42824A22D00CBC26B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF32824A22D00CBC26B /* Network.swift */; };
 		A5078DF72824A35700CBC26B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5078DF62824A35700CBC26B /* RxCocoa */; };
 		A5078DF92824A43E00CBC26B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF82824A43E00CBC26B /* NetworkError.swift */; };
+		A5078DFD2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DFC2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift */; };
+		A5078E062824AD5900CBC26B /* ReciptopiaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* ViewController.swift */; };
@@ -25,6 +27,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		A5078DE528249BDA00CBC26B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5078DE028249BDA00CBC26B;
+			remoteInfo = ReciptopiaKit;
+		};
+		A5078E072824AD5900CBC26B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
 			proxyType = 1;
@@ -52,6 +61,8 @@
 		A5078DE328249BDA00CBC26B /* ReciptopiaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReciptopiaKit.h; sourceTree = "<group>"; };
 		A5078DF32824A22D00CBC26B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A5078DF82824A43E00CBC26B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A5078DFC2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A5078E022824AD5900CBC26B /* ReciptopiaKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +84,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5078DFF2824AD5900CBC26B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5078E062824AD5900CBC26B /* ReciptopiaKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57B9AA52822C33B00F93329 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +106,7 @@
 		A5078DE228249BDA00CBC26B /* ReciptopiaKit */ = {
 			isa = PBXGroup;
 			children = (
+				A5078DFB2824AD2900CBC26B /* Repositories */,
 				A5078DF22824A22200CBC26B /* Infrastructure */,
 				A5078DE328249BDA00CBC26B /* ReciptopiaKit.h */,
 			);
@@ -109,11 +129,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A5078DFB2824AD2900CBC26B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				A5078E0E2824AD7900CBC26B /* PictureIngredient */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		A5078E032824AD5900CBC26B /* ReciptopiaKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5078E0C2824AD5F00CBC26B /* RepositoryTests */,
+			);
+			path = ReciptopiaKitTests;
+			sourceTree = "<group>";
+		};
+		A5078E0C2824AD5F00CBC26B /* RepositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5078E0D2824AD6800CBC26B /* PictureIngredient */,
+			);
+			path = RepositoryTests;
+			sourceTree = "<group>";
+		};
+		A5078E0D2824AD6800CBC26B /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
+		A5078E0E2824AD7900CBC26B /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A5078DFC2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift */,
+			);
+			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
 		A57B9A9F2822C33B00F93329 = {
 			isa = PBXGroup;
 			children = (
 				A57B9AAA2822C33B00F93329 /* Reciptopia */,
 				A5078DE228249BDA00CBC26B /* ReciptopiaKit */,
+				A5078E032824AD5900CBC26B /* ReciptopiaKitTests */,
 				A57B9AA92822C33B00F93329 /* Products */,
 				A5078DF52824A35700CBC26B /* Frameworks */,
 			);
@@ -124,6 +184,7 @@
 			children = (
 				A57B9AA82822C33B00F93329 /* Reciptopia.app */,
 				A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */,
+				A5078E022824AD5900CBC26B /* ReciptopiaKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +240,24 @@
 			productReference = A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A5078E012824AD5900CBC26B /* ReciptopiaKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5078E092824AD5900CBC26B /* Build configuration list for PBXNativeTarget "ReciptopiaKitTests" */;
+			buildPhases = (
+				A5078DFE2824AD5900CBC26B /* Sources */,
+				A5078DFF2824AD5900CBC26B /* Frameworks */,
+				A5078E002824AD5900CBC26B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5078E082824AD5900CBC26B /* PBXTargetDependency */,
+			);
+			name = ReciptopiaKitTests;
+			productName = ReciptopiaKitTests;
+			productReference = A5078E022824AD5900CBC26B /* ReciptopiaKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A57B9AA72822C33B00F93329 /* Reciptopia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57B9ABC2822C33C00F93329 /* Build configuration list for PBXNativeTarget "Reciptopia" */;
@@ -212,6 +291,9 @@
 						CreatedOnToolsVersion = 13.3;
 						LastSwiftMigration = 1330;
 					};
+					A5078E012824AD5900CBC26B = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					A57B9AA72822C33B00F93329 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -235,12 +317,20 @@
 			targets = (
 				A57B9AA72822C33B00F93329 /* Reciptopia */,
 				A5078DE028249BDA00CBC26B /* ReciptopiaKit */,
+				A5078E012824AD5900CBC26B /* ReciptopiaKitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A5078DDF28249BDA00CBC26B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5078E002824AD5900CBC26B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -265,7 +355,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5078DF42824A22D00CBC26B /* Network.swift in Sources */,
+				A5078DFD2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift in Sources */,
 				A5078DF92824A43E00CBC26B /* NetworkError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5078DFE2824AD5900CBC26B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +384,11 @@
 			isa = PBXTargetDependency;
 			target = A5078DE028249BDA00CBC26B /* ReciptopiaKit */;
 			targetProxy = A5078DE528249BDA00CBC26B /* PBXContainerItemProxy */;
+		};
+		A5078E082824AD5900CBC26B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5078DE028249BDA00CBC26B /* ReciptopiaKit */;
+			targetProxy = A5078E072824AD5900CBC26B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -371,6 +474,40 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5078E0A2824AD5900CBC26B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.ReciptopiaKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5078E0B2824AD5900CBC26B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.ReciptopiaKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -554,6 +691,15 @@
 			buildConfigurations = (
 				A5078DEA28249BDA00CBC26B /* Debug */,
 				A5078DEB28249BDA00CBC26B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5078E092824AD5900CBC26B /* Build configuration list for PBXNativeTarget "ReciptopiaKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5078E0A2824AD5900CBC26B /* Debug */,
+				A5078E0B2824AD5900CBC26B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
