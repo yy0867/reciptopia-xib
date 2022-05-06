@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 internal protocol PictureIngredientRepositoryProtocol {
-    func analyze(_ pictures: [Data]) -> Observable<[Ingredient]>
+    func analyze(_ pictures: [Data]) -> Observable<[String]>
 }
