@@ -6,9 +6,44 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 internal class Network {
     
+    // MARK: - Properties
     let shared = Network()
     private init() {}
+    
+    // MARK: - Methods
+    // MARK: INTERNAL
+    
+    // MARK: PRIVATE
+    private func request(_ urlRequest: URLRequest) -> Observable<Data> {
+        return Observable.create { observer in
+            let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+                guard let data = data else {
+                    observer.onError(NetworkError.nilData)
+                    return
+                }
+                if let error = error {
+                    observer.onError(error)
+                    return
+                }
+                if let response = response as? HTTPURLResponse,
+                   (200..<300).contains(response.statusCode) {
+                    observer.onError(NetworkError.badResponse(code: response.statusCode))
+                    return
+                }
+                observer.onNext(data)
+                observer.onCompleted()
+            }
+            task.resume()
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+        .observe(on: MainScheduler.instance)
+    }
 }

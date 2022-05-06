@@ -13,6 +13,8 @@
 		A5078DEF28249DC000CBC26B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5078DEE28249DC000CBC26B /* RxRelay */; };
 		A5078DF128249DC000CBC26B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5078DF028249DC000CBC26B /* RxSwift */; };
 		A5078DF42824A22D00CBC26B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF32824A22D00CBC26B /* Network.swift */; };
+		A5078DF72824A35700CBC26B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5078DF62824A35700CBC26B /* RxCocoa */; };
+		A5078DF92824A43E00CBC26B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF82824A43E00CBC26B /* NetworkError.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* ViewController.swift */; };
@@ -49,6 +51,7 @@
 		A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReciptopiaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5078DE328249BDA00CBC26B /* ReciptopiaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReciptopiaKit.h; sourceTree = "<group>"; };
 		A5078DF32824A22D00CBC26B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A5078DF82824A43E00CBC26B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5078DF72824A35700CBC26B /* RxCocoa in Frameworks */,
 				A5078DF128249DC000CBC26B /* RxSwift in Frameworks */,
 				A5078DEF28249DC000CBC26B /* RxRelay in Frameworks */,
 			);
@@ -93,8 +97,16 @@
 			isa = PBXGroup;
 			children = (
 				A5078DF32824A22D00CBC26B /* Network.swift */,
+				A5078DF82824A43E00CBC26B /* NetworkError.swift */,
 			);
 			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		A5078DF52824A35700CBC26B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A57B9A9F2822C33B00F93329 = {
@@ -103,6 +115,7 @@
 				A57B9AAA2822C33B00F93329 /* Reciptopia */,
 				A5078DE228249BDA00CBC26B /* ReciptopiaKit */,
 				A57B9AA92822C33B00F93329 /* Products */,
+				A5078DF52824A35700CBC26B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +173,7 @@
 			packageProductDependencies = (
 				A5078DEE28249DC000CBC26B /* RxRelay */,
 				A5078DF028249DC000CBC26B /* RxSwift */,
+				A5078DF62824A35700CBC26B /* RxCocoa */,
 			);
 			productName = ReciptopiaKit;
 			productReference = A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */;
@@ -251,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5078DF42824A22D00CBC26B /* Network.swift in Sources */,
+				A5078DF92824A43E00CBC26B /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +599,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		A5078DF62824A35700CBC26B /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
