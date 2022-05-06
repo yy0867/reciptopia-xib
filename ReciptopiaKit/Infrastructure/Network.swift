@@ -17,6 +17,13 @@ internal class Network {
     
     // MARK: - Methods
     // MARK: INTERNAL
+    func get(_ url: URL) -> Observable<Data> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        return request(urlRequest)
+    }
     
     // MARK: PRIVATE
     private func request(_ urlRequest: URLRequest) -> Observable<Data> {
