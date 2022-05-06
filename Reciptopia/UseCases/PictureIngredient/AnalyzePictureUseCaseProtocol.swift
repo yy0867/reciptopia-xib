@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Foundation
 
 protocol AnalyzePictureUseCaseProtocol {
     func execute(_ pictures: [Data]) -> Observable<[String]>
