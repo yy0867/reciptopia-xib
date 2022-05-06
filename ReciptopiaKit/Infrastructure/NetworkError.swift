@@ -9,7 +9,7 @@ import Foundation
 
 internal enum NetworkError: LocalizedError {
     case unknown
-    case badURL
+    case badURL(url: URL?)
     case badResponse(code: Int)
     case encode
     case decode
