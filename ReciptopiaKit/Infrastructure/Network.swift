@@ -61,3 +61,9 @@ internal class Network {
         }
     }
 }
+
+fileprivate extension Encodable {
+    func toData() -> Data? {
+        return try? JSONEncoder().encode(self)
+    }
+}
