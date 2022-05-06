@@ -24,14 +24,10 @@ class DependencyContainer {
         dependencies.updateValue(instance, forKey: key)
     }
     
-    func resolve<T>() -> T {
+    func resolve<T>() -> T? {
         let key = makeKey(of: T.self)
         
-        guard let instance = dependencies[key] as? T else {
-            fatalError("Fail to get \(key)'s instance.")
-        }
-        
-        return instance
+        return dependencies[key] as? T
     }
     
     func remove<T>(of type: T.Type) {
