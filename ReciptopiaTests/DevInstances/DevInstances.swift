@@ -19,4 +19,13 @@ extension XCTestCase {
 struct DevInstances {
     
     static let shared = DevInstances()
+    
+    // MARK: - UseCases
+    
+    
+    // MARK: - Repositories
+    let pictureIngredientRepository = FakePictureIngredientRepository()
+    
+    // MARK: - DataStores
+    let pictureIngredientDataStore = FakePictureIngredientDataStore()
 }
