@@ -11,3 +11,5 @@ public struct Ingredient: Codable {
     public let detail: String?
     public var isMainIngredient: Bool
 }
+
+extension Ingredient: Equatable {}
