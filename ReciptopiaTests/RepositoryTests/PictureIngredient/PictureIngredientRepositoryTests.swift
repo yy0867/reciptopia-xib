@@ -20,6 +20,11 @@ class PictureIngredientRepositoryTests: XCTestCase {
     
     func test_PictureIngredientRepository_analyze_shouldReturnIngredientNames() {
         // Given
+        let ingredients = [
+            "스팸",
+            "김치",
+            "다진마늘",
+        ]
         
         // When
         guard let receivedValue = try? repository
@@ -31,6 +36,6 @@ class PictureIngredientRepositoryTests: XCTestCase {
         }
         
         // Then
-        XCTAssertEqual(["a", "b", "c"], receivedValue)
+        XCTAssertEqual(ingredients, receivedValue)
     }
 }
