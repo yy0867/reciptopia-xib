@@ -11,9 +11,14 @@ import RxSwift
 internal final class PictureIngredientRepository: PictureIngredientRepositoryProtocol {
     
     // MARK: - Properties
+    private let dataStore: PictureIngredientDataStoreProtocol
     
     // MARK: - Methods
+    init(dataStore: PictureIngredientDataStoreProtocol) {
+        self.dataStore = dataStore
+    }
+    
     func analyze(_ pictures: [Data]) -> Observable<[String]> {
-        
+        return dataStore.analyze(pictures)
     }
 }
