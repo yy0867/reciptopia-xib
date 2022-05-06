@@ -8,14 +8,14 @@
 import Foundation
 import RxSwift
 
-final class PictureIngredientDataStore: PictureIngredientRepositoryProtocol {
+final class PictureIngredientDataStore: PictureIngredientDataStoreProtocol {
     
     // MARK: - Properties
     
     // MARK: - Methods
     func analyze(_ pictures: [Data]) -> Observable<[String]> {
         return Observable.create { observer in
-            observer.onNext([])
+            observer.onNext(["다진 마늘", "스팸", "김치"])
             observer.onCompleted()
             
             return Disposables.create()
