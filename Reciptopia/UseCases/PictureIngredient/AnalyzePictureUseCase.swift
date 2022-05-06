@@ -18,7 +18,12 @@ final class AnalyzePictureUseCase: AnalyzePictureUseCaseProtocol {
         self.repository = repository
     }
     
-    func execute(_ pictures: [Data]) -> Observable<[String]> {
+    func execute(_ pictures: [Data]) -> Observable<[Ingredient]> {
         return repository.analyze(pictures)
+            .map(mapNameToIngredient)
+    }
+    
+    private func mapNameToIngredient(_ names: [String]) -> [Ingredient] {
+        return names.map { Ingredient(name: $0) }
     }
 }
