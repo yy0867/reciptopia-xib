@@ -14,6 +14,10 @@ final class AnalyzePictureUseCase: AnalyzePictureUseCaseProtocol {
     private let repository: PictureIngredientRepositoryProtocol
     
     // MARK: - Methods
+    init(repository: PictureIngredientRepositoryProtocol) {
+        self.repository = repository
+    }
+    
     func execute(_ pictures: [Data]) -> Observable<[String]> {
         
     }
