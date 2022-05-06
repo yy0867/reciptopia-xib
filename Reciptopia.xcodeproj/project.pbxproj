@@ -12,6 +12,7 @@
 		A5078DE828249BDA00CBC26B /* ReciptopiaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A5078DEF28249DC000CBC26B /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5078DEE28249DC000CBC26B /* RxRelay */; };
 		A5078DF128249DC000CBC26B /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5078DF028249DC000CBC26B /* RxSwift */; };
+		A5078DF42824A22D00CBC26B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF32824A22D00CBC26B /* Network.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		A5078DE128249BDA00CBC26B /* ReciptopiaKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReciptopiaKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5078DE328249BDA00CBC26B /* ReciptopiaKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReciptopiaKit.h; sourceTree = "<group>"; };
+		A5078DF32824A22D00CBC26B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,9 +83,18 @@
 		A5078DE228249BDA00CBC26B /* ReciptopiaKit */ = {
 			isa = PBXGroup;
 			children = (
+				A5078DF22824A22200CBC26B /* Infrastructure */,
 				A5078DE328249BDA00CBC26B /* ReciptopiaKit.h */,
 			);
 			path = ReciptopiaKit;
+			sourceTree = "<group>";
+		};
+		A5078DF22824A22200CBC26B /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				A5078DF32824A22D00CBC26B /* Network.swift */,
+			);
+			path = Infrastructure;
 			sourceTree = "<group>";
 		};
 		A57B9A9F2822C33B00F93329 = {
@@ -185,6 +196,7 @@
 				TargetAttributes = {
 					A5078DE028249BDA00CBC26B = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 					A57B9AA72822C33B00F93329 = {
 						CreatedOnToolsVersion = 13.3;
@@ -238,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5078DF42824A22D00CBC26B /* Network.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +297,7 @@
 		A5078DEA28249BDA00CBC26B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -305,6 +319,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -315,6 +330,7 @@
 		A5078DEB28249BDA00CBC26B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -460,6 +476,7 @@
 		A57B9ABD2822C33C00F93329 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +505,7 @@
 		A57B9ABE2822C33C00F93329 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
