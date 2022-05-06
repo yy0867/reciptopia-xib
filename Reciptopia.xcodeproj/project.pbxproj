@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* ViewController.swift */; };
@@ -21,6 +22,8 @@
 		A5818B422825161100EB11AB /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B412825161100EB11AB /* RxRelay */; };
 		A5818B442825161100EB11AB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B432825161100EB11AB /* RxSwift */; };
 		A5818B462825161100EB11AB /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B452825161100EB11AB /* RxTest */; };
+		A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */; };
+		A5818B4C2825179000EB11AB /* DevInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B4B2825179000EB11AB /* DevInstances.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -60,6 +63,7 @@
 		A5078DFC2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A5078E142824B43100CBC26B /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepository.swift; sourceTree = "<group>"; };
+		A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientInstances.swift; sourceTree = "<group>"; };
 		A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A5283E752824D07300761679 /* PictureIngredientDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientDataStore.swift; sourceTree = "<group>"; };
 		A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		A5818B26282512B800EB11AB /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Network/NetworkError.swift; sourceTree = "<group>"; };
 		A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryTests.swift; sourceTree = "<group>"; };
+		A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientUseCaseTests.swift; sourceTree = "<group>"; };
+		A5818B4B2825179000EB11AB /* DevInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInstances.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +149,14 @@
 				A5078E142824B43100CBC26B /* Ingredient.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A51BEDFE28254DC300703E52 /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */,
+			);
+			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
 		A5283E712824CF0E00761679 /* DataStores */ = {
@@ -220,6 +234,7 @@
 		A5818B2E2825140A00EB11AB /* ReciptopiaTests */ = {
 			isa = PBXGroup;
 			children = (
+				A5818B492825177A00EB11AB /* DevInstances */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
 				A5818B362825141100EB11AB /* RepositoryTests */,
 			);
@@ -245,6 +260,7 @@
 		A5818B382825141D00EB11AB /* PictureIngredient */ = {
 			isa = PBXGroup;
 			children = (
+				A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */,
 			);
 			path = PictureIngredient;
 			sourceTree = "<group>";
@@ -255,6 +271,15 @@
 				A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */,
 			);
 			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
+		A5818B492825177A00EB11AB /* DevInstances */ = {
+			isa = PBXGroup;
+			children = (
+				A51BEDFE28254DC300703E52 /* PictureIngredient */,
+				A5818B4B2825179000EB11AB /* DevInstances.swift */,
+			);
+			path = DevInstances;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +419,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
+				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
+				A5818B4C2825179000EB11AB /* DevInstances.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
