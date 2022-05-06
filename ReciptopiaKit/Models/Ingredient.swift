@@ -8,5 +8,6 @@
 public struct Ingredient: Codable {
     public let id: Int?
     public let name: String
-    public let detail: String
+    public let detail: String?
+    public var isMainIngredient: Bool
 }
