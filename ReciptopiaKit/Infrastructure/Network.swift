@@ -34,6 +34,15 @@ internal class Network {
         return request(urlRequest)
     }
     
+    func patch(_ url: URL, body: Encodable, token: String? = nil) -> Observable<Data> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PATCH"
+        urlRequest.httpBody = body.toData()
+        configureHeader(of: &urlRequest, token: token)
+        
+        return request(urlRequest)
+    }
+    
     // MARK: PRIVATE
     private func request(_ urlRequest: URLRequest) -> Observable<Data> {
         return Observable.create { observer in
