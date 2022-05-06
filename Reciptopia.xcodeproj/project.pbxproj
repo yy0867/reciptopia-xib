@@ -15,6 +15,12 @@
 		A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB62822C33C00F93329 /* LaunchScreen.storyboard */; };
 		A5818B27282512B800EB11AB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B25282512B800EB11AB /* Network.swift */; };
 		A5818B28282512B800EB11AB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B26282512B800EB11AB /* NetworkError.swift */; };
+		A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */; };
+		A5818B3E2825161100EB11AB /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B3D2825161100EB11AB /* RxBlocking */; };
+		A5818B402825161100EB11AB /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B3F2825161100EB11AB /* RxCocoa */; };
+		A5818B422825161100EB11AB /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B412825161100EB11AB /* RxRelay */; };
+		A5818B442825161100EB11AB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B432825161100EB11AB /* RxSwift */; };
+		A5818B462825161100EB11AB /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B452825161100EB11AB /* RxTest */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -26,6 +32,16 @@
 		A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */; };
 		A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5818B312825140A00EB11AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A57B9AA72822C33B00F93329;
+			remoteInfo = Reciptopia;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A5078DEC28249BDA00CBC26B /* Embed Frameworks */ = {
@@ -58,6 +74,8 @@
 		A57B9AB92822C33C00F93329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5818B25282512B800EB11AB /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
 		A5818B26282512B800EB11AB /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Network/NetworkError.swift; sourceTree = "<group>"; };
+		A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +86,18 @@
 				A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */,
 				A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */,
 				A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5818B2A2825140A00EB11AB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5818B462825161100EB11AB /* RxTest in Frameworks */,
+				A5818B422825161100EB11AB /* RxRelay in Frameworks */,
+				A5818B402825161100EB11AB /* RxCocoa in Frameworks */,
+				A5818B442825161100EB11AB /* RxSwift in Frameworks */,
+				A5818B3E2825161100EB11AB /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				A57B9AAA2822C33B00F93329 /* Reciptopia */,
+				A5818B2E2825140A00EB11AB /* ReciptopiaTests */,
 				A57B9AA92822C33B00F93329 /* Products */,
 				A5078DF52824A35700CBC26B /* Frameworks */,
 			);
@@ -162,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				A57B9AA82822C33B00F93329 /* Reciptopia.app */,
+				A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +215,46 @@
 				A5078DF22824A22200CBC26B /* Infrastructure */,
 			);
 			path = Reciptopia;
+			sourceTree = "<group>";
+		};
+		A5818B2E2825140A00EB11AB /* ReciptopiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5818B372825141800EB11AB /* UseCaseTests */,
+				A5818B362825141100EB11AB /* RepositoryTests */,
+			);
+			path = ReciptopiaTests;
+			sourceTree = "<group>";
+		};
+		A5818B362825141100EB11AB /* RepositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5818B392825142300EB11AB /* PictureIngredient */,
+			);
+			path = RepositoryTests;
+			sourceTree = "<group>";
+		};
+		A5818B372825141800EB11AB /* UseCaseTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5818B382825141D00EB11AB /* PictureIngredient */,
+			);
+			path = UseCaseTests;
+			sourceTree = "<group>";
+		};
+		A5818B382825141D00EB11AB /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
+		A5818B392825142300EB11AB /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */,
+			);
+			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,6 +283,31 @@
 			productReference = A57B9AA82822C33B00F93329 /* Reciptopia.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A5818B2C2825140A00EB11AB /* ReciptopiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5818B332825140A00EB11AB /* Build configuration list for PBXNativeTarget "ReciptopiaTests" */;
+			buildPhases = (
+				A5818B292825140A00EB11AB /* Sources */,
+				A5818B2A2825140A00EB11AB /* Frameworks */,
+				A5818B2B2825140A00EB11AB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5818B322825140A00EB11AB /* PBXTargetDependency */,
+			);
+			name = ReciptopiaTests;
+			packageProductDependencies = (
+				A5818B3D2825161100EB11AB /* RxBlocking */,
+				A5818B3F2825161100EB11AB /* RxCocoa */,
+				A5818B412825161100EB11AB /* RxRelay */,
+				A5818B432825161100EB11AB /* RxSwift */,
+				A5818B452825161100EB11AB /* RxTest */,
+			);
+			productName = ReciptopiaTests;
+			productReference = A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -223,6 +320,11 @@
 				TargetAttributes = {
 					A57B9AA72822C33B00F93329 = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					A5818B2C2825140A00EB11AB = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
+						TestTargetID = A57B9AA72822C33B00F93329;
 					};
 				};
 			};
@@ -243,6 +345,7 @@
 			projectRoot = "";
 			targets = (
 				A57B9AA72822C33B00F93329 /* Reciptopia */,
+				A5818B2C2825140A00EB11AB /* ReciptopiaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -255,6 +358,13 @@
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
 				A57B9AB32822C33B00F93329 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5818B2B2825140A00EB11AB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +390,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5818B292825140A00EB11AB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5818B322825140A00EB11AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A57B9AA72822C33B00F93329 /* Reciptopia */;
+			targetProxy = A5818B312825140A00EB11AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A57B9AB12822C33B00F93329 /* Main.storyboard */ = {
@@ -474,6 +600,59 @@
 			};
 			name = Release;
 		};
+		A5818B342825140A00EB11AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.ReciptopiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reciptopia.app/Reciptopia";
+			};
+			name = Debug;
+		};
+		A5818B352825140A00EB11AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.ReciptopiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Reciptopia.app/Reciptopia";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -495,6 +674,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A5818B332825140A00EB11AB /* Build configuration list for PBXNativeTarget "ReciptopiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5818B342825140A00EB11AB /* Debug */,
+				A5818B352825140A00EB11AB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -509,6 +697,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A5818B3D2825161100EB11AB /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		A5818B3F2825161100EB11AB /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A5818B412825161100EB11AB /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		A5818B432825161100EB11AB /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		A5818B452825161100EB11AB /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
 		A5CD36D92824EA3700A96B3E /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
