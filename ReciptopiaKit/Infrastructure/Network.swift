@@ -53,4 +53,11 @@ internal class Network {
         }
         .observe(on: MainScheduler.instance)
     }
+    
+    private func configureHeader(of urlRequest: inout URLRequest, token: String? = nil) {
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let token = token {
+            urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        }
+    }
 }
