@@ -33,4 +33,10 @@ class DependencyContainer {
         
         return instance
     }
+    
+    func remove<T>(of type: T.Type) {
+        let key = makeKey(of: T.self)
+        
+        dependencies.removeValue(forKey: key)
+    }
 }
