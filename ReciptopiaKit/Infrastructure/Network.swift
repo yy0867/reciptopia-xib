@@ -20,7 +20,16 @@ internal class Network {
     func get(_ url: URL) -> Observable<Data> {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        configureHeader(of: &urlRequest)
+        
+        return request(urlRequest)
+    }
+    
+    func post(_ url: URL, body: Encodable, token: String? = nil) -> Observable<Data> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = body.toData()
+        configureHeader(of: &urlRequest, token: token)
         
         return request(urlRequest)
     }
