@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */; };
+		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
+		A562812E2825701A0062BFA6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* RootViewController.swift */; };
@@ -68,6 +70,8 @@
 		A5283E752824D07300761679 /* PictureIngredientDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientDataStore.swift; sourceTree = "<group>"; };
 		A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A5283E7B2824D81600761679 /* AnalyzePictureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCase.swift; sourceTree = "<group>"; };
+		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		A562812D282570190062BFA6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				A5078E142824B43100CBC26B /* Ingredient.swift */,
+				A562812B282570030062BFA6 /* UserSession.swift */,
+				A562812D282570190062BFA6 /* Account.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,16 +214,8 @@
 		A5628127282558280062BFA6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				A5628128282558360062BFA6 /* PictureIngredients */,
 			);
 			path = Presenters;
-			sourceTree = "<group>";
-		};
-		A5628128282558360062BFA6 /* PictureIngredients */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PictureIngredients;
 			sourceTree = "<group>";
 		};
 		A57B9A9F2822C33B00F93329 = {
@@ -435,7 +433,9 @@
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
+				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
 				A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */,
+				A562812E2825701A0062BFA6 /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
