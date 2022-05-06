@@ -43,6 +43,14 @@ internal class Network {
         return request(urlRequest)
     }
     
+    func delete(_ url: URL, token: String? = nil) -> Observable<Data> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+        configureHeader(of: &urlRequest, token: token)
+        
+        return request(urlRequest)
+    }
+    
     // MARK: PRIVATE
     private func request(_ urlRequest: URLRequest) -> Observable<Data> {
         return Observable.create { observer in
