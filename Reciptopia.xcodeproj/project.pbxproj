@@ -16,6 +16,15 @@
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
+		A5CD36DF2824EB3F00A96B3E /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF82824A43E00CBC26B /* NetworkError.swift */; };
+		A5CD36E02824EB3F00A96B3E /* PictureIngredientRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DFC2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift */; };
+		A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E752824D07300761679 /* PictureIngredientDataStore.swift */; };
+		A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */; };
+		A5CD36E32824EB3F00A96B3E /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078DF32824A22D00CBC26B /* Network.swift */; };
+		A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E7B2824D81600761679 /* AnalyzePictureUseCase.swift */; };
+		A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E142824B43100CBC26B /* Ingredient.swift */; };
+		A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */; };
+		A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -256,7 +265,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
+				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
+				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
+				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
+				A5CD36E02824EB3F00A96B3E /* PictureIngredientRepositoryProtocol.swift in Sources */,
+				A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */,
+				A5CD36E32824EB3F00A96B3E /* Network.swift in Sources */,
 				A57B9AB02822C33B00F93329 /* ViewController.swift in Sources */,
+				A5CD36DF2824EB3F00A96B3E /* NetworkError.swift in Sources */,
+				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */,
 			);
