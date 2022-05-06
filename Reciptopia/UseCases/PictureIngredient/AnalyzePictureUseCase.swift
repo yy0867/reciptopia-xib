@@ -8,13 +8,13 @@
 import Foundation
 import RxSwift
 
-public final class AnalyzePictureUseCase: AnalyzePictureUseCaseProtocol {
+final class AnalyzePictureUseCase: AnalyzePictureUseCaseProtocol {
     
     // MARK: - Properties
     private let repository: PictureIngredientRepositoryProtocol
     
     // MARK: - Methods
-    public func execute(_ pictures: [Data]) -> Observable<[String]> {
+    func execute(_ pictures: [Data]) -> Observable<[String]> {
         
     }
 }

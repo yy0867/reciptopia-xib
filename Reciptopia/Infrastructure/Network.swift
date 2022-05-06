@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-internal class Network {
+class Network {
     
     // MARK: - Properties
     let shared = Network()

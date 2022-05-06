@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-internal final class PictureIngredientRepository: PictureIngredientRepositoryProtocol {
+final class PictureIngredientRepository: PictureIngredientRepositoryProtocol {
     
     // MARK: - Properties
     private let dataStore: PictureIngredientDataStoreProtocol
