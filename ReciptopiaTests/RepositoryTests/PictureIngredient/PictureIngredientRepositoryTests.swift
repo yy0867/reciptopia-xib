@@ -12,23 +12,10 @@ import RxSwift
 
 class PictureIngredientRepositoryTests: XCTestCase {
     
-    class FakePictureIngredientDataStore: PictureIngredientDataStoreProtocol {
-        func analyze(_ pictures: [Data]) -> Observable<[String]> {
-            return Observable.create { observer in
-                observer.onNext(["a", "b", "c"])
-                observer.onCompleted()
-                
-                return Disposables.create()
-            }
-        }
-    }
-    
-    var dataStore: PictureIngredientDataStoreProtocol!
     var repository: PictureIngredientRepositoryProtocol!
     
     override func setUp() {
-        self.dataStore = FakePictureIngredientDataStore()
-        self.repository = PictureIngredientRepository(dataStore: dataStore)
+        self.repository = PictureIngredientRepository(dataStore: dev.pictureIngredientDataStore)
     }
     
     func test_PictureIngredientRepository_analyze_shouldReturnIngredientNames() {
