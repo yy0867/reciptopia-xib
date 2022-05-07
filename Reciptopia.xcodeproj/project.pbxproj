@@ -26,6 +26,7 @@
 		A5818B462825161100EB11AB /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B452825161100EB11AB /* RxTest */; };
 		A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */; };
 		A5818B4C2825179000EB11AB /* DevInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B4B2825179000EB11AB /* DevInstances.swift */; };
+		A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -86,6 +87,7 @@
 		A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryTests.swift; sourceTree = "<group>"; };
 		A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientUseCaseTests.swift; sourceTree = "<group>"; };
 		A5818B4B2825179000EB11AB /* DevInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInstances.swift; sourceTree = "<group>"; };
+		A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataStoreProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 		A5283E712824CF0E00761679 /* DataStores */ = {
 			isa = PBXGroup;
 			children = (
+				A583987E2825FEEB00C5E3BD /* UserSession */,
 				A5283E722824CF4900761679 /* PictureIngredients */,
 			);
 			path = DataStores;
@@ -216,6 +219,13 @@
 			children = (
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		A562812F282570E00062BFA6 /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UserSession;
 			sourceTree = "<group>";
 		};
 		A57B9A9F2822C33B00F93329 = {
@@ -266,6 +276,7 @@
 		A5818B362825141100EB11AB /* RepositoryTests */ = {
 			isa = PBXGroup;
 			children = (
+				A562812F282570E00062BFA6 /* UserSession */,
 				A5818B392825142300EB11AB /* PictureIngredient */,
 			);
 			path = RepositoryTests;
@@ -302,6 +313,14 @@
 				A5818B4B2825179000EB11AB /* DevInstances.swift */,
 			);
 			path = DevInstances;
+			sourceTree = "<group>";
+		};
+		A583987E2825FEEB00C5E3BD /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */,
+			);
+			path = UserSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,6 +444,7 @@
 				A5818B27282512B800EB11AB /* Network.swift in Sources */,
 				A5818B28282512B800EB11AB /* NetworkError.swift in Sources */,
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
+				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
