@@ -10,5 +10,6 @@ import Foundation
 protocol TokenDataStoreProtocol {
     func addToken(_ token: String) -> Bool
     func searchToken() -> String?
+    func updateToken(_ token: String) -> Bool
     func deleteToken() -> Bool
 }
