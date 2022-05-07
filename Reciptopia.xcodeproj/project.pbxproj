@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
-		A562812E2825701A0062BFA6 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account.swift */; };
+		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* RootViewController.swift */; };
@@ -29,6 +29,8 @@
 		A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */; };
 		A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */; };
 		A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */; };
+		A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988628262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift */; };
+		A583988928262E6600C5E3BD /* Exist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988828262E6600C5E3BD /* Exist.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -74,7 +76,7 @@
 		A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A5283E7B2824D81600761679 /* AnalyzePictureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCase.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
-		A562812D282570190062BFA6 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAD2822C33B00F93329 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenDataStore.swift; sourceTree = "<group>"; };
 		A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilebasedTokenDataStore.swift; sourceTree = "<group>"; };
+		A583988628262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A583988828262E6600C5E3BD /* Exist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 		A5078DFB2824AD2900CBC26B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				A583988528262C7C00C5E3BD /* UserSession */,
 				A5078E0E2824AD7900CBC26B /* PictureIngredient */,
 			);
 			path = Repositories;
@@ -158,7 +163,8 @@
 			children = (
 				A5078E142824B43100CBC26B /* Ingredient.swift */,
 				A562812B282570030062BFA6 /* UserSession.swift */,
-				A562812D282570190062BFA6 /* Account.swift */,
+				A562812D282570190062BFA6 /* Account+Credential.swift */,
+				A583988828262E6600C5E3BD /* Exist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -329,6 +335,14 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
+		A583988528262C7C00C5E3BD /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				A583988628262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -463,7 +477,9 @@
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
 				A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */,
-				A562812E2825701A0062BFA6 /* Account.swift in Sources */,
+				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
+				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
+				A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
