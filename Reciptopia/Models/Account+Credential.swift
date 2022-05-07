@@ -12,7 +12,7 @@ public struct Account: Codable {
     public let email: String
     public let password: String?
     public let nickname: String
-    public let profilePictureUrl: String
+    public let profilePictureUrl: String?
 }
 
 struct Credential {
