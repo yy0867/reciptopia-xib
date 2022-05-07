@@ -28,6 +28,7 @@
 		A5818B4C2825179000EB11AB /* DevInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B4B2825179000EB11AB /* DevInstances.swift */; };
 		A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */; };
 		A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */; };
+		A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -90,6 +91,7 @@
 		A5818B4B2825179000EB11AB /* DevInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInstances.swift; sourceTree = "<group>"; };
 		A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenDataStore.swift; sourceTree = "<group>"; };
+		A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilebasedTokenDataStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +324,7 @@
 			children = (
 				A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */,
 				A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */,
+				A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */,
 			);
 			path = UserSession;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
+				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
 				A5CD36E02824EB3F00A96B3E /* PictureIngredientRepositoryProtocol.swift in Sources */,
 				A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */,
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
