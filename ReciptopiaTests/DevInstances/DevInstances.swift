@@ -28,4 +28,6 @@ struct DevInstances {
     
     // MARK: - DataStores
     let pictureIngredientDataStore = FakePictureIngredientDataStore()
+    let succeedTokenDataStore = FakeTokenDataStore(isSucceedCase: true)
+    let failTokenDataStore = FakeTokenDataStore(isSucceedCase: false)
 }
