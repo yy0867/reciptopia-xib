@@ -14,3 +14,8 @@ public struct Account: Codable {
     public let nickname: String
     public let profilePictureUrl: String
 }
+
+struct Credential {
+    let email: String
+    let password: String
+}
