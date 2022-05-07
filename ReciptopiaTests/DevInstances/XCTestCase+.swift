@@ -14,6 +14,10 @@ extension XCTestCase {
     var dev: DevInstances {
         return DevInstances.shared
     }
+    
+    func getLocation(_ file: String = #file, _ function: String = #function) -> String {
+        return " at \(file) - \(function)"
+    }
 }
 
 struct DevInstances {
