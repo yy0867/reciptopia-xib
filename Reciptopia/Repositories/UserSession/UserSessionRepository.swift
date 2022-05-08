@@ -11,29 +11,71 @@ import RxSwift
 final class UserSessionRepository: UserSessionRepositoryProtocol {
     
     // MARK: - Properties
+    private let dataStore: TokenDataStoreProtocol
+    private let fakeUserSession: UserSession = UserSession(
+        token: "token",
+        account: Account(
+            id: 1,
+            email: "email@example.com",
+            password: nil,
+            nickname: "nickname",
+            profilePictureUrl: "https://www.example.com"
+        )
+    )
     
     // MARK: - Methods
+    init(dataStore: TokenDataStoreProtocol) {
+        self.dataStore = dataStore
+    }
+    
     func signIn(credential: Credential) -> Observable<UserSession> {
-        <#code#>
+        return .just(UserSession(
+            token: "token",
+            account: Account(
+                id: 1,
+                email: credential.email,
+                password: nil,
+                nickname: "nickname",
+                profilePictureUrl: nil
+            )
+        ))
     }
     
     func signUp(credential: Credential, nickname: String) -> Observable<Account> {
-        <#code#>
+        return .just(Account(
+            id: 1,
+            email: credential.email,
+            password: nil,
+            nickname: nickname,
+            profilePictureUrl: nil
+        ))
     }
     
-    func readUserSession() -> Observable<UserSession> {
-        <#code#>
+    func rememberMe() -> Observable<UserSession?> {
+        guard let token = dataStore.searchToken() else {
+            return .just(nil)
+        }
+        
+        return .just(fakeUserSession)
     }
     
     func signOut() -> Observable<Void> {
-        <#code#>
+        if !dataStore.deleteToken() {
+            return .error(ReciptopiaError.notFound)
+        }
+        
+        return .just(())
     }
     
     func isExists(email: String) -> Observable<Exist> {
-        <#code#>
+        return .just(Exist(isExists: Bool.random()))
     }
     
     func withdrawal() -> Observable<Void> {
-        <#code#>
+        if !dataStore.deleteToken() {
+            return .error(ReciptopiaError.notFound)
+        }
+        
+        return .just(())
     }
 }
