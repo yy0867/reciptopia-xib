@@ -11,7 +11,7 @@ import RxSwift
 protocol UserSessionRepositoryProtocol {
     func signIn(credential: Credential) -> Observable<UserSession>
     func signUp(credential: Credential, nickname: String) -> Observable<Account>
-    func readUserSession() -> Observable<UserSession>
+    func rememberMe() -> Observable<UserSession?>
     func signOut() -> Observable<Void>
     func isExists(email: String) -> Observable<Exist>
     func withdrawal() -> Observable<Void>
