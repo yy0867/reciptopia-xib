@@ -25,13 +25,16 @@
 		A5818B442825161100EB11AB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B432825161100EB11AB /* RxSwift */; };
 		A5818B462825161100EB11AB /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B452825161100EB11AB /* RxTest */; };
 		A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */; };
-		A5818B4C2825179000EB11AB /* DevInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B4B2825179000EB11AB /* DevInstances.swift */; };
+		A5818B4C2825179000EB11AB /* XCTestCase+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B4B2825179000EB11AB /* XCTestCase+.swift */; };
 		A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */; };
 		A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */; };
 		A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */; };
 		A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988628262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift */; };
 		A583988928262E6600C5E3BD /* Exist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988828262E6600C5E3BD /* Exist.swift */; };
 		A583988B28262EC800C5E3BD /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988A28262EC800C5E3BD /* UserSessionRepository.swift */; };
+		A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988F2826302400C5E3BD /* ReciptopiaError.swift */; };
+		A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */; };
+		A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5839893282631A700C5E3BD /* UserSessionInstances.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -91,13 +94,16 @@
 		A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryTests.swift; sourceTree = "<group>"; };
 		A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientUseCaseTests.swift; sourceTree = "<group>"; };
-		A5818B4B2825179000EB11AB /* DevInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevInstances.swift; sourceTree = "<group>"; };
+		A5818B4B2825179000EB11AB /* XCTestCase+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+.swift"; sourceTree = "<group>"; };
 		A583987F2825FEF700C5E3BD /* TokenDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A58398812826059900C5E3BD /* KeychainTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenDataStore.swift; sourceTree = "<group>"; };
 		A583988328262A6200C5E3BD /* FilebasedTokenDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilebasedTokenDataStore.swift; sourceTree = "<group>"; };
 		A583988628262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A583988828262E6600C5E3BD /* Exist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exist.swift; sourceTree = "<group>"; };
 		A583988A28262EC800C5E3BD /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
+		A583988F2826302400C5E3BD /* ReciptopiaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciptopiaError.swift; sourceTree = "<group>"; };
+		A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryTests.swift; sourceTree = "<group>"; };
+		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +173,7 @@
 				A562812B282570030062BFA6 /* UserSession.swift */,
 				A562812D282570190062BFA6 /* Account+Credential.swift */,
 				A583988828262E6600C5E3BD /* Exist.swift */,
+				A583988F2826302400C5E3BD /* ReciptopiaError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */,
+				A5839893282631A700C5E3BD /* UserSessionInstances.swift */,
 			);
 			path = PictureIngredient;
 			sourceTree = "<group>";
@@ -236,6 +244,7 @@
 		A562812F282570E00062BFA6 /* UserSession */ = {
 			isa = PBXGroup;
 			children = (
+				A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */,
 			);
 			path = UserSession;
 			sourceTree = "<group>";
@@ -322,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				A51BEDFE28254DC300703E52 /* PictureIngredient */,
-				A5818B4B2825179000EB11AB /* DevInstances.swift */,
+				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
 			);
 			path = DevInstances;
 			sourceTree = "<group>";
@@ -470,6 +479,7 @@
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
+				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
 				A5CD36E02824EB3F00A96B3E /* PictureIngredientRepositoryProtocol.swift in Sources */,
@@ -491,10 +501,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
-				A5818B4C2825179000EB11AB /* DevInstances.swift in Sources */,
+				A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */,
+				A5818B4C2825179000EB11AB /* XCTestCase+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
