@@ -31,7 +31,7 @@ class PictureIngredientRepositoryTests: XCTestCase {
             .analyze([Data](repeating: Data(), count: 10))
             .toBlocking()
             .first() else {
-            XCTFail("\(#function) \(#line) fails.")
+            XCTFail("failed" + getLocation())
             return
         }
         

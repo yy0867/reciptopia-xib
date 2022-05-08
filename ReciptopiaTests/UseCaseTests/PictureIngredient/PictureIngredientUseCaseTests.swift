@@ -30,7 +30,7 @@ class AnalyzePictureUseCaseTests: XCTestCase {
             .execute([Data](repeating: Data(), count: 10))
             .toBlocking()
             .first() else {
-            XCTFail("\(#function) \(#line) failed.")
+            XCTFail("failed" + getLocation())
             return
         }
         
