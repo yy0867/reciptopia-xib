@@ -10,6 +10,7 @@ import Foundation
 enum ReciptopiaError: LocalizedError {
     case unknown
     case notFound
+    case signInFail
     
     var errorDescription: String? {
         switch self {
@@ -17,6 +18,8 @@ enum ReciptopiaError: LocalizedError {
                 return "Unknown error detected."
             case .notFound:
                 return "Item not found."
+            case .signInFail:
+                return "Fail to sign in."
         }
     }
 }

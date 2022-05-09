@@ -35,6 +35,13 @@
 		A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988F2826302400C5E3BD /* ReciptopiaError.swift */; };
 		A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */; };
 		A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5839893282631A700C5E3BD /* UserSessionInstances.swift */; };
+		A5A9BB8B28278AD400DAAAA9 /* UserSessionUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB8A28278AD400DAAAA9 /* UserSessionUseCases.swift */; };
+		A5A9BB8D28278B7000DAAAA9 /* SignInUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB8C28278B7000DAAAA9 /* SignInUseCase.swift */; };
+		A5A9BB8F28278B7900DAAAA9 /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB8E28278B7900DAAAA9 /* SignUpUseCase.swift */; };
+		A5A9BB9128278B8100DAAAA9 /* SignOutUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB9028278B8100DAAAA9 /* SignOutUseCase.swift */; };
+		A5A9BB9328278B8900DAAAA9 /* CheckEmailExistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB9228278B8900DAAAA9 /* CheckEmailExistsUseCase.swift */; };
+		A5A9BB9528278BA300DAAAA9 /* WithdrawalUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB9428278BA300DAAAA9 /* WithdrawalUseCase.swift */; };
+		A5A9BB9728278BAB00DAAAA9 /* RememberMeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A9BB9628278BAB00DAAAA9 /* RememberMeUseCase.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -104,6 +111,13 @@
 		A583988F2826302400C5E3BD /* ReciptopiaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciptopiaError.swift; sourceTree = "<group>"; };
 		A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryTests.swift; sourceTree = "<group>"; };
 		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
+		A5A9BB8A28278AD400DAAAA9 /* UserSessionUseCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCases.swift; sourceTree = "<group>"; };
+		A5A9BB8C28278B7000DAAAA9 /* SignInUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUseCase.swift; sourceTree = "<group>"; };
+		A5A9BB8E28278B7900DAAAA9 /* SignUpUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
+		A5A9BB9028278B8100DAAAA9 /* SignOutUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutUseCase.swift; sourceTree = "<group>"; };
+		A5A9BB9228278B8900DAAAA9 /* CheckEmailExistsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckEmailExistsUseCase.swift; sourceTree = "<group>"; };
+		A5A9BB9428278BA300DAAAA9 /* WithdrawalUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawalUseCase.swift; sourceTree = "<group>"; };
+		A5A9BB9628278BAB00DAAAA9 /* RememberMeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RememberMeUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +234,7 @@
 		A5283E772824D69D00761679 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				A5A9BB8928278ACC00DAAAA9 /* UserSession */,
 				A5283E782824D6AA00761679 /* PictureIngredient */,
 			);
 			path = UseCases;
@@ -355,6 +370,20 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
+		A5A9BB8928278ACC00DAAAA9 /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				A5A9BB8A28278AD400DAAAA9 /* UserSessionUseCases.swift */,
+				A5A9BB9628278BAB00DAAAA9 /* RememberMeUseCase.swift */,
+				A5A9BB9428278BA300DAAAA9 /* WithdrawalUseCase.swift */,
+				A5A9BB8C28278B7000DAAAA9 /* SignInUseCase.swift */,
+				A5A9BB8E28278B7900DAAAA9 /* SignUpUseCase.swift */,
+				A5A9BB9028278B8100DAAAA9 /* SignOutUseCase.swift */,
+				A5A9BB9228278B8900DAAAA9 /* CheckEmailExistsUseCase.swift */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,18 +507,25 @@
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
+				A5A9BB8F28278B7900DAAAA9 /* SignUpUseCase.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
+				A5A9BB9128278B8100DAAAA9 /* SignOutUseCase.swift in Sources */,
+				A5A9BB9728278BAB00DAAAA9 /* RememberMeUseCase.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
+				A5A9BB9328278B8900DAAAA9 /* CheckEmailExistsUseCase.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
+				A5A9BB8D28278B7000DAAAA9 /* SignInUseCase.swift in Sources */,
 				A5CD36E02824EB3F00A96B3E /* PictureIngredientRepositoryProtocol.swift in Sources */,
 				A583988B28262EC800C5E3BD /* UserSessionRepository.swift in Sources */,
+				A5A9BB9528278BA300DAAAA9 /* WithdrawalUseCase.swift in Sources */,
 				A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */,
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
+				A5A9BB8B28278AD400DAAAA9 /* UserSessionUseCases.swift in Sources */,
 				A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */,
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
 				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
