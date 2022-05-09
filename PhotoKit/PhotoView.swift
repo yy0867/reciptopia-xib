@@ -43,8 +43,10 @@ open class PhotoView: UIView {
     }
     
     public func takePhoto() {
-        let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        stillImageOutput.capturePhoto(with: settings, delegate: self)
+        if let _ = stillImageOutput {
+            let settings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            stillImageOutput.capturePhoto(with: settings, delegate: self)
+        }
     }
     
     // MARK: - Private
