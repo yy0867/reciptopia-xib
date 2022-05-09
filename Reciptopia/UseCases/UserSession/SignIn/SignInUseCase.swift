@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 final class SignInUseCase {
     
@@ -15,5 +16,10 @@ final class SignInUseCase {
     // MARK: - Methods
     init(repository: UserSessionRepositoryProtocol) {
         self.repository = repository
+    }
+    
+    func execute(email: String, password: String) -> Observable<UserSession> {
+        let credential = Credential(email: email, password: password)
+        return repository.signIn(credential: credential)
     }
 }

@@ -17,4 +17,8 @@ final class SignOutUseCase {
     init(repository: UserSessionRepositoryProtocol) {
         self.repository = repository
     }
+    
+    func execute() -> Observable<Void> {
+        return repository.signOut()
+    }
 }

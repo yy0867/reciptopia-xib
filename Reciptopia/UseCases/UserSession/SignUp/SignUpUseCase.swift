@@ -17,4 +17,9 @@ final class SignUpUseCase {
     init(repository: UserSessionRepositoryProtocol) {
         self.repository = repository
     }
+    
+    func execute(email: String, password: String, nickname: String) -> Observable<Account> {
+        let credential = Credential(email: email, password: password)
+        return repository.signUp(credential: credential, nickname: nickname)
+    }
 }

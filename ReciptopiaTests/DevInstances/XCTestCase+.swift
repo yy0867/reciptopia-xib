@@ -24,11 +24,22 @@ struct DevInstances {
     
     static let shared = DevInstances()
     
+    // MARK: - Properties
+    let fakeAccount = Account(
+        id: 1,
+        email: "email@example.com",
+        password: "password",
+        nickname: "nickname",
+        profilePictureUrl: "https://www.example.com"
+    )
+    
     // MARK: - UseCases
     
     
     // MARK: - Repositories
     let pictureIngredientRepository = FakePictureIngredientRepository()
+    let succeedUserSessionRepository = FakeUserSessionRepository(isSucceedCase: true)
+    let failUserSessionRepository = FakeUserSessionRepository(isSucceedCase: false)
     
     // MARK: - DataStores
     let pictureIngredientDataStore = FakePictureIngredientDataStore()

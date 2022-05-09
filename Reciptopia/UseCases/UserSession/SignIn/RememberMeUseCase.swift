@@ -17,4 +17,8 @@ final class RememberMeUseCase {
     init(repository: UserSessionRepositoryProtocol) {
         self.repository = repository
     }
+    
+    func execute() -> Observable<UserSession?> {
+        return repository.rememberMe()
+    }
 }

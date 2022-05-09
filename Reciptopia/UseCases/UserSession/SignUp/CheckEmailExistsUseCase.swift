@@ -17,4 +17,9 @@ final class CheckEmailExistsUseCase {
     init(repository: UserSessionRepositoryProtocol) {
         self.repository = repository
     }
+    
+    func execute(email: String) -> Observable<Bool> {
+        return repository.isExists(email: email)
+            .map { $0.isExists }
+    }
 }
