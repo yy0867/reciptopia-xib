@@ -57,6 +57,7 @@
 		A5DC01E32828CABF00CC063A /* SignedInUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01E02828CABF00CC063A /* SignedInUseCasesTests.swift */; };
 		A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01E12828CABF00CC063A /* SignUpUseCasesTests.swift */; };
 		A5DC01E52828CABF00CC063A /* SignInUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */; };
+		A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		A5DC01E02828CABF00CC063A /* SignedInUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignedInUseCasesTests.swift; sourceTree = "<group>"; };
 		A5DC01E12828CABF00CC063A /* SignUpUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCasesTests.swift; sourceTree = "<group>"; };
 		A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInUseCasesTests.swift; sourceTree = "<group>"; };
+		A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,43 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		A527A2712828EC0F00212FD8 /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2722828EC1C00212FD8 /* PictureIngredientViewController.storyboard */,
+				A527A2742828EC2D00212FD8 /* PictureIngredientViewController.swift */,
+				A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */,
+			);
+			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
+		A527A2852828F6B000212FD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2822828F6A900212FD8 /* Network.swift */,
+				A527A2812828F6A900212FD8 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A527A2862828F6ED00212FD8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2872828F6F700212FD8 /* StoryboardInstantiable.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A527A2A52829077100212FD8 /* PhotoKit */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2A62829077100212FD8 /* PhotoKit.h */,
+				A527A2AF2829078E00212FD8 /* PhotoView.swift */,
+				A527A2B1282908AE00212FD8 /* PhotoViewDelegate.swift */,
+			);
+			path = PhotoKit;
+			sourceTree = "<group>";
+		};
 		A5283E712824CF0E00761679 /* DataStores */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				A5818B492825177A00EB11AB /* DevInstances */,
+				A5EA3411282923FC00944FC0 /* VIewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
 				A5818B362825141100EB11AB /* RepositoryTests */,
 			);
@@ -429,6 +469,13 @@
 				A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5EA3411282923FC00944FC0 /* VIewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIewModelTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -573,6 +620,7 @@
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
+				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
 				A57B9AAE2822C33B00F93329 /* SceneDelegate.swift in Sources */,
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
