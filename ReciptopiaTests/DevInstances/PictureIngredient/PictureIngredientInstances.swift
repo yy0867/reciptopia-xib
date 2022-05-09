@@ -35,4 +35,23 @@ extension DevInstances {
             }
         }
     }
+    
+    class FakeAnalyzePictureUseCase: AnalyzePictureUseCaseProtocol {
+        
+        func execute(_ pictures: [Data]) -> Observable<[Ingredient]> {
+            
+            let fakeIngredients: [Ingredient] = [
+                Ingredient(id: 1, name: "스팸", detail: nil, isMainIngredient: false),
+                Ingredient(id: 2, name: "김치", detail: nil, isMainIngredient: false),
+                Ingredient(id: 3, name: "다진마늘", detail: nil, isMainIngredient: false),
+            ]
+            
+            return Observable.create { observer in
+                observer.onNext(fakeIngredients)
+                observer.onCompleted()
+                
+                return Disposables.create()
+            }
+        }
+    }
 }

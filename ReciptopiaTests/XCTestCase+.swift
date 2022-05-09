@@ -34,7 +34,7 @@ struct DevInstances {
     )
     
     // MARK: - UseCases
-    
+    let analyzePictureUseCase = FakeAnalyzePictureUseCase()
     
     // MARK: - Repositories
     let pictureIngredientRepository = FakePictureIngredientRepository()
