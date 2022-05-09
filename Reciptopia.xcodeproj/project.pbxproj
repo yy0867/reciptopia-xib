@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */; };
+		A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A527A2722828EC1C00212FD8 /* PictureIngredientViewController.storyboard */; };
+		A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2742828EC2D00212FD8 /* PictureIngredientViewController.swift */; };
+		A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2812828F6A900212FD8 /* NetworkError.swift */; };
+		A527A2842828F6A900212FD8 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2822828F6A900212FD8 /* Network.swift */; };
+		A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2872828F6F700212FD8 /* StoryboardInstantiable.swift */; };
+		A527A2A72829077100212FD8 /* PhotoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A527A2A62829077100212FD8 /* PhotoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A527A2AA2829077100212FD8 /* PhotoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A527A2A42829077100212FD8 /* PhotoKit.framework */; };
+		A527A2AB2829077100212FD8 /* PhotoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A527A2A42829077100212FD8 /* PhotoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A527A2B02829078E00212FD8 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2AF2829078E00212FD8 /* PhotoView.swift */; };
+		A527A2B2282908AE00212FD8 /* PhotoViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2B1282908AE00212FD8 /* PhotoViewDelegate.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
@@ -16,8 +26,6 @@
 		A57B9AB32822C33B00F93329 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB12822C33B00F93329 /* Main.storyboard */; };
 		A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB42822C33C00F93329 /* Assets.xcassets */; };
 		A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB62822C33C00F93329 /* LaunchScreen.storyboard */; };
-		A5818B27282512B800EB11AB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B25282512B800EB11AB /* Network.swift */; };
-		A5818B28282512B800EB11AB /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B26282512B800EB11AB /* NetworkError.swift */; };
 		A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */; };
 		A5818B3E2825161100EB11AB /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B3D2825161100EB11AB /* RxBlocking */; };
 		A5818B402825161100EB11AB /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5818B3F2825161100EB11AB /* RxCocoa */; };
@@ -60,6 +68,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A527A2A82829077100212FD8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A527A2A32829077100212FD8;
+			remoteInfo = PhotoKit;
+		};
 		A5818B312825140A00EB11AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
@@ -76,6 +91,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A527A2AB2829077100212FD8 /* PhotoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +103,15 @@
 		A5078E142824B43100CBC26B /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepository.swift; sourceTree = "<group>"; };
 		A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientInstances.swift; sourceTree = "<group>"; };
+		A527A2722828EC1C00212FD8 /* PictureIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PictureIngredientViewController.storyboard; sourceTree = "<group>"; };
+		A527A2742828EC2D00212FD8 /* PictureIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewController.swift; sourceTree = "<group>"; };
+		A527A2812828F6A900212FD8 /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A527A2822828F6A900212FD8 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A527A2872828F6F700212FD8 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		A527A2A42829077100212FD8 /* PhotoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PhotoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A527A2A62829077100212FD8 /* PhotoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoKit.h; sourceTree = "<group>"; };
+		A527A2AF2829078E00212FD8 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		A527A2B1282908AE00212FD8 /* PhotoViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewDelegate.swift; sourceTree = "<group>"; };
 		A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A5283E752824D07300761679 /* PictureIngredientDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientDataStore.swift; sourceTree = "<group>"; };
 		A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCaseProtocol.swift; sourceTree = "<group>"; };
@@ -101,8 +126,6 @@
 		A57B9AB42822C33C00F93329 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A57B9AB72822C33C00F93329 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A57B9AB92822C33C00F93329 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Reciptopia/App/Info.plist; sourceTree = SOURCE_ROOT; };
-		A5818B25282512B800EB11AB /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Network/Network.swift; sourceTree = "<group>"; };
-		A5818B26282512B800EB11AB /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkError.swift; path = Network/NetworkError.swift; sourceTree = "<group>"; };
 		A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5818B3B2825143600EB11AB /* PictureIngredientRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryTests.swift; sourceTree = "<group>"; };
 		A5818B47282516B600EB11AB /* PictureIngredientUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientUseCaseTests.swift; sourceTree = "<group>"; };
@@ -131,10 +154,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A527A2A12829077100212FD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57B9AA52822C33B00F93329 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A527A2AA2829077100212FD8 /* PhotoKit.framework in Frameworks */,
 				A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */,
 				A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */,
 				A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */,
@@ -159,8 +190,8 @@
 		A5078DF22824A22200CBC26B /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				A5818B25282512B800EB11AB /* Network.swift */,
-				A5818B26282512B800EB11AB /* NetworkError.swift */,
+				A527A2862828F6ED00212FD8 /* Presenter */,
+				A527A2852828F6B000212FD8 /* Network */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -223,6 +254,42 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		A527A2712828EC0F00212FD8 /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2722828EC1C00212FD8 /* PictureIngredientViewController.storyboard */,
+				A527A2742828EC2D00212FD8 /* PictureIngredientViewController.swift */,
+			);
+			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
+		A527A2852828F6B000212FD8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2822828F6A900212FD8 /* Network.swift */,
+				A527A2812828F6A900212FD8 /* NetworkError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A527A2862828F6ED00212FD8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2872828F6F700212FD8 /* StoryboardInstantiable.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A527A2A52829077100212FD8 /* PhotoKit */ = {
+			isa = PBXGroup;
+			children = (
+				A527A2A62829077100212FD8 /* PhotoKit.h */,
+				A527A2AF2829078E00212FD8 /* PhotoView.swift */,
+				A527A2B1282908AE00212FD8 /* PhotoViewDelegate.swift */,
+			);
+			path = PhotoKit;
+			sourceTree = "<group>";
+		};
 		A5283E712824CF0E00761679 /* DataStores */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +329,7 @@
 		A5628127282558280062BFA6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
+				A527A2712828EC0F00212FD8 /* PictureIngredient */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -279,6 +347,7 @@
 			children = (
 				A57B9AAA2822C33B00F93329 /* Reciptopia */,
 				A5818B2E2825140A00EB11AB /* ReciptopiaTests */,
+				A527A2A52829077100212FD8 /* PhotoKit */,
 				A57B9AA92822C33B00F93329 /* Products */,
 				A5078DF52824A35700CBC26B /* Frameworks */,
 			);
@@ -289,6 +358,7 @@
 			children = (
 				A57B9AA82822C33B00F93329 /* Reciptopia.app */,
 				A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */,
+				A527A2A42829077100212FD8 /* PhotoKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -433,7 +503,36 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		A527A29F2829077100212FD8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A527A2A72829077100212FD8 /* PhotoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		A527A2A32829077100212FD8 /* PhotoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A527A2AC2829077100212FD8 /* Build configuration list for PBXNativeTarget "PhotoKit" */;
+			buildPhases = (
+				A527A29F2829077100212FD8 /* Headers */,
+				A527A2A02829077100212FD8 /* Sources */,
+				A527A2A12829077100212FD8 /* Frameworks */,
+				A527A2A22829077100212FD8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoKit;
+			productName = PhotoKit;
+			productReference = A527A2A42829077100212FD8 /* PhotoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A57B9AA72822C33B00F93329 /* Reciptopia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57B9ABC2822C33C00F93329 /* Build configuration list for PBXNativeTarget "Reciptopia" */;
@@ -446,6 +545,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A527A2A92829077100212FD8 /* PBXTargetDependency */,
 			);
 			name = Reciptopia;
 			packageProductDependencies = (
@@ -492,6 +592,10 @@
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					A527A2A32829077100212FD8 = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
+					};
 					A57B9AA72822C33B00F93329 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -520,15 +624,24 @@
 			targets = (
 				A57B9AA72822C33B00F93329 /* Reciptopia */,
 				A5818B2C2825140A00EB11AB /* ReciptopiaTests */,
+				A527A2A32829077100212FD8 /* PhotoKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A527A2A22829077100212FD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57B9AA62822C33B00F93329 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
 				A57B9AB32822C33B00F93329 /* Main.storyboard in Resources */,
@@ -545,13 +658,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A527A2A02829077100212FD8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A527A2B2282908AE00212FD8 /* PhotoViewDelegate.swift in Sources */,
+				A527A2B02829078E00212FD8 /* PhotoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A57B9AA42822C33B00F93329 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A5DC01DE2828CA9E00CC063A /* SignOutUseCase.swift in Sources */,
-				A5818B27282512B800EB11AB /* Network.swift in Sources */,
-				A5818B28282512B800EB11AB /* NetworkError.swift in Sources */,
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5DC01DB2828CA9E00CC063A /* RememberMeUseCase.swift in Sources */,
@@ -559,9 +679,12 @@
 				A5DC01DD2828CA9E00CC063A /* WithdrawalUseCase.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
 				A5DC01DA2828CA9E00CC063A /* SignInUseCases.swift in Sources */,
+				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
+				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
+				A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */,
 				A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
 				A5CD36E02824EB3F00A96B3E /* PictureIngredientRepositoryProtocol.swift in Sources */,
@@ -578,6 +701,7 @@
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
 				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
 				A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */,
+				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -601,6 +725,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		A527A2A92829077100212FD8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A527A2A32829077100212FD8 /* PhotoKit */;
+			targetProxy = A527A2A82829077100212FD8 /* PBXContainerItemProxy */;
+		};
 		A5818B322825140A00EB11AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A57B9AA72822C33B00F93329 /* Reciptopia */;
@@ -628,6 +757,71 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		A527A2AD2829077100212FD8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PhotoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A527A2AE2829077100212FD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PhotoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A57B9ABA2822C33C00F93329 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -858,6 +1052,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A527A2AC2829077100212FD8 /* Build configuration list for PBXNativeTarget "PhotoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A527A2AD2829077100212FD8 /* Debug */,
+				A527A2AE2829077100212FD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A57B9AA32822C33B00F93329 /* Build configuration list for PBXProject "Reciptopia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
