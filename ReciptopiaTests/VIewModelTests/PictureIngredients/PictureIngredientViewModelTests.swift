@@ -50,7 +50,7 @@ class PictureIngredientViewModelTests: XCTestCase {
     
     func test_PictureIngredientViewModel_addPicturesOverMaxCount_shouldAddMaxCount() {
         // Given
-        let datas = [Data](repeating: Data(), count: Int.random(in: 30..<100))
+        let datas = [Data](repeating: Data(), count: Int.random(in: 11..<100))
         let observables = scheduler.createColdObservable(makeRecordedEvents(by: datas))
         
         // When
@@ -61,7 +61,47 @@ class PictureIngredientViewModelTests: XCTestCase {
         scheduler.start()
         
         // Then
-        let results = viewModel.pictures.value
-        XCTAssertEqual(results.count, viewModel.maxPictureCount)
+        let result = viewModel.pictures.value
+        XCTAssertEqual(result.count, viewModel.maxPictureCount)
+    }
+    
+    func test_PictureIngredientViewModel_removePictureAtValidIndex_shouldRemovePicture() {
+        // Given
+        let datas = [Data](repeating: Data(), count: Int.random(in: 1...10))
+        let validIndices = Array(Array(0..<datas.count).reversed())
+        let observables = scheduler.createColdObservable(makeRecordedEvents(by: validIndices))
+        
+        for data in datas { viewModel.pictures.append(data) }
+        
+        // When
+        self.subscription = observables.bind(onNext: { [weak self] index in
+            self?.viewModel.removePicture(at: index)
+        })
+        
+        scheduler.start()
+        
+        // Then
+        let result = viewModel.pictures.value
+        XCTAssertTrue(result.isEmpty)
+    }
+    
+    func test_PictureIngredientViewModel_removePictureAtInvalidIndex_shouldNotRemovePicture() {
+        // Given
+        let datas = [Data](repeating: Data(), count: Int.random(in: 1...10))
+        let invalidIndices = Array(11..<100)
+        let observables = scheduler.createColdObservable(makeRecordedEvents(by: invalidIndices))
+        
+        for data in datas { viewModel.pictures.append(data) }
+        
+        // When
+        self.subscription = observables.bind(onNext: { [weak self] index in
+            self?.viewModel.removePicture(at: index)
+        })
+        
+        scheduler.start()
+        
+        // Then
+        let result = viewModel.pictures.value
+        XCTAssertEqual(result, datas)
     }
 }
