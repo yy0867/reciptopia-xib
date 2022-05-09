@@ -13,6 +13,20 @@ public struct Account: Codable {
     public let password: String?
     public let nickname: String
     public let profilePictureUrl: String?
+    
+    init(
+        id: Int? = nil,
+        email: String,
+        password: String? = nil,
+        nickname: String,
+        profilePictureUrl: String? = nil
+    ) {
+        self.id = id
+        self.email = email
+        self.password = password
+        self.nickname = nickname
+        self.profilePictureUrl = profilePictureUrl
+    }
 }
 
 struct Credential {
