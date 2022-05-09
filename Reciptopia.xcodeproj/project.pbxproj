@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50254E32829260700827137 /* PictureIngredientViewModelTests.swift */; };
+		A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FD92829502C000EBF21 /* RxTest+.swift */; };
+		A5061FDC28295588000EBF21 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FDB28295588000EBF21 /* Log.swift */; };
+		A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */; };
 		A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51BEE0028254DD800703E52 /* PictureIngredientInstances.swift */; };
 		A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A527A2722828EC1C00212FD8 /* PictureIngredientViewController.storyboard */; };
 		A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2742828EC2D00212FD8 /* PictureIngredientViewController.swift */; };
@@ -100,6 +104,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A50254E32829260700827137 /* PictureIngredientViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewModelTests.swift; sourceTree = "<group>"; };
+		A5061FD92829502C000EBF21 /* RxTest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxTest+.swift"; sourceTree = "<group>"; };
+		A5061FDB28295588000EBF21 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+.swift"; sourceTree = "<group>"; };
 		A5078DFC2824AD3700CBC26B /* PictureIngredientRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A5078E142824B43100CBC26B /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientRepository.swift; sourceTree = "<group>"; };
@@ -189,9 +197,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50254E2282925F900827137 /* PictureIngredients */ = {
+			isa = PBXGroup;
+			children = (
+				A50254E32829260700827137 /* PictureIngredientViewModelTests.swift */,
+			);
+			path = PictureIngredients;
+			sourceTree = "<group>";
+		};
+		A5061FDD282956FD000EBF21 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		A5078DF22824A22200CBC26B /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				A5061FDD282956FD000EBF21 /* Extension */,
+				A5061FDB28295588000EBF21 /* Log.swift */,
 				A527A2862828F6ED00212FD8 /* Presenter */,
 				A527A2852828F6B000212FD8 /* Network */,
 			);
@@ -385,6 +411,8 @@
 		A5818B2E2825140A00EB11AB /* ReciptopiaTests */ = {
 			isa = PBXGroup;
 			children = (
+				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
+				A5061FD92829502C000EBF21 /* RxTest+.swift */,
 				A5818B492825177A00EB11AB /* DevInstances */,
 				A5EA3411282923FC00944FC0 /* VIewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
@@ -431,7 +459,6 @@
 			isa = PBXGroup;
 			children = (
 				A51BEDFE28254DC300703E52 /* PictureIngredient */,
-				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
 			);
 			path = DevInstances;
 			sourceTree = "<group>";
@@ -508,6 +535,7 @@
 		A5EA3411282923FC00944FC0 /* VIewModelTests */ = {
 			isa = PBXGroup;
 			children = (
+				A50254E2282925F900827137 /* PictureIngredients */,
 			);
 			path = VIewModelTests;
 			sourceTree = "<group>";
@@ -690,6 +718,7 @@
 				A5DC01DD2828CA9E00CC063A /* WithdrawalUseCase.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
 				A5DC01DA2828CA9E00CC063A /* SignInUseCases.swift in Sources */,
+				A5061FDC28295588000EBF21 /* Log.swift in Sources */,
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
@@ -703,6 +732,7 @@
 				A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */,
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
+				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
 				A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
@@ -726,9 +756,11 @@
 				A5DC01E32828CABF00CC063A /* SignedInUseCasesTests.swift in Sources */,
 				A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */,
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
+				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
+				A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */,
 				A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */,
 				A5818B4C2825179000EB11AB /* XCTestCase+.swift in Sources */,
 			);
