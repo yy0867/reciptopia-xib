@@ -53,13 +53,14 @@ class CheckIngredientViewModelTests: XCTestCase {
     func test_CheckIngredientViewModel_changeIngredientStateAtIndex_shouldChangeIngredientStateAtIndex() {
         // Given
         var randomIndicesSet = Set<Int>()
-        for _ in 1...10 { randomIndicesSet.insert(Int.random(in: 0..<10)) }
+        let ingredientCount = viewModel.ingredients.value.count
+        for _ in 1...10 { randomIndicesSet.insert(Int.random(in: 0..<ingredientCount)) }
         let randomIndices = Array(randomIndicesSet)
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: randomIndices))
         
         // When
         subscription = observable.bind(onNext: { [weak self] index in
-            self?.viewModel.changeState(true, at: index)
+            self?.viewModel.changeState(to: true, at: index)
         })
         
         scheduler.start()
@@ -72,9 +73,9 @@ class CheckIngredientViewModelTests: XCTestCase {
         }
     }
     
-    func test_CheckIngredientViewModel_addIngredient_shouldAppendIngredient() {
+    func test_CheckIngredientViewModel_addIngredient_shouldAppendIngredientUnderMaxCount() {
         // Given
-        let randomIngredientNames = [String](repeating: generateRandomString(), count: Int.random(in: 1...10))
+        let randomIngredientNames = [String](repeating: generateRandomString(), count: Int.random(in: 1...100))
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: randomIngredientNames))
         
         // When
@@ -99,7 +100,7 @@ class CheckIngredientViewModelTests: XCTestCase {
         var randomIndicesSet = Set<Int>()
         let ingredientCount = viewModel.ingredients.value.count
         for _ in 1...10 { randomIndicesSet.insert(Int.random(in: 0..<ingredientCount)) }
-        let randomIndices = Array(randomIndicesSet)
+        let randomIndices = Array(randomIndicesSet).sorted(by: >)
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: randomIndices))
         
         // When
