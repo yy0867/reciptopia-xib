@@ -33,6 +33,8 @@
 		A544C162282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */; };
 		A544C164282A4E9B00EAD7F6 /* XCUIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */; };
 		A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */; };
+		A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */; };
+		A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
@@ -155,6 +157,8 @@
 		A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewControllerTests.swift; sourceTree = "<group>"; };
 		A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+.swift"; sourceTree = "<group>"; };
 		A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewControllerTests.swift; sourceTree = "<group>"; };
+		A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckIngredientViewController.storyboard; sourceTree = "<group>"; };
+		A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewController.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -582,6 +586,8 @@
 			isa = PBXGroup;
 			children = (
 				A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */,
+				A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */,
+				A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */,
 			);
 			path = CheckIngredient;
 			sourceTree = "<group>";
@@ -821,6 +827,7 @@
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
+				A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,6 +878,7 @@
 				A5061FDC28295588000EBF21 /* Log.swift in Sources */,
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
+				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
