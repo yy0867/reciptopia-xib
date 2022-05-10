@@ -125,13 +125,12 @@
                         </button>
                     </navigationItem>
                     <connections>
-                        <outlet property="albumButton" destination="KxP-ln-xdN" id="m4s-AA-fwz"/>
+                        <outlet property="albumButton" destination="KxP-ln-xdN" id="xhy-6Y-JuE"/>
                         <outlet property="analyzePictureButton" destination="Db1-we-hm0" id="12K-xe-kCb"/>
                         <outlet property="managePictureButton" destination="oQK-Pe-RSz" id="Pxc-T2-hVv"/>
                         <outlet property="maskingStackView" destination="sSA-zs-toO" id="WQt-wk-NLW"/>
                         <outlet property="photoView" destination="haE-s6-jVp" id="S97-0m-TSi"/>
-                        <outlet property="takePhotoButton" destination="BBF-nv-PP3" id="7Ql-vo-gAw"/>
-                        <outlet property="toggleFlashlightButton" destination="W2s-wh-r2O" id="tsT-sG-bAs"/>
+                        <outlet property="takePhotoButton" destination="BBF-nv-PP3" id="wTb-yR-upY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
