@@ -16,4 +16,8 @@ class Log {
         Swift.print(items)
         Swift.print("####################")
     }
+    
+    static func getLocation(file: String = #file, function: String = #function, line: Int = #line) -> String {
+        return "\(file) - \(function) (line \(line))"
+    }
 }
