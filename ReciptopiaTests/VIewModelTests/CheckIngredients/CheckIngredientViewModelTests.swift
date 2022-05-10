@@ -16,16 +16,16 @@ class CheckIngredientViewModelTests: XCTestCase {
     var viewModel: CheckIngredientViewModel!
     var scheduler: TestScheduler!
     var subscription: Disposable!
-    let fakeIngredientNames = [
-        "스팸",
-        "다진마늘",
-        "김치",
-        "대파",
-        "참치"
+    let fakeIngredients = [
+        Ingredient(name: "스팸"),
+        Ingredient(name: "다진마늘"),
+        Ingredient(name: "김치"),
+        Ingredient(name: "대파"),
+        Ingredient(name: "참치"),
     ]
     
     override func setUp() {
-        self.viewModel = CheckIngredientViewModel(ingredientNames: fakeIngredientNames)
+        self.viewModel = CheckIngredientViewModel(ingredients: fakeIngredients)
         self.scheduler = TestScheduler(initialClock: 0)
     }
     
@@ -35,19 +35,6 @@ class CheckIngredientViewModelTests: XCTestCase {
         }
         scheduler = nil
         super.tearDown()
-    }
-    
-    func test_CheckIngredientViewModel_initializer_shouldConvertIngredientNamesToIngredients() {
-        // Given
-        
-        // When
-        let ingredients = viewModel.ingredients.value
-        
-        // Then
-        XCTAssertEqual(fakeIngredientNames.count, ingredients.count)
-        for i in 0..<ingredients.count {
-            XCTAssertEqual(fakeIngredientNames[i], ingredients[i].name)
-        }
     }
     
     func test_CheckIngredientViewModel_toggleStateAtIndex_shouldChangeIngredientStateAtIndex() {
@@ -87,7 +74,7 @@ class CheckIngredientViewModelTests: XCTestCase {
         
         // Then
         let result = viewModel.ingredients.value
-        let compare = fakeIngredientNames + randomIngredientNames
+        let compare = fakeIngredients.map { $0.name } + randomIngredientNames
         
         XCTAssertEqual(result.count, compare.count < viewModel.maxCount ? compare.count : viewModel.maxCount)
         for i in 0..<result.count {
