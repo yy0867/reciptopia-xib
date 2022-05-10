@@ -30,6 +30,9 @@
 		A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */; };
 		A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C129282A39F400EAD7F6 /* UICollectionView+.swift */; };
 		A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C12D282A3BDF00EAD7F6 /* UIView+.swift */; };
+		A544C162282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */; };
+		A544C164282A4E9B00EAD7F6 /* XCUIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */; };
+		A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
@@ -86,6 +89,13 @@
 			remoteGlobalIDString = A527A2A32829077100212FD8;
 			remoteInfo = PhotoKit;
 		};
+		A544C15B282A4BE000EAD7F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A57B9AA72822C33B00F93329;
+			remoteInfo = Reciptopia;
+		};
 		A5818B312825140A00EB11AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A57B9AA02822C33B00F93329 /* Project object */;
@@ -139,6 +149,10 @@
 		A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		A544C129282A39F400EAD7F6 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
 		A544C12D282A3BDF00EAD7F6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
+		A544C155282A4BE000EAD7F6 /* ReciptopiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewControllerTests.swift; sourceTree = "<group>"; };
+		A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+.swift"; sourceTree = "<group>"; };
+		A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +191,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		A527A2A12829077100212FD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A544C152282A4BE000EAD7F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -396,6 +417,24 @@
 			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
+		A544C156282A4BE000EAD7F6 /* ReciptopiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A544C160282A4BF500EAD7F6 /* PictureIngredient */,
+				A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */,
+			);
+			path = ReciptopiaUITests;
+			sourceTree = "<group>";
+		};
+		A544C160282A4BF500EAD7F6 /* PictureIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */,
+				A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */,
+			);
+			path = PictureIngredient;
+			sourceTree = "<group>";
+		};
 		A5628127282558280062BFA6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -418,6 +457,7 @@
 			children = (
 				A57B9AAA2822C33B00F93329 /* Reciptopia */,
 				A5818B2E2825140A00EB11AB /* ReciptopiaTests */,
+				A544C156282A4BE000EAD7F6 /* ReciptopiaUITests */,
 				A527A2A52829077100212FD8 /* PhotoKit */,
 				A57B9AA92822C33B00F93329 /* Products */,
 				A5078DF52824A35700CBC26B /* Frameworks */,
@@ -430,6 +470,7 @@
 				A57B9AA82822C33B00F93329 /* Reciptopia.app */,
 				A5818B2D2825140A00EB11AB /* ReciptopiaTests.xctest */,
 				A527A2A42829077100212FD8 /* PhotoKit.framework */,
+				A544C155282A4BE000EAD7F6 /* ReciptopiaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -614,6 +655,24 @@
 			productReference = A527A2A42829077100212FD8 /* PhotoKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		A544C154282A4BE000EAD7F6 /* ReciptopiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A544C15D282A4BE000EAD7F6 /* Build configuration list for PBXNativeTarget "ReciptopiaUITests" */;
+			buildPhases = (
+				A544C151282A4BE000EAD7F6 /* Sources */,
+				A544C152282A4BE000EAD7F6 /* Frameworks */,
+				A544C153282A4BE000EAD7F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A544C15C282A4BE000EAD7F6 /* PBXTargetDependency */,
+			);
+			name = ReciptopiaUITests;
+			productName = ReciptopiaUITests;
+			productReference = A544C155282A4BE000EAD7F6 /* ReciptopiaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		A57B9AA72822C33B00F93329 /* Reciptopia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57B9ABC2822C33C00F93329 /* Build configuration list for PBXNativeTarget "Reciptopia" */;
@@ -677,6 +736,11 @@
 						CreatedOnToolsVersion = 13.3;
 						LastSwiftMigration = 1330;
 					};
+					A544C154282A4BE000EAD7F6 = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
+						TestTargetID = A57B9AA72822C33B00F93329;
+					};
 					A57B9AA72822C33B00F93329 = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -705,6 +769,7 @@
 			targets = (
 				A57B9AA72822C33B00F93329 /* Reciptopia */,
 				A5818B2C2825140A00EB11AB /* ReciptopiaTests */,
+				A544C154282A4BE000EAD7F6 /* ReciptopiaUITests */,
 				A527A2A32829077100212FD8 /* PhotoKit */,
 			);
 		};
@@ -712,6 +777,13 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		A527A2A22829077100212FD8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A544C153282A4BE000EAD7F6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -746,6 +818,16 @@
 			files = (
 				A527A2B2282908AE00212FD8 /* PhotoViewDelegate.swift in Sources */,
 				A527A2B02829078E00212FD8 /* PhotoView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A544C151282A4BE000EAD7F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A544C162282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift in Sources */,
+				A544C164282A4E9B00EAD7F6 /* XCUIApplication+.swift in Sources */,
+				A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +903,11 @@
 			isa = PBXTargetDependency;
 			target = A527A2A32829077100212FD8 /* PhotoKit */;
 			targetProxy = A527A2A82829077100212FD8 /* PBXContainerItemProxy */;
+		};
+		A544C15C282A4BE000EAD7F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A57B9AA72822C33B00F93329 /* Reciptopia */;
+			targetProxy = A544C15B282A4BE000EAD7F6 /* PBXContainerItemProxy */;
 		};
 		A5818B322825140A00EB11AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -903,6 +990,55 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A544C15E282A4BE000EAD7F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.ReciptopiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Reciptopia;
+			};
+			name = Debug;
+		};
+		A544C15F282A4BE000EAD7F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.ReciptopiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Reciptopia;
 			};
 			name = Release;
 		};
@@ -1139,6 +1275,15 @@
 			buildConfigurations = (
 				A527A2AD2829077100212FD8 /* Debug */,
 				A527A2AE2829077100212FD8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A544C15D282A4BE000EAD7F6 /* Build configuration list for PBXNativeTarget "ReciptopiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A544C15E282A4BE000EAD7F6 /* Debug */,
+				A544C15F282A4BE000EAD7F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
