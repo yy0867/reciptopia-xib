@@ -64,7 +64,12 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
 extension PictureIngredientViewController {
     
     @IBAction func takePhoto(_ sender: UIButton!) {
+        #if targetEnvironment(simulator)
+        let image = UIImage(systemName: "photo")
+        self.photoView(self.photoView, didTakePhoto: image)
+        #else
         photoView.takePhoto()
+        #endif
     }
     
     @IBAction func presentManagePicture(_ sender: UIButton!) {
@@ -76,6 +81,10 @@ extension PictureIngredientViewController {
 // MARK: - PhotoView Delegate
 extension PictureIngredientViewController: PhotoViewDelegate {
     func photoView(_ photoView: PhotoView, didTakePhoto photo: UIImage?) {
-        print("photo taken.")
+        guard let data = photo?.jpegData(compressionQuality: 1) else {
+            Log.print("Taken Photo is nil.")
+            return
+        }
+        viewModel.addPicture(data)
     }
 }
