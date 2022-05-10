@@ -12,6 +12,8 @@ import PhotoKit
 
 final class PictureIngredientViewController: UIViewController, StoryboardInstantiable {
     
+    typealias ManagePictureViewControllerFactory = () -> ManagePictureViewController
+    
     // MARK: - Outlets
     @IBOutlet weak var photoView: PhotoView!
     
@@ -24,11 +26,16 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     
     // MARK: - Properties
     private var viewModel: PictureIngredientViewModel!
+    private var makeManagePictureViewController: ManagePictureViewControllerFactory!
     
     // MARK: - Methods
-    static func create(with viewModel: PictureIngredientViewModel) -> Self {
+    static func create(
+        with viewModel: PictureIngredientViewModel,
+        managePictureViewControllerFactory: @escaping ManagePictureViewControllerFactory
+    ) -> Self {
         let vc = self.instantiateViewController()
         vc.viewModel = viewModel
+        vc.makeManagePictureViewController = managePictureViewControllerFactory
         return vc
     }
     
@@ -58,6 +65,11 @@ extension PictureIngredientViewController {
     
     @IBAction func takePhoto(_ sender: UIButton!) {
         photoView.takePhoto()
+    }
+    
+    @IBAction func presentManagePicture(_ sender: UIButton!) {
+        let vc = makeManagePictureViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

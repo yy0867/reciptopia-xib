@@ -33,6 +33,9 @@
                                                         <color key="tintColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="n / 10" image="photo" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="presentManagePicture:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PBw-WU-UEX"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Db1-we-hm0">
                                                         <rect key="frame" x="139.5" y="33.5" width="135" height="30"/>
