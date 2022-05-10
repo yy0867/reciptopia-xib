@@ -22,15 +22,11 @@ class PictureIngredientViewControllerTests: XCTestCase {
         
         let managePictureButton = app.buttons["managePictureButton"]
         let analyzePictureButton = app.buttons["analyzePictureButton"]
-        let albumButton = app.buttons["albumButton"]
-        let takePhotoButton = app.buttons["cameraButton"]
         
         XCTAssertEqual(managePictureButton.label, "\(randomCount) / 10")
         XCTAssertEqual(analyzePictureButton.label, "\(randomCount)개의 재료 분석하기")
         XCTAssertTrue(managePictureButton.isEnabled)
         XCTAssertTrue(analyzePictureButton.isEnabled)
-        XCTAssertTrue(albumButton.isEnabled)
-        XCTAssertTrue(takePhotoButton.isEnabled)
     }
     
     func test_PictureIngredientViewController_pictureEmpty_shouldBindEmptyStateToButtons() {

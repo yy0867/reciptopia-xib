@@ -50,7 +50,7 @@ class CheckIngredientViewModelTests: XCTestCase {
         }
     }
     
-    func test_CheckIngredientViewModel_changeIngredientStateAtIndex_shouldChangeIngredientStateAtIndex() {
+    func test_CheckIngredientViewModel_toggleStateAtIndex_shouldChangeIngredientStateAtIndex() {
         // Given
         var randomIndicesSet = Set<Int>()
         let ingredientCount = viewModel.ingredients.value.count
@@ -60,7 +60,7 @@ class CheckIngredientViewModelTests: XCTestCase {
         
         // When
         subscription = observable.bind(onNext: { [weak self] index in
-            self?.viewModel.changeState(to: true, at: index)
+            self?.viewModel.toggleState(at: index)
         })
         
         scheduler.start()
