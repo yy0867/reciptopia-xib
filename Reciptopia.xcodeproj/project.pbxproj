@@ -29,6 +29,7 @@
 		A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A544C124282A2F0B00EAD7F6 /* ImageCell.xib */; };
 		A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */; };
 		A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C129282A39F400EAD7F6 /* UICollectionView+.swift */; };
+		A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C12D282A3BDF00EAD7F6 /* UIView+.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
@@ -137,6 +138,7 @@
 		A544C124282A2F0B00EAD7F6 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
 		A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
 		A544C129282A39F400EAD7F6 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		A544C12D282A3BDF00EAD7F6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +223,7 @@
 				A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */,
 				A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */,
 				A544C129282A39F400EAD7F6 /* UICollectionView+.swift */,
+				A544C12D282A3BDF00EAD7F6 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */,
 				A5DC01DE2828CA9E00CC063A /* SignOutUseCase.swift in Sources */,
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
 				A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */,

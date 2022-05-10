@@ -18,6 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분석할 사진이 없습니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8l-R9-N3g">
+                                <rect key="frame" x="90" y="433" width="234" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-zJ-cZ5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -46,14 +52,17 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="a8l-R9-N3g" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="2YV-0l-etD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZWe-zJ-cZ5" secondAttribute="bottom" id="3rM-ri-cdd"/>
                             <constraint firstItem="ZWe-zJ-cZ5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ND1-5V-dMp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZWe-zJ-cZ5" secondAttribute="trailing" id="Ubo-Dx-kPe"/>
+                            <constraint firstItem="a8l-R9-N3g" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vdi-4f-O4R"/>
                             <constraint firstItem="ZWe-zJ-cZ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="u2X-bm-bgT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="ZWe-zJ-cZ5" id="0Kj-EN-SpJ"/>
+                        <outlet property="emptyPictureLabel" destination="a8l-R9-N3g" id="cbs-XX-P7O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -13,6 +13,7 @@ class ManagePictureViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var emptyPictureLabel: UILabel!
     
     // MARK: - Properties
     private var viewModel: PictureIngredientViewModel!
@@ -29,6 +30,7 @@ class ManagePictureViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         
         registerCell()
+        bindPictureEmptyState()
         bindPicturesToCollectionView()
     }
     
@@ -39,7 +41,14 @@ class ManagePictureViewController: UIViewController, StoryboardInstantiable {
 
 // MARK: - Bind ViewModel
 extension ManagePictureViewController {
-    func bindPicturesToCollectionView() {
+    private func bindPictureEmptyState() {
+        viewModel.pictures
+            .map { $0.isEmpty }
+            .bind(to: collectionView.rx.isHidden, emptyPictureLabel.rx.isShown)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindPicturesToCollectionView() {
         viewModel.pictures
             .map(mapDatasToUIImages)
             .bind(to: collectionView.rx.items(
