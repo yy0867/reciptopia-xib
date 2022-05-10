@@ -27,6 +27,7 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     // MARK: - Properties
     private var viewModel: PictureIngredientViewModel!
     private var makeManagePictureViewController: ManagePictureViewControllerFactory!
+    private let disposeBag = DisposeBag()
     
     // MARK: - Methods
     static func create(
@@ -44,6 +45,7 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
         
         photoView.delegate = self
         configureViewDetail()
+        bindViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +59,55 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     private func configureViewDetail() {
         analyzePictureButton.layer.cornerRadius = 10
         view.bringSubviewToFront(maskingStackView)
+    }
+}
+
+// MARK: - Bind ViewModel
+extension PictureIngredientViewController {
+    private func bindViewModel() {
+        bindPictureCountToView()
+        bindPictureEmptyStateToView()
+        bindPictureFullStateToView()
+    }
+    
+    private func bindPictureCountToView() {
+        viewModel.pictures
+            .map { $0.count }
+            .map(mapPictureCountToAnalyzeButtonLabel)
+            .bind(to: analyzePictureButton.rx.title())
+            .disposed(by: disposeBag)
+        
+        viewModel.pictures
+            .map { $0.count }
+            .map(mapPictureCountToManagePictureButtonLabel)
+            .bind(to: managePictureButton.rx.title())
+            .disposed(by: disposeBag)
+    }
+    
+    private func mapPictureCountToAnalyzeButtonLabel(_ count: Int) -> String {
+        return "\(count)개의 재료 분석하기"
+    }
+    
+    private func mapPictureCountToManagePictureButtonLabel(_ count: Int) -> String {
+        return "\(count) / \(viewModel.maxPictureCount)"
+    }
+    
+    private func bindPictureEmptyStateToView() {
+        viewModel.pictures
+            .map { $0.isEmpty }
+            .bind(to: analyzePictureButton.rx.isDisabled, managePictureButton.rx.isDisabled)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindPictureFullStateToView() {
+        viewModel.pictures
+            .map(isPictureCountFull)
+            .bind(to: albumButton.rx.isDisabled, takePhotoButton.rx.isDisabled)
+            .disposed(by: disposeBag)
+    }
+    
+    private func isPictureCountFull(_ datas: [Data]) -> Bool {
+        return datas.count >= viewModel.maxPictureCount
     }
 }
 
