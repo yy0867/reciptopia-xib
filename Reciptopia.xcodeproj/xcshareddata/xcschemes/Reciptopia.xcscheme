@@ -49,6 +49,16 @@
                ReferencedContainer = "container:Reciptopia.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A544C154282A4BE000EAD7F6"
+               BuildableName = "ReciptopiaUITests.xctest"
+               BlueprintName = "ReciptopiaUITests"
+               ReferencedContainer = "container:Reciptopia.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
