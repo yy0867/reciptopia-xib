@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -25,7 +26,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZWe-zJ-cZ5">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="772"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GCx-QD-scL">
                                     <size key="itemSize" width="128" height="128"/>
@@ -48,19 +49,34 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="kx6-SZ-Fha"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQf-3x-RoG">
+                                <rect key="frame" x="0.0" y="816" width="414" height="80"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="5PE-2D-3xj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="n개의 사진을 분석합니다."/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="a8l-R9-N3g" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="2YV-0l-etD"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ZWe-zJ-cZ5" secondAttribute="bottom" id="3rM-ri-cdd"/>
+                            <constraint firstItem="sQf-3x-RoG" firstAttribute="top" secondItem="ZWe-zJ-cZ5" secondAttribute="bottom" id="3rM-ri-cdd"/>
+                            <constraint firstItem="sQf-3x-RoG" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JtZ-Ck-FQi"/>
                             <constraint firstItem="ZWe-zJ-cZ5" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ND1-5V-dMp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZWe-zJ-cZ5" secondAttribute="trailing" id="Ubo-Dx-kPe"/>
                             <constraint firstItem="a8l-R9-N3g" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Vdi-4f-O4R"/>
+                            <constraint firstAttribute="bottom" secondItem="sQf-3x-RoG" secondAttribute="bottom" id="X2N-O6-Bgw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sQf-3x-RoG" secondAttribute="trailing" id="nKn-jd-Cai"/>
                             <constraint firstItem="ZWe-zJ-cZ5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="u2X-bm-bgT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="analyzePictureButton" destination="sQf-3x-RoG" id="et4-Cr-IiR"/>
                         <outlet property="collectionView" destination="ZWe-zJ-cZ5" id="0Kj-EN-SpJ"/>
                         <outlet property="emptyPictureLabel" destination="a8l-R9-N3g" id="cbs-XX-P7O"/>
                     </connections>
@@ -71,6 +87,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.37299999594688416" green="0.56099998950958252" blue="0.92900002002716064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

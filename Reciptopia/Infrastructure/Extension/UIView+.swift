@@ -14,3 +14,11 @@ extension UIView {
         set { self.isHidden = !newValue }
     }
 }
+
+extension UIControl {
+    
+    var isDisabled: Bool {
+        get { return !self.isEnabled }
+        set { self.isEnabled = !newValue }
+    }
+}

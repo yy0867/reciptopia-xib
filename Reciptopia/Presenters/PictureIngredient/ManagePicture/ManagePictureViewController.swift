@@ -14,6 +14,7 @@ class ManagePictureViewController: UIViewController, StoryboardInstantiable {
     // MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var emptyPictureLabel: UILabel!
+    @IBOutlet weak var analyzePictureButton: UIButton!
     
     // MARK: - Properties
     private var viewModel: PictureIngredientViewModel!
@@ -29,9 +30,13 @@ class ManagePictureViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureView()
         registerCell()
-        bindPictureEmptyState()
-        bindPicturesToCollectionView()
+        bindViewModel()
+    }
+    
+    private func configureView() {
+        analyzePictureButton.setTitle("분석할 사진이 없습니다.", for: .disabled)
     }
     
     private func registerCell() {
@@ -41,10 +46,27 @@ class ManagePictureViewController: UIViewController, StoryboardInstantiable {
 
 // MARK: - Bind ViewModel
 extension ManagePictureViewController {
+    private func bindViewModel() {
+        bindPictureEmptyState()
+        bindAnalyzeButtonState()
+        bindPicturesToCollectionView()
+    }
+    
     private func bindPictureEmptyState() {
         viewModel.pictures
             .map { $0.isEmpty }
-            .bind(to: collectionView.rx.isHidden, emptyPictureLabel.rx.isShown)
+            .bind(
+                to: collectionView.rx.isHidden,
+                emptyPictureLabel.rx.isShown,
+                analyzePictureButton.rx.isDisabled
+            )
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindAnalyzeButtonState() {
+        viewModel.pictures
+            .map { "\($0.count)개의 사진을 분석합니다." }
+            .bind(to: analyzePictureButton.rx.title())
             .disposed(by: disposeBag)
     }
     
