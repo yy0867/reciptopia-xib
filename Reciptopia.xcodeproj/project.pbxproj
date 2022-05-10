@@ -23,6 +23,13 @@
 		A527A2B02829078E00212FD8 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2AF2829078E00212FD8 /* PhotoView.swift */; };
 		A527A2B2282908AE00212FD8 /* PhotoViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2B1282908AE00212FD8 /* PhotoViewDelegate.swift */; };
 		A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C118282A273700EAD7F6 /* RootDIContainer.swift */; };
+		A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A544C11B282A2A7700EAD7F6 /* ManagePictureViewController.storyboard */; };
+		A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C11D282A2A8A00EAD7F6 /* ManagePictureViewController.swift */; };
+		A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C123282A2F0B00EAD7F6 /* ImageCell.swift */; };
+		A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A544C124282A2F0B00EAD7F6 /* ImageCell.xib */; };
+		A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */; };
+		A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C129282A39F400EAD7F6 /* UICollectionView+.swift */; };
+		A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C12D282A3BDF00EAD7F6 /* UIView+.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
@@ -125,6 +132,13 @@
 		A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A5283E7B2824D81600761679 /* AnalyzePictureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCase.swift; sourceTree = "<group>"; };
 		A544C118282A273700EAD7F6 /* RootDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDIContainer.swift; sourceTree = "<group>"; };
+		A544C11B282A2A7700EAD7F6 /* ManagePictureViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManagePictureViewController.storyboard; sourceTree = "<group>"; };
+		A544C11D282A2A8A00EAD7F6 /* ManagePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewController.swift; sourceTree = "<group>"; };
+		A544C123282A2F0B00EAD7F6 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		A544C124282A2F0B00EAD7F6 /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+.swift"; sourceTree = "<group>"; };
+		A544C129282A39F400EAD7F6 /* UICollectionView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+.swift"; sourceTree = "<group>"; };
+		A544C12D282A3BDF00EAD7F6 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +221,9 @@
 			isa = PBXGroup;
 			children = (
 				A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */,
+				A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */,
+				A544C129282A39F400EAD7F6 /* UICollectionView+.swift */,
+				A544C12D282A3BDF00EAD7F6 /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -285,6 +302,7 @@
 				A527A2722828EC1C00212FD8 /* PictureIngredientViewController.storyboard */,
 				A527A2742828EC2D00212FD8 /* PictureIngredientViewController.swift */,
 				A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */,
+				A544C11A282A2A6800EAD7F6 /* ManagePicture */,
 			);
 			path = PictureIngredient;
 			sourceTree = "<group>";
@@ -352,6 +370,32 @@
 			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
+		A544C11A282A2A6800EAD7F6 /* ManagePicture */ = {
+			isa = PBXGroup;
+			children = (
+				A544C11B282A2A7700EAD7F6 /* ManagePictureViewController.storyboard */,
+				A544C11D282A2A8A00EAD7F6 /* ManagePictureViewController.swift */,
+			);
+			path = ManagePicture;
+			sourceTree = "<group>";
+		};
+		A544C11F282A2EBF00EAD7F6 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				A544C122282A2F0000EAD7F6 /* CollectionViewCell */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		A544C122282A2F0000EAD7F6 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A544C123282A2F0B00EAD7F6 /* ImageCell.swift */,
+				A544C124282A2F0B00EAD7F6 /* ImageCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		A5628127282558280062BFA6 /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +444,7 @@
 				A5283E772824D69D00761679 /* UseCases */,
 				A5078DFB2824AD2900CBC26B /* Repositories */,
 				A5283E712824CF0E00761679 /* DataStores */,
+				A544C11F282A2EBF00EAD7F6 /* Reusable */,
 				A5078DF22824A22200CBC26B /* Infrastructure */,
 			);
 			path = Reciptopia;
@@ -678,7 +723,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */,
+				A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
+				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,8 +753,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */,
 				A5DC01DE2828CA9E00CC063A /* SignOutUseCase.swift in Sources */,
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
+				A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */,
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5DC01DB2828CA9E00CC063A /* RememberMeUseCase.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
@@ -718,8 +767,10 @@
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
+				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
+				A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */,
 				A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */,
 				A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
@@ -734,6 +785,7 @@
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
+				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
 				A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */,
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,

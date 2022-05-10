@@ -12,6 +12,8 @@ import PhotoKit
 
 final class PictureIngredientViewController: UIViewController, StoryboardInstantiable {
     
+    typealias ManagePictureViewControllerFactory = () -> ManagePictureViewController
+    
     // MARK: - Outlets
     @IBOutlet weak var photoView: PhotoView!
     
@@ -24,11 +26,16 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     
     // MARK: - Properties
     private var viewModel: PictureIngredientViewModel!
+    private var makeManagePictureViewController: ManagePictureViewControllerFactory!
     
     // MARK: - Methods
-    static func create(with viewModel: PictureIngredientViewModel) -> Self {
+    static func create(
+        with viewModel: PictureIngredientViewModel,
+        managePictureViewControllerFactory: @escaping ManagePictureViewControllerFactory
+    ) -> Self {
         let vc = self.instantiateViewController()
         vc.viewModel = viewModel
+        vc.makeManagePictureViewController = managePictureViewControllerFactory
         return vc
     }
     
@@ -57,13 +64,27 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
 extension PictureIngredientViewController {
     
     @IBAction func takePhoto(_ sender: UIButton!) {
+        #if targetEnvironment(simulator)
+        let image = UIImage(systemName: "photo")
+        self.photoView(self.photoView, didTakePhoto: image)
+        #else
         photoView.takePhoto()
+        #endif
+    }
+    
+    @IBAction func presentManagePicture(_ sender: UIButton!) {
+        let vc = makeManagePictureViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
 // MARK: - PhotoView Delegate
 extension PictureIngredientViewController: PhotoViewDelegate {
     func photoView(_ photoView: PhotoView, didTakePhoto photo: UIImage?) {
-        print("photo taken.")
+        guard let data = photo?.jpegData(compressionQuality: 1) else {
+            Log.print("Taken Photo is nil.")
+            return
+        }
+        viewModel.addPicture(data)
     }
 }
