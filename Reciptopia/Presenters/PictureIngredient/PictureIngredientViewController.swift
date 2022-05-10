@@ -21,11 +21,17 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     
     @IBOutlet weak var albumButton: UIButton!
     @IBOutlet weak var takePhotoButton: UIButton!
-    @IBOutlet weak var toggleFlashlightButton: UIButton!
     
     // MARK: - Properties
+    private var viewModel: PictureIngredientViewModel!
     
     // MARK: - Methods
+    static func create(with viewModel: PictureIngredientViewModel) -> Self {
+        let vc = self.instantiateViewController()
+        vc.viewModel = viewModel
+        return vc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

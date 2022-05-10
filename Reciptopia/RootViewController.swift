@@ -9,22 +9,23 @@ import UIKit
 
 class RootViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    // MARK: - Properties
+    private let viewController: PictureIngredientViewController
+    
+    // MARK: - Methods
+    init(viewController: PictureIngredientViewController) {
+        self.viewController = viewController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let vc = PictureIngredientViewController.instantiate(
-            type: UINavigationController.self,
-            as: .navigationController
-        ) else { return }
-        
-        vc.modalPresentationStyle = .fullScreen
-        
-        present(vc, animated: false)
+        self.present(viewController, animated: true)
     }
 }
 
