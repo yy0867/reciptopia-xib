@@ -22,6 +22,10 @@
 		A527A2AB2829077100212FD8 /* PhotoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A527A2A42829077100212FD8 /* PhotoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A527A2B02829078E00212FD8 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2AF2829078E00212FD8 /* PhotoView.swift */; };
 		A527A2B2282908AE00212FD8 /* PhotoViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A527A2B1282908AE00212FD8 /* PhotoViewDelegate.swift */; };
+		A528C23A282B3A2B0017F9A0 /* CheckIngredientViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A528C239282B3A2B0017F9A0 /* CheckIngredientViewControllerTests.swift */; };
+		A528C23C282B3B270017F9A0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A528C23B282B3B270017F9A0 /* RxCocoa */; };
+		A528C23E282B3B270017F9A0 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A528C23D282B3B270017F9A0 /* RxRelay */; };
+		A528C240282B3B270017F9A0 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A528C23F282B3B270017F9A0 /* RxSwift */; };
 		A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C118282A273700EAD7F6 /* RootDIContainer.swift */; };
 		A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A544C11B282A2A7700EAD7F6 /* ManagePictureViewController.storyboard */; };
 		A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C11D282A2A8A00EAD7F6 /* ManagePictureViewController.swift */; };
@@ -149,6 +153,7 @@
 		A5283E752824D07300761679 /* PictureIngredientDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientDataStore.swift; sourceTree = "<group>"; };
 		A5283E792824D6B500761679 /* AnalyzePictureUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCaseProtocol.swift; sourceTree = "<group>"; };
 		A5283E7B2824D81600761679 /* AnalyzePictureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyzePictureUseCase.swift; sourceTree = "<group>"; };
+		A528C239282B3A2B0017F9A0 /* CheckIngredientViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewControllerTests.swift; sourceTree = "<group>"; };
 		A544C118282A273700EAD7F6 /* RootDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDIContainer.swift; sourceTree = "<group>"; };
 		A544C11B282A2A7700EAD7F6 /* ManagePictureViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ManagePictureViewController.storyboard; sourceTree = "<group>"; };
 		A544C11D282A2A8A00EAD7F6 /* ManagePictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +222,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A528C240282B3B270017F9A0 /* RxSwift in Frameworks */,
+				A528C23E282B3B270017F9A0 /* RxRelay in Frameworks */,
+				A528C23C282B3B270017F9A0 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +415,14 @@
 			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
+		A528C238282B3A120017F9A0 /* CheckIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A528C239282B3A2B0017F9A0 /* CheckIngredientViewControllerTests.swift */,
+			);
+			path = CheckIngredient;
+			sourceTree = "<group>";
+		};
 		A544C11A282A2A6800EAD7F6 /* ManagePicture */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,6 +455,7 @@
 			isa = PBXGroup;
 			children = (
 				A544C160282A4BF500EAD7F6 /* PictureIngredient */,
+				A528C238282B3A120017F9A0 /* CheckIngredient */,
 				A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */,
 			);
 			path = ReciptopiaUITests;
@@ -725,6 +742,11 @@
 				A544C15C282A4BE000EAD7F6 /* PBXTargetDependency */,
 			);
 			name = ReciptopiaUITests;
+			packageProductDependencies = (
+				A528C23B282B3B270017F9A0 /* RxCocoa */,
+				A528C23D282B3B270017F9A0 /* RxRelay */,
+				A528C23F282B3B270017F9A0 /* RxSwift */,
+			);
 			productName = ReciptopiaUITests;
 			productReference = A544C155282A4BE000EAD7F6 /* ReciptopiaUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -883,6 +905,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A528C23A282B3A2B0017F9A0 /* CheckIngredientViewControllerTests.swift in Sources */,
 				A544C162282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift in Sources */,
 				A544C164282A4E9B00EAD7F6 /* XCUIApplication+.swift in Sources */,
 				A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */,
@@ -1393,6 +1416,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A528C23B282B3B270017F9A0 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A528C23D282B3B270017F9A0 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		A528C23F282B3B270017F9A0 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
 		A5818B3D2825161100EB11AB /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
