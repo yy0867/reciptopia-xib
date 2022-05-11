@@ -37,6 +37,7 @@ open class AddIngredientTextField: UITextField {
     }
     
     private func configureCornerRadius(with rect: CGRect) {
+        borderStyle = .none
         layer.cornerRadius = rect.height / 2
     }
 }
