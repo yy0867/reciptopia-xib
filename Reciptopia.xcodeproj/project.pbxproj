@@ -70,6 +70,10 @@
 		A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E142824B43100CBC26B /* Ingredient.swift */; };
 		A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */; };
 		A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */; };
+		A5CE6E4A282A9EE700C46BCC /* AddIngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */; };
+		A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */; };
+		A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */; };
+		A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */; };
 		A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */; };
 		A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */; };
 		A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */; };
@@ -182,6 +186,10 @@
 		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
 		A59E2113282A73190081A851 /* CheckIngredientViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModelTests.swift; sourceTree = "<group>"; };
 		A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModel.swift; sourceTree = "<group>"; };
+		A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
+		A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
+		A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCases.swift; sourceTree = "<group>"; };
 		A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckEmailExistsUseCase.swift; sourceTree = "<group>"; };
@@ -411,6 +419,8 @@
 		A544C11F282A2EBF00EAD7F6 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */,
+				A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */,
 				A544C122282A2F0000EAD7F6 /* CollectionViewCell */,
 			);
 			path = Reusable;
@@ -419,8 +429,8 @@
 		A544C122282A2F0000EAD7F6 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				A544C123282A2F0B00EAD7F6 /* ImageCell.swift */,
-				A544C124282A2F0B00EAD7F6 /* ImageCell.xib */,
+				A5CE6E4C282AA25000C46BCC /* IngredientCell */,
+				A5CE6E4B282AA21A00C46BCC /* ImageCell */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -600,6 +610,24 @@
 				A5DC01CA2828CA9E00CC063A /* SignUp */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5CE6E4B282AA21A00C46BCC /* ImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				A544C123282A2F0B00EAD7F6 /* ImageCell.swift */,
+				A544C124282A2F0B00EAD7F6 /* ImageCell.xib */,
+			);
+			path = ImageCell;
+			sourceTree = "<group>";
+		};
+		A5CE6E4C282AA25000C46BCC /* IngredientCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */,
+				A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */,
+			);
+			path = IngredientCell;
 			sourceTree = "<group>";
 		};
 		A5DC01CA2828CA9E00CC063A /* SignUp */ = {
@@ -827,6 +855,7 @@
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
+				A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */,
 				A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -878,6 +907,7 @@
 				A5061FDC28295588000EBF21 /* Log.swift in Sources */,
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
+				A5CE6E4A282A9EE700C46BCC /* AddIngredientButton.swift in Sources */,
 				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
@@ -891,9 +921,11 @@
 				A583988B28262EC800C5E3BD /* UserSessionRepository.swift in Sources */,
 				A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */,
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
+				A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
 				A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */,
+				A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,

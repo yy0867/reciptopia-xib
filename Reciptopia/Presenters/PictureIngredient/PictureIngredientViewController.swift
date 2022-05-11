@@ -13,11 +13,13 @@ import PhotoKit
 final class PictureIngredientViewController: UIViewController, StoryboardInstantiable {
     
     typealias ManagePictureViewControllerFactory = () -> ManagePictureViewController
+    typealias CheckIngredientViewControllerFactory = ([Ingredient]) -> CheckIngredientViewController
     
     // MARK: - Outlets
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var photoView: PhotoView!
     
-    @IBOutlet weak var maskingStackView: UIStackView!
+    @IBOutlet weak var maskingView: UIView!
     @IBOutlet weak var managePictureButton: UIButton!
     @IBOutlet weak var analyzePictureButton: UIButton!
     
@@ -27,16 +29,19 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     // MARK: - Properties
     private var viewModel: PictureIngredientViewModel!
     private var makeManagePictureViewController: ManagePictureViewControllerFactory!
+    private var makeCheckIngredientViewController: CheckIngredientViewControllerFactory!
     private let disposeBag = DisposeBag()
     
     // MARK: - Methods
     static func create(
         with viewModel: PictureIngredientViewModel,
-        managePictureViewControllerFactory: @escaping ManagePictureViewControllerFactory
+        managePictureViewControllerFactory: @escaping ManagePictureViewControllerFactory,
+        checkIngredientViewControllerFactory: @escaping CheckIngredientViewControllerFactory
     ) -> Self {
         let vc = self.instantiateViewController()
         vc.viewModel = viewModel
         vc.makeManagePictureViewController = managePictureViewControllerFactory
+        vc.makeCheckIngredientViewController = checkIngredientViewControllerFactory
         return vc
     }
     
@@ -50,6 +55,7 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     
     override func viewWillAppear(_ animated: Bool) {
         photoView.startPreview()
+        photoView.bringSubviewToFront(maskingView)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -58,7 +64,6 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     
     private func configureViewDetail() {
         analyzePictureButton.layer.cornerRadius = 10
-        view.bringSubviewToFront(maskingStackView)
     }
 }
 
@@ -68,8 +73,10 @@ extension PictureIngredientViewController {
         bindPictureCountToView()
         bindPictureEmptyStateToView()
         bindPictureFullStateToView()
+        bindAnalyzeStateToView()
     }
     
+    // MARK: PictureCount to View
     private func bindPictureCountToView() {
         viewModel.pictures
             .map { $0.count }
@@ -92,6 +99,7 @@ extension PictureIngredientViewController {
         return "\(count) / \(viewModel.maxPictureCount)"
     }
     
+    // MARK: PictureEmptyState to View
     private func bindPictureEmptyStateToView() {
         viewModel.pictures
             .map { $0.isEmpty }
@@ -99,6 +107,7 @@ extension PictureIngredientViewController {
             .disposed(by: disposeBag)
     }
     
+    // MARK: PictureFullState to View
     private func bindPictureFullStateToView() {
         viewModel.pictures
             .map(isPictureCountFull)
@@ -108,6 +117,37 @@ extension PictureIngredientViewController {
     
     private func isPictureCountFull(_ datas: [Data]) -> Bool {
         return datas.count >= viewModel.maxPictureCount
+    }
+    
+    // MARK: AnalyzeState to View
+    private func bindAnalyzeStateToView() {
+        viewModel.analyzeState
+            .bind(onNext: handleAnalyzeState)
+            .disposed(by: disposeBag)
+    }
+    
+    private func handleAnalyzeState(_ state: PictureIngredientViewModel.AnalyzeState) {
+        Log.print(state)
+        switch state {
+            case .analyzing:
+                view.bringSubviewToFront(indicator)
+                indicator.isShown = true
+                indicator.startAnimating()
+            case .errorDetected:
+                indicator.stopAnimating()
+                presentErrorAlert()
+            case .analyzed(let result):
+                indicator.stopAnimating()
+                presentCheckIngredient(with: result)
+        }
+    }
+    
+    private func presentCheckIngredient(with result: [Ingredient]) {
+        let vc = makeCheckIngredientViewController(result)
+        
+        vc.modalPresentationStyle = .fullScreen
+        
+        present(vc, animated: true)
     }
 }
 
@@ -126,6 +166,10 @@ extension PictureIngredientViewController {
     @IBAction func presentManagePicture(_ sender: UIButton!) {
         let vc = makeManagePictureViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func onAnalyze(_ sender: UIButton!) {
+        viewModel.analyze()
     }
 }
 
