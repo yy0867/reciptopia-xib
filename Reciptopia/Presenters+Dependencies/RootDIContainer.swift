@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RxRelay
 
 class RootDIContainer {
     
     // MARK: - Long Lived
     private let pictureIngredientViewModel: PictureIngredientViewModel
+    let userSession = BehaviorRelay<UserSession?>(value: nil)
     
     init() {
         func makePictureIngredientViewModel() -> PictureIngredientViewModel {
@@ -58,5 +60,19 @@ class RootDIContainer {
     func makeCheckIngredientViewController(_ analyzeResult: [Ingredient]) -> CheckIngredientViewController {
         let viewModel = CheckIngredientViewModel(ingredients: analyzeResult)
         return CheckIngredientViewController.create(with: viewModel)
+    }
+}
+
+extension RootDIContainer: UserSessionDelegate {
+    func signedIn(_ userSession: UserSession) {
+        self.userSession.accept(userSession)
+    }
+    
+    func signOut() {
+        self.userSession.accept(nil)
+    }
+    
+    func profileEdited(_ editedUserSession: UserSession) {
+        self.userSession.accept(editedUserSession)
     }
 }

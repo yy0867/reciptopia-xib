@@ -11,3 +11,5 @@ public struct UserSession: Codable {
     public let token: String
     public let account: Account
 }
+
+extension UserSession: Equatable {}

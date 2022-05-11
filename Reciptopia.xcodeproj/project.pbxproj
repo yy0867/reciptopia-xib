@@ -65,6 +65,7 @@
 		A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5839893282631A700C5E3BD /* UserSessionInstances.swift */; };
 		A59E2114282A73190081A851 /* CheckIngredientViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E2113282A73190081A851 /* CheckIngredientViewModelTests.swift */; };
 		A59E2117282A75C80081A851 /* CheckIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */; };
+		A5CC1AA1282BA8D900512D8B /* UserSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */; };
 		A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36D92824EA3700A96B3E /* RxCocoa */; };
 		A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DB2824EA3700A96B3E /* RxRelay */; };
 		A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A5CD36DD2824EA3700A96B3E /* RxSwift */; };
@@ -79,6 +80,7 @@
 		A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */; };
 		A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */; };
 		A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */; };
+		A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */; };
 		A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */; };
 		A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */; };
 		A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */; };
@@ -193,10 +195,12 @@
 		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
 		A59E2113282A73190081A851 /* CheckIngredientViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModelTests.swift; sourceTree = "<group>"; };
 		A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModel.swift; sourceTree = "<group>"; };
+		A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegate.swift; sourceTree = "<group>"; };
 		A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
 		A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegateTests.swift; sourceTree = "<group>"; };
 		A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCases.swift; sourceTree = "<group>"; };
 		A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckEmailExistsUseCase.swift; sourceTree = "<group>"; };
@@ -481,14 +485,15 @@
 			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
-		A5628127282558280062BFA6 /* Presenters */ = {
+		A5628127282558280062BFA6 /* Presenters+Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				A544C118282A273700EAD7F6 /* RootDIContainer.swift */,
+				A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */,
 				A527A2712828EC0F00212FD8 /* PictureIngredient */,
 				A59E2115282A75BB0081A851 /* CheckIngredient */,
 			);
-			path = Presenters;
+			path = "Presenters+Dependencies";
 			sourceTree = "<group>";
 		};
 		A562812F282570E00062BFA6 /* UserSession */ = {
@@ -527,7 +532,7 @@
 			children = (
 				A51BEE02282555C400703E52 /* App */,
 				A57B9AAF2822C33B00F93329 /* RootViewController.swift */,
-				A5628127282558280062BFA6 /* Presenters */,
+				A5628127282558280062BFA6 /* Presenters+Dependencies */,
 				A5078E132824B42A00CBC26B /* Models */,
 				A5283E772824D69D00761679 /* UseCases */,
 				A5078DFB2824AD2900CBC26B /* Repositories */,
@@ -544,6 +549,7 @@
 				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
 				A5061FD92829502C000EBF21 /* RxTest+.swift */,
 				A5818B492825177A00EB11AB /* DevInstances */,
+				A5CC1AA2282BA98500512D8B /* DIContainerTests */,
 				A5EA3411282923FC00944FC0 /* VIewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
 				A5818B362825141100EB11AB /* RepositoryTests */,
@@ -638,6 +644,14 @@
 				A5DC01CA2828CA9E00CC063A /* SignUp */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5CC1AA2282BA98500512D8B /* DIContainerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */,
+			);
+			path = DIContainerTests;
 			sourceTree = "<group>";
 		};
 		A5CE6E4B282AA21A00C46BCC /* ImageCell */ = {
@@ -963,6 +977,7 @@
 				A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
+				A5CC1AA1282BA8D900512D8B /* UserSessionDelegate.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
@@ -983,6 +998,7 @@
 				A5DC01E52828CABF00CC063A /* SignInUseCasesTests.swift in Sources */,
 				A5DC01E32828CABF00CC063A /* SignedInUseCasesTests.swift in Sources */,
 				A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */,
+				A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */,
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
