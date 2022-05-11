@@ -45,12 +45,18 @@ class RootDIContainer {
         let viewModel = pictureIngredientViewModel
         return PictureIngredientViewController.create(
             with: viewModel,
-            managePictureViewControllerFactory: makeManagePictureIngredientViewController
+            managePictureViewControllerFactory: makeManagePictureIngredientViewController,
+            checkIngredientViewControllerFactory: makeCheckIngredientViewController
         )
     }
     
     func makeManagePictureIngredientViewController() -> ManagePictureViewController {
         let viewModel = pictureIngredientViewModel
         return ManagePictureViewController.create(with: viewModel)
+    }
+    
+    func makeCheckIngredientViewController(_ analyzeResult: [Ingredient]) -> CheckIngredientViewController {
+        let viewModel = CheckIngredientViewModel(ingredients: analyzeResult)
+        return CheckIngredientViewController.create(with: viewModel)
     }
 }
