@@ -30,10 +30,11 @@ final class CheckIngredientViewModel {
         ingredients.remove(at: index)
     }
     
-    func changeState(to isMainIngredient: Bool, at index: Int) {
+    func toggleState(at index: Int) {
         guard 0 <= index && index < ingredients.value.count else { return }
         var mutableIngredients = ingredients.value
-        mutableIngredients[index].isMainIngredient = isMainIngredient
+        let isMainIngredient = ingredients.value[index].isMainIngredient
+        mutableIngredients[index].isMainIngredient = !isMainIngredient
         ingredients.accept(mutableIngredients)
     }
 }
