@@ -33,6 +33,7 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMO-dI-sOb">
                                                 <rect key="frame" x="336.5" y="0.0" width="17.5" height="27.5"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="dismissButton"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" image="xmark" catalog="system"/>
@@ -72,7 +73,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKz-V7-rpp">
                                 <rect key="frame" x="0.0" y="816" width="414" height="80"/>
                                 <color key="backgroundColor" name="AccentColor"/>
-                                <accessibility key="accessibilityConfiguration" identifier="analyzeButton"/>
+                                <accessibility key="accessibilityConfiguration" identifier="findRecipeButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="NNT-sh-9rB"/>
                                 </constraints>
@@ -107,6 +108,7 @@
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkT-K1-kNu" customClass="AddIngredientButton" customModule="Reciptopia" customModuleProvider="target">
                                 <rect key="frame" x="50" y="291" width="314" height="45"/>
+                                <accessibility key="accessibilityConfiguration" identifier="addIngredientButton"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="EcQ-Wg-Ezz"/>
                                 </constraints>
