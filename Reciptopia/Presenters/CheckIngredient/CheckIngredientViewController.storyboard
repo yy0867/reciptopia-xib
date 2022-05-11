@@ -122,9 +122,13 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onAddIngredient:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FV4-Mk-ElX"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-d6-cmv" customClass="AddIngredientTextField" customModule="Reciptopia" customModuleProvider="target">
                                 <rect key="frame" x="50" y="291" width="314" height="45"/>
+                                <accessibility key="accessibilityConfiguration" identifier="addIngredientTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -135,6 +139,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="JrN-hg-w8x"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -161,6 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="addIngredientButton" destination="hkT-K1-kNu" id="oKb-cU-041"/>
+                        <outlet property="addIngredientTextField" destination="pKC-d6-cmv" id="wcb-11-jFK"/>
                         <outlet property="findRecipeButton" destination="cKz-V7-rpp" id="QEo-dd-HgD"/>
                         <outlet property="ingredientCollectionView" destination="1SU-6e-SRa" id="TPe-LX-tuC"/>
                     </connections>

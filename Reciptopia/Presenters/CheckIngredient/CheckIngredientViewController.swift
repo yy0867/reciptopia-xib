@@ -7,18 +7,26 @@
 
 import UIKit
 import RxSwift
+import RxRelay
 import RxCocoa
 
 class CheckIngredientViewController: UIViewController, StoryboardInstantiable {
     
+    enum AddIngredientState {
+        case none
+        case editing
+    }
+    
     // MARK: - Outlets
     @IBOutlet weak var addIngredientButton: AddIngredientButton!
+    @IBOutlet weak var addIngredientTextField: AddIngredientTextField!
     @IBOutlet weak var ingredientCollectionView: UICollectionView!
     @IBOutlet weak var findRecipeButton: UIButton!
     
     // MARK: - Properties
     private var viewModel: CheckIngredientViewModel!
     private let disposeBag = DisposeBag()
+    private let addIngredientState = BehaviorRelay<AddIngredientState>(value: .none)
 
     // MARK: - Methods
     static func create(with viewModel: CheckIngredientViewModel) -> Self {
@@ -33,6 +41,7 @@ class CheckIngredientViewController: UIViewController, StoryboardInstantiable {
         configureView()
         registerCell()
         bindViewModel()
+        bindAddIngredientState()
     }
     
     private func configureView() {
@@ -44,7 +53,7 @@ class CheckIngredientViewController: UIViewController, StoryboardInstantiable {
     }
 }
 
-// MARK: - Bind ViewModel
+// MARK: - Bind ViewModel + State
 extension CheckIngredientViewController {
     private func bindViewModel() {
         bindIngredientsEmptyStateToButton()
@@ -91,12 +100,27 @@ extension CheckIngredientViewController {
             self?.viewModel.removeIngredient(at: index)
         }
     }
+    
+    private func bindAddIngredientState() {
+        addIngredientState
+            .map { $0 == .editing }
+            .bind(
+                to: addIngredientButton.rx.isHidden,
+                addIngredientTextField.rx.isShown
+            )
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: - IBActions
 extension CheckIngredientViewController {
     @IBAction func onDismiss(_ sender: UIButton) {
         dismiss(animated: true)
+    }
+    
+    @IBAction func onAddIngredient(_ sender: UIButton) {
+        addIngredientState.accept(.editing)
+        addIngredientTextField.becomeFirstResponder()
     }
 }
 
@@ -108,5 +132,17 @@ extension CheckIngredientViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.width - 100, height: 45)
+    }
+}
+
+// MARK: - AddIngredientField Delegate
+extension CheckIngredientViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return true }
+        viewModel.addIngredient(text)
+        textField.text = ""
+        textField.endEditing(true)
+        addIngredientState.accept(.none)
+        return true
     }
 }

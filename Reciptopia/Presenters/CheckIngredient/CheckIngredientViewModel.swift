@@ -20,7 +20,8 @@ final class CheckIngredientViewModel {
     }
     
     func addIngredient(_ ingredientName: String) {
-        guard ingredients.value.count < 10 else { return }
+        guard ingredients.value.count < 10,
+              !ingredientName.isEmpty else { return }
         
         ingredients.append(Ingredient(name: ingredientName))
     }
