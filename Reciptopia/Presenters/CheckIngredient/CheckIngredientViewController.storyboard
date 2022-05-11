@@ -122,7 +122,27 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onAddIngredient:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FV4-Mk-ElX"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pKC-d6-cmv" customClass="AddIngredientTextField" customModule="Reciptopia" customModuleProvider="target">
+                                <rect key="frame" x="50" y="291" width="314" height="45"/>
+                                <accessibility key="accessibilityConfiguration" identifier="addIngredientTextField"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="AccentColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="JrN-hg-w8x"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -134,16 +154,21 @@
                             <constraint firstItem="cKz-V7-rpp" firstAttribute="top" secondItem="1SU-6e-SRa" secondAttribute="bottom" id="Nma-jf-BGB"/>
                             <constraint firstItem="cKz-V7-rpp" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="Svg-F8-6cr"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hkT-K1-kNu" secondAttribute="trailing" constant="50" id="Y9b-oO-Ctf"/>
+                            <constraint firstItem="pKC-d6-cmv" firstAttribute="bottom" secondItem="hkT-K1-kNu" secondAttribute="bottom" id="ZGm-n9-fUk"/>
                             <constraint firstItem="hkT-K1-kNu" firstAttribute="top" secondItem="pju-cs-69x" secondAttribute="bottom" constant="60" id="cCq-Ha-UMZ"/>
+                            <constraint firstItem="pKC-d6-cmv" firstAttribute="leading" secondItem="hkT-K1-kNu" secondAttribute="leading" id="ecO-Wf-TVe"/>
                             <constraint firstItem="hkT-K1-kNu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="fDN-MJ-joP"/>
                             <constraint firstItem="1SU-6e-SRa" firstAttribute="top" secondItem="hkT-K1-kNu" secondAttribute="bottom" constant="10" id="grS-GH-I7y"/>
                             <constraint firstItem="pju-cs-69x" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="hnc-cF-jsL"/>
+                            <constraint firstItem="pKC-d6-cmv" firstAttribute="trailing" secondItem="hkT-K1-kNu" secondAttribute="trailing" id="pgj-8d-ODm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pju-cs-69x" secondAttribute="trailing" constant="30" id="qHy-7S-Z4r"/>
+                            <constraint firstItem="pKC-d6-cmv" firstAttribute="top" secondItem="hkT-K1-kNu" secondAttribute="top" id="qvZ-ol-SzW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1SU-6e-SRa" secondAttribute="trailing" constant="50" id="v4r-Ce-0j0"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addIngredientButton" destination="hkT-K1-kNu" id="oKb-cU-041"/>
+                        <outlet property="addIngredientTextField" destination="pKC-d6-cmv" id="wcb-11-jFK"/>
                         <outlet property="findRecipeButton" destination="cKz-V7-rpp" id="QEo-dd-HgD"/>
                         <outlet property="ingredientCollectionView" destination="1SU-6e-SRa" id="TPe-LX-tuC"/>
                     </connections>
@@ -156,6 +181,9 @@
     <designables>
         <designable name="hkT-K1-kNu">
             <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="pKC-d6-cmv">
+            <size key="intrinsicContentSize" width="4" height="18.5"/>
         </designable>
     </designables>
     <resources>
