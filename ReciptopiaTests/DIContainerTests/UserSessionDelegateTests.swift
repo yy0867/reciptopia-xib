@@ -21,9 +21,7 @@ class UserSessionDelegateTests: XCTestCase {
         }
         
         func signedIn(_ userSession: UserSession) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.userSessionDelegate?.signedIn(userSession)
-            }
+            self.userSessionDelegate?.signedIn(userSession)
         }
         
         func signOut() {
@@ -31,9 +29,7 @@ class UserSessionDelegateTests: XCTestCase {
         }
         
         func profileEdited(_ editedUserSession: UserSession) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.userSessionDelegate?.profileEdited(editedUserSession)
-            }
+            self.userSessionDelegate?.profileEdited(editedUserSession)
         }
     }
 
@@ -75,12 +71,7 @@ class UserSessionDelegateTests: XCTestCase {
         scheduler.start()
         
         // Then
-        guard let result = try? container.userSession
-            .toBlocking()
-            .last() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+        let result = container.userSession.value
         
         XCTAssertEqual(result, fakeUserSession)
     }
@@ -97,12 +88,7 @@ class UserSessionDelegateTests: XCTestCase {
         scheduler.start()
         
         // Then
-        guard let result = try? container.userSession
-            .toBlocking()
-            .last() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+        let result = container.userSession.value
         
         XCTAssertNil(result)
     }
@@ -125,12 +111,7 @@ class UserSessionDelegateTests: XCTestCase {
         scheduler.start()
         
         // Then
-        guard let result = try? container.userSession
-            .toBlocking()
-            .last() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+        let result = container.userSession.value
         
         XCTAssertEqual(result, editedUserSesion)
     }
