@@ -481,14 +481,14 @@
 			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
-		A5628127282558280062BFA6 /* Presenters */ = {
+		A5628127282558280062BFA6 /* Presenters+Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				A544C118282A273700EAD7F6 /* RootDIContainer.swift */,
 				A527A2712828EC0F00212FD8 /* PictureIngredient */,
 				A59E2115282A75BB0081A851 /* CheckIngredient */,
 			);
-			path = Presenters;
+			path = "Presenters+Dependencies";
 			sourceTree = "<group>";
 		};
 		A562812F282570E00062BFA6 /* UserSession */ = {
@@ -527,7 +527,7 @@
 			children = (
 				A51BEE02282555C400703E52 /* App */,
 				A57B9AAF2822C33B00F93329 /* RootViewController.swift */,
-				A5628127282558280062BFA6 /* Presenters */,
+				A5628127282558280062BFA6 /* Presenters+Dependencies */,
 				A5078E132824B42A00CBC26B /* Models */,
 				A5283E772824D69D00761679 /* UseCases */,
 				A5078DFB2824AD2900CBC26B /* Repositories */,
