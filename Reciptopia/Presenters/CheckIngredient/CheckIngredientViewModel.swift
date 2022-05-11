@@ -15,12 +15,7 @@ final class CheckIngredientViewModel {
     let maxCount = 10
     
     // MARK: - Methods
-    init(ingredientNames: [String]) {
-        func mapIngredientNamesToIngredients(_ ingredientNames: [String]) -> [Ingredient] {
-            return ingredientNames.map { Ingredient(name: $0) }
-        }
-        let ingredients = mapIngredientNamesToIngredients(ingredientNames)
-        
+    init(ingredients: [Ingredient]) {
         self.ingredients.accept(ingredients)
     }
     
