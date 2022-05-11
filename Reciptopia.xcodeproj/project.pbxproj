@@ -80,6 +80,7 @@
 		A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */; };
 		A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */; };
 		A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */; };
+		A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */; };
 		A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */; };
 		A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */; };
 		A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */; };
@@ -199,6 +200,7 @@
 		A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegateTests.swift; sourceTree = "<group>"; };
 		A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCases.swift; sourceTree = "<group>"; };
 		A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckEmailExistsUseCase.swift; sourceTree = "<group>"; };
@@ -547,6 +549,7 @@
 				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
 				A5061FD92829502C000EBF21 /* RxTest+.swift */,
 				A5818B492825177A00EB11AB /* DevInstances */,
+				A5CC1AA2282BA98500512D8B /* DIContainerTests */,
 				A5EA3411282923FC00944FC0 /* VIewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
 				A5818B362825141100EB11AB /* RepositoryTests */,
@@ -641,6 +644,14 @@
 				A5DC01CA2828CA9E00CC063A /* SignUp */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5CC1AA2282BA98500512D8B /* DIContainerTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */,
+			);
+			path = DIContainerTests;
 			sourceTree = "<group>";
 		};
 		A5CE6E4B282AA21A00C46BCC /* ImageCell */ = {
@@ -987,6 +998,7 @@
 				A5DC01E52828CABF00CC063A /* SignInUseCasesTests.swift in Sources */,
 				A5DC01E32828CABF00CC063A /* SignedInUseCasesTests.swift in Sources */,
 				A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */,
+				A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */,
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,

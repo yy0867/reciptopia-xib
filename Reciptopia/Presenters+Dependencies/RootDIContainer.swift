@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import RxRelay
 
 class RootDIContainer {
     
     // MARK: - Long Lived
     private let pictureIngredientViewModel: PictureIngredientViewModel
+    let userSession = BehaviorRelay<UserSession?>(value: nil)
     
     init() {
         func makePictureIngredientViewModel() -> PictureIngredientViewModel {
