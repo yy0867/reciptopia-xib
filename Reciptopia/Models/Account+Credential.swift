@@ -33,3 +33,5 @@ struct Credential {
     let email: String
     let password: String
 }
+
+extension Account: Equatable {}
