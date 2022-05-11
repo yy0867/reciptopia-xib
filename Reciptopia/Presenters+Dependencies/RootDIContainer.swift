@@ -62,3 +62,17 @@ class RootDIContainer {
         return CheckIngredientViewController.create(with: viewModel)
     }
 }
+
+extension RootDIContainer: UserSessionDelegate {
+    func signedIn(_ userSession: UserSession) {
+        self.userSession.accept(userSession)
+    }
+    
+    func signOut() {
+        self.userSession.accept(nil)
+    }
+    
+    func profileEdited(_ editedUserSession: UserSession) {
+        self.userSession.accept(editedUserSession)
+    }
+}
