@@ -16,9 +16,19 @@ final class MyPageViewControllerProvider {
     private let makeNotSignedInMyPageViewModel: () -> NotSignedInMyPageViewModel
     private let makeSignedInMyPageViewModel: (UserSession) -> SignedInMyPageViewModel
     
+    var profilePictureUrl: String? {
+        return userSession.value?.account.profilePictureUrl
+    }
+    
     // MARK: - Methods
-    init(userSession: BehaviorRelay<UserSession?>) {
+    init(
+        userSession: BehaviorRelay<UserSession?>,
+        makeNotSignedInMyPageViewModel: @escaping () -> NotSignedInMyPageViewModel,
+        makeSignedInMyPageViewModel: @escaping (UserSession) -> SignedInMyPageViewModel
+    ) {
         self.userSession = userSession
+        self.makeNotSignedInMyPageViewModel = makeNotSignedInMyPageViewModel
+        self.makeSignedInMyPageViewModel = makeSignedInMyPageViewModel
     }
     
     func makeMyPageViewController() -> MyPageViewControllerProtocol {

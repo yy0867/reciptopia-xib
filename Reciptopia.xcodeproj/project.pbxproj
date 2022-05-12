@@ -102,6 +102,10 @@
 		A5EC30B8282CA7D500C551D7 /* MyPageViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */; };
 		A5EC30BA282CA84600C551D7 /* MyPageViewControllerProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */; };
 		A5EC30BC282CAADD00C551D7 /* MyPageViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30BB282CAADD00C551D7 /* MyPageViewControllerProvider.swift */; };
+		A5EC30C9282CC06100C551D7 /* NotSignedInMyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30C8282CC06100C551D7 /* NotSignedInMyPageViewModel.swift */; };
+		A5EC30CB282CC06800C551D7 /* SignedInMyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30CA282CC06800C551D7 /* SignedInMyPageViewModel.swift */; };
+		A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30CE282CC4EB00C551D7 /* SignUpViewModel.swift */; };
+		A5EC30D1282CC4F000C551D7 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30D0282CC4F000C551D7 /* SignInViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +234,10 @@
 		A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProtocol.swift; sourceTree = "<group>"; };
 		A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProviderTests.swift; sourceTree = "<group>"; };
 		A5EC30BB282CAADD00C551D7 /* MyPageViewControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProvider.swift; sourceTree = "<group>"; };
+		A5EC30C8282CC06100C551D7 /* NotSignedInMyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSignedInMyPageViewModel.swift; sourceTree = "<group>"; };
+		A5EC30CA282CC06800C551D7 /* SignedInMyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInMyPageViewModel.swift; sourceTree = "<group>"; };
+		A5EC30CE282CC4EB00C551D7 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A5EC30D0282CC4F000C551D7 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +297,7 @@
 			children = (
 				A502B1D3282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard */,
 				A502B1D4282CA3C700CC3A0E /* SignedInMyPageViewController.swift */,
+				A5EC30CA282CC06800C551D7 /* SignedInMyPageViewModel.swift */,
 			);
 			path = SignedIn;
 			sourceTree = "<group>";
@@ -296,8 +305,11 @@
 		A502B1C0282C9FB700CC3A0E /* NotSignedIn */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC30CD282CC4E300C551D7 /* SignUp */,
+				A5EC30CC282CC4E000C551D7 /* SignIn */,
 				A502B1C1282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard */,
 				A502B1C3282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift */,
+				A5EC30C8282CC06100C551D7 /* NotSignedInMyPageViewModel.swift */,
 			);
 			path = NotSignedIn;
 			sourceTree = "<group>";
@@ -769,6 +781,22 @@
 			path = VIewModelTests;
 			sourceTree = "<group>";
 		};
+		A5EC30CC282CC4E000C551D7 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC30D0282CC4F000C551D7 /* SignInViewModel.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		A5EC30CD282CC4E300C551D7 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC30CE282CC4EB00C551D7 /* SignUpViewModel.swift */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -997,6 +1025,7 @@
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
 				A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */,
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
+				A5EC30CB282CC06800C551D7 /* SignedInMyPageViewModel.swift in Sources */,
 				A5DC01DB2828CA9E00CC063A /* RememberMeUseCase.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5DC01DD2828CA9E00CC063A /* WithdrawalUseCase.swift in Sources */,
@@ -1012,6 +1041,7 @@
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
+				A5EC30C9282CC06100C551D7 /* NotSignedInMyPageViewModel.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
 				A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */,
 				A502B1C4282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift in Sources */,
@@ -1025,12 +1055,14 @@
 				A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
+				A5EC30D1282CC4F000C551D7 /* SignInViewModel.swift in Sources */,
 				A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */,
 				A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
 				A5CC1AA1282BA8D900512D8B /* UserSessionDelegate.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
+				A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
 				A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */,

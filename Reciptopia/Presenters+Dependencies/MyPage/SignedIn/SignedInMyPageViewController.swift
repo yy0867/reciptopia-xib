@@ -12,9 +12,11 @@ class SignedInMyPageViewController:
     MyPageViewControllerProtocol,
     StoryboardInstantiable
 {
+    // MARK: - Outlets
+    
     
     // MARK: - Properties
-    
+    var viewModel: SignedInMyPageViewModel!
     
     // MARK: - Methods
     static func create(with viewModel: SignedInMyPageViewModel) -> Self {
