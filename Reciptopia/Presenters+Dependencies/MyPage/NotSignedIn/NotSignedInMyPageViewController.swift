@@ -19,7 +19,6 @@ class NotSignedInMyPageViewController:
     // MARK: - Methods
     static func create(with viewModel: NotSignedInMyPageViewModel) -> Self {
         let vc = self.instantiateViewController()
-        vc.viewModel = viewModel
         return vc
     }
     
