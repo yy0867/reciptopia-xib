@@ -18,7 +18,7 @@ class CheckIngredientViewController: UIViewController, StoryboardInstantiable {
     }
     
     // MARK: - Outlets
-    @IBOutlet weak var addIngredientButton: AddIngredientButton!
+    @IBOutlet weak var addIngredientButton: BorderImageButton!
     @IBOutlet weak var addIngredientTextField: AddIngredientTextField!
     @IBOutlet weak var ingredientCollectionView: UICollectionView!
     @IBOutlet weak var findRecipeButton: UIButton!
