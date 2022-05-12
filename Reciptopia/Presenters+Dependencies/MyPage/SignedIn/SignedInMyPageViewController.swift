@@ -7,13 +7,23 @@
 
 import UIKit
 
-class SignedInMyPageViewController: UITableViewController, MyPageViewControllerProtocol {
+class SignedInMyPageViewController:
+    UITableViewController,
+    MyPageViewControllerProtocol,
+    StoryboardInstantiable
+{
     
     // MARK: - Properties
     
+    
     // MARK: - Methods
+    static func create(with viewModel: SignedInMyPageViewModel) -> Self {
+        let vc = self.instantiateViewController()
+        vc.viewModel = viewModel
+        return vc
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }

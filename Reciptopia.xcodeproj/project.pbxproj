@@ -100,7 +100,8 @@
 		A5DC01E52828CABF00CC063A /* SignInUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */; };
 		A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */; };
 		A5EC30B8282CA7D500C551D7 /* MyPageViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */; };
-		A5EC30BA282CA84600C551D7 /* MyPageProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B9282CA84600C551D7 /* MyPageProviderTests.swift */; };
+		A5EC30BA282CA84600C551D7 /* MyPageViewControllerProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */; };
+		A5EC30BC282CAADD00C551D7 /* MyPageViewControllerProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30BB282CAADD00C551D7 /* MyPageViewControllerProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,7 +228,8 @@
 		A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInUseCasesTests.swift; sourceTree = "<group>"; };
 		A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewModel.swift; sourceTree = "<group>"; };
 		A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProtocol.swift; sourceTree = "<group>"; };
-		A5EC30B9282CA84600C551D7 /* MyPageProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProviderTests.swift; sourceTree = "<group>"; };
+		A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProviderTests.swift; sourceTree = "<group>"; };
+		A5EC30BB282CAADD00C551D7 /* MyPageViewControllerProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -684,7 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */,
-				A5EC30B9282CA84600C551D7 /* MyPageProviderTests.swift */,
+				A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */,
 			);
 			path = ServiceTests;
 			sourceTree = "<group>";
@@ -710,6 +712,7 @@
 		A5DAE171282BC3DD00975F09 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC30BB282CAADD00C551D7 /* MyPageViewControllerProvider.swift */,
 				A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */,
 				A502B1C0282C9FB700CC3A0E /* NotSignedIn */,
 				A502B1BF282C9FB400CC3A0E /* SignedIn */,
@@ -1002,6 +1005,7 @@
 				A5061FDC28295588000EBF21 /* Log.swift in Sources */,
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
+				A5EC30BC282CAADD00C551D7 /* MyPageViewControllerProvider.swift in Sources */,
 				A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */,
 				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A528C243282B3E790017F9A0 /* AddIngredientTextField.swift in Sources */,
@@ -1055,7 +1059,7 @@
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
-				A5EC30BA282CA84600C551D7 /* MyPageProviderTests.swift in Sources */,
+				A5EC30BA282CA84600C551D7 /* MyPageViewControllerProviderTests.swift in Sources */,
 				A59E2114282A73190081A851 /* CheckIngredientViewModelTests.swift in Sources */,
 				A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */,
 				A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */,

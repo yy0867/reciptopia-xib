@@ -1,5 +1,5 @@
 //
-//  MyPageProviderTests.swift
+//  MyPageViewControllerProviderTests.swift
 //  ReciptopiaTests
 //
 //  Created by 김세영 on 2022/05/12.
@@ -8,14 +8,14 @@
 import XCTest
 @testable import Reciptopia
 
-class MyPageProviderTests: XCTestCase {
+class MyPageViewControllerProviderTests: XCTestCase {
     
     var container: RootDIContainer!
-    var myPageProvider: MyPageProvider!
+    var myPageProvider: MyPageViewControllerProvider!
     
     override func setUp() {
         self.container = RootDIContainer()
-        self.myPageProvider = MyPageProvider(userSession: container.userSession)
+        self.myPageProvider = MyPageViewControllerProvider(userSession: container.userSession)
     }
     
     func test_MyPageProvider_ifUserSessionNil_shouldReturnNotSignedInMyPageViewController() {
