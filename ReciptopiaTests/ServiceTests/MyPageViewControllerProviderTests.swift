@@ -15,7 +15,13 @@ class MyPageViewControllerProviderTests: XCTestCase {
     
     override func setUp() {
         self.container = RootDIContainer()
-        self.myPageProvider = MyPageViewControllerProvider(userSession: container.userSession)
+        self.myPageProvider = MyPageViewControllerProvider(
+            userSession: container.userSession,
+            makeNotSignedInMyPageViewModel: { return NotSignedInMyPageViewModel() },
+            makeSignedInMyPageViewModel: { userSession in
+                return SignedInMyPageViewModel(userSession: userSession)
+            }
+        )
     }
     
     func test_MyPageProvider_ifUserSessionNil_shouldReturnNotSignedInMyPageViewController() {
