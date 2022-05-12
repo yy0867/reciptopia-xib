@@ -13,4 +13,4 @@ struct Favorite {
     let title: String
 }
 
-extension Favorite: Equatable {}
+extension Favorite: Identifiable, Equatable {}
