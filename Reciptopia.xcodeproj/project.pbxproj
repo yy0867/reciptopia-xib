@@ -393,7 +393,7 @@
 			children = (
 				A583988528262C7C00C5E3BD /* UserSession */,
 				A5078E0E2824AD7900CBC26B /* PictureIngredient */,
-				A5EC30E3282CD77700C551D7 /* SearchHistory */,
+				A5EC30E3282CD77700C551D7 /* SearchIngredient */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -634,6 +634,13 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
+		A54816EF282D022F006001FC /* SearchIngredient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchIngredient;
+			sourceTree = "<group>";
+		};
 		A5628127282558280062BFA6 /* Presenters+Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +649,7 @@
 				A527A2712828EC0F00212FD8 /* PictureIngredient */,
 				A59E2115282A75BB0081A851 /* CheckIngredient */,
 				A5DAE171282BC3DD00975F09 /* MyPage */,
+				A54816EF282D022F006001FC /* SearchIngredient */,
 			);
 			path = "Presenters+Dependencies";
 			sourceTree = "<group>";
@@ -926,13 +934,13 @@
 			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
-		A5EC30E3282CD77700C551D7 /* SearchHistory */ = {
+		A5EC30E3282CD77700C551D7 /* SearchIngredient */ = {
 			isa = PBXGroup;
 			children = (
 				A54816E2282CFBD1006001FC /* Favorite */,
 				A54816E1282CFBCC006001FC /* SearchHistory */,
 			);
-			path = SearchHistory;
+			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
 		A5EC30EB282CDA9000C551D7 /* Entities */ = {
