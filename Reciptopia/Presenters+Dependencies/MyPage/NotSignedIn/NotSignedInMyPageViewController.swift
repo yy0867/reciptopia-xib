@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NotSignedInMyPageViewController: UITableViewController {
+class NotSignedInMyPageViewController: UITableViewController, MyPageViewControllerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()

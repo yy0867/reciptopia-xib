@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignedInMyPageViewController: UITableViewController {
+class SignedInMyPageViewController: UITableViewController, MyPageViewControllerProtocol {
     
     // MARK: - Properties
     
