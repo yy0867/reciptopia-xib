@@ -57,46 +57,6 @@ class FavoriteRepositoryTests: XCTestCase {
         // Then
     }
     
-    func test_FavoriteRepository_updateSuccess_shouldReturnFavorite() {
-        // Given
-        dev.favoriteDataStore.favorites = generateRandomFavorites()
-        
-        let randomId = Int.random(in: 1...dev.favoriteDataStore.favorites.count)
-        let newFavorite = Favorite(id: randomId, postId: 1, title: generateRandomString())
-        
-        // When
-        guard let result = try? repository.update(newFavorite)
-            .toBlocking()
-            .toArray() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
-        
-        // Then
-        let updatedFavorite = result.first(where: { $0.id == randomId })
-        XCTAssertEqual(updatedFavorite, newFavorite)
-    }
-    
-    func test_FavoriteRepository_updateFail_shouldReturnError() {
-        // Given
-        dev.favoriteDataStore.favorites = generateRandomFavorites()
-        let randomId = Int.random(in: (dev.favoriteDataStore.favorites.count + 1)...100)
-        let newFavorite = Favorite(id: randomId, postId: 1, title: generateRandomString())
-        
-        // When
-        let result = repository.update(newFavorite)
-            .toBlocking()
-            .materialize()
-        
-        // Then
-        switch result {
-            case .completed:
-                XCTFail("update invalid id should fail.")
-            case .failed:
-                break
-        }
-    }
-    
     func test_FavoriteRepository_deleteSuccess_shouldReturnVoid() {
         // Given
         dev.favoriteDataStore.favorites = generateRandomFavorites()
