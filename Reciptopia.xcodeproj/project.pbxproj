@@ -11,6 +11,8 @@
 		A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502B1BD282C98B400CC3A0E /* UIImage+.swift */; };
 		A502B1C2282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A502B1C1282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard */; };
 		A502B1C4282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502B1C3282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift */; };
+		A502B1D5282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A502B1D3282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard */; };
+		A502B1D6282CA3C700CC3A0E /* SignedInMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502B1D4282CA3C700CC3A0E /* SignedInMyPageViewController.swift */; };
 		A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FD92829502C000EBF21 /* RxTest+.swift */; };
 		A5061FDC28295588000EBF21 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FDB28295588000EBF21 /* Log.swift */; };
 		A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */; };
@@ -79,7 +81,7 @@
 		A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E142824B43100CBC26B /* Ingredient.swift */; };
 		A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */; };
 		A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */; };
-		A5CE6E4A282A9EE700C46BCC /* AddIngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */; };
+		A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E49282A9EE700C46BCC /* BorderImageButton.swift */; };
 		A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */; };
 		A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */; };
 		A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */; };
@@ -142,6 +144,8 @@
 		A502B1BD282C98B400CC3A0E /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		A502B1C1282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotSignedInMyPageViewController.storyboard; sourceTree = "<group>"; };
 		A502B1C3282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSignedInMyPageViewController.swift; sourceTree = "<group>"; };
+		A502B1D3282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignedInMyPageViewController.storyboard; sourceTree = "<group>"; };
+		A502B1D4282CA3C700CC3A0E /* SignedInMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignedInMyPageViewController.swift; sourceTree = "<group>"; };
 		A5061FD92829502C000EBF21 /* RxTest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxTest+.swift"; sourceTree = "<group>"; };
 		A5061FDB28295588000EBF21 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+.swift"; sourceTree = "<group>"; };
@@ -202,7 +206,7 @@
 		A59E2113282A73190081A851 /* CheckIngredientViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModelTests.swift; sourceTree = "<group>"; };
 		A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModel.swift; sourceTree = "<group>"; };
 		A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegate.swift; sourceTree = "<group>"; };
-		A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIngredientButton.swift; sourceTree = "<group>"; };
+		A5CE6E49282A9EE700C46BCC /* BorderImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderImageButton.swift; sourceTree = "<group>"; };
 		A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
@@ -277,6 +281,8 @@
 		A502B1BF282C9FB400CC3A0E /* SignedIn */ = {
 			isa = PBXGroup;
 			children = (
+				A502B1D3282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard */,
+				A502B1D4282CA3C700CC3A0E /* SignedInMyPageViewController.swift */,
 			);
 			path = SignedIn;
 			sourceTree = "<group>";
@@ -455,7 +461,7 @@
 		A528C241282B3E620017F9A0 /* AddIngredient */ = {
 			isa = PBXGroup;
 			children = (
-				A5CE6E49282A9EE700C46BCC /* AddIngredientButton.swift */,
+				A5CE6E49282A9EE700C46BCC /* BorderImageButton.swift */,
 				A528C242282B3E790017F9A0 /* AddIngredientTextField.swift */,
 			);
 			path = AddIngredient;
@@ -931,6 +937,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */,
+				A502B1D5282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard in Resources */,
 				A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
@@ -989,7 +996,7 @@
 				A5061FDC28295588000EBF21 /* Log.swift in Sources */,
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
-				A5CE6E4A282A9EE700C46BCC /* AddIngredientButton.swift in Sources */,
+				A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */,
 				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A528C243282B3E790017F9A0 /* AddIngredientTextField.swift in Sources */,
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
@@ -1021,6 +1028,7 @@
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
 				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
 				A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */,
+				A502B1D6282CA3C700CC3A0E /* SignedInMyPageViewController.swift in Sources */,
 				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
 				A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
