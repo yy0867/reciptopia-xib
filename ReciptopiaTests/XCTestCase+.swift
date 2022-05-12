@@ -54,4 +54,5 @@ struct DevInstances {
     let pictureIngredientDataStore = FakePictureIngredientDataStore()
     let succeedTokenDataStore = FakeTokenDataStore(isSucceedCase: true)
     let failTokenDataStore = FakeTokenDataStore(isSucceedCase: false)
+    let searchHistoryDataStore = FakeSearchHistoryDataStore()
 }

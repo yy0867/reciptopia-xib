@@ -60,10 +60,6 @@ class CheckIngredientViewControllerTests: XCTestCase {
         let randomCount = Int.random(in: 1..<5)
         for _ in 1...randomCount {
             addIngredientButton.tap()
-            if addIngredientButton.exists {
-                XCTFail("addIngredientButton should not exist.")
-                return
-            }
             XCTAssertTrue(addIngredientField.exists)
             
             addIngredientField.typeText("\n")
