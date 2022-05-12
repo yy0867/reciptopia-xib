@@ -45,6 +45,11 @@
 		A54816D7282CEFD9006001FC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A54816D6282CEFD9006001FC /* Realm */; };
 		A54816DD282CF5B1006001FC /* FavoriteRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816DC282CF5B1006001FC /* FavoriteRepositoryTests.swift */; };
 		A54816E0282CF695006001FC /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816DF282CF695006001FC /* Favorite.swift */; };
+		A54816E4282CFBE0006001FC /* FavoriteRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816E3282CFBE0006001FC /* FavoriteRepositoryProtocol.swift */; };
+		A54816E6282CFC52006001FC /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816E5282CFC52006001FC /* FavoriteRepository.swift */; };
+		A54816EA282CFC91006001FC /* FavoriteDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */; };
+		A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */; };
+		A54816EE282CFE85006001FC /* RealmFavorite+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */; };
 		A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */; };
 		A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */; };
 		A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */; };
@@ -204,6 +209,11 @@
 		A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+.swift"; sourceTree = "<group>"; };
 		A54816DC282CF5B1006001FC /* FavoriteRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryTests.swift; sourceTree = "<group>"; };
 		A54816DF282CF695006001FC /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		A54816E3282CFBE0006001FC /* FavoriteRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A54816E5282CFC52006001FC /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
+		A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataStoreProtocol.swift; sourceTree = "<group>"; };
+		A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFavoriteDataStore.swift; sourceTree = "<group>"; };
+		A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmFavorite+Mapping.swift"; sourceTree = "<group>"; };
 		A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckIngredientViewController.storyboard; sourceTree = "<group>"; };
 		A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewController.swift; sourceTree = "<group>"; };
@@ -475,7 +485,7 @@
 			children = (
 				A583987E2825FEEB00C5E3BD /* UserSession */,
 				A5283E722824CF4900761679 /* PictureIngredients */,
-				A5EC30DB282CCC6900C551D7 /* SearchHistory */,
+				A5EC30DB282CCC6900C551D7 /* SearchIngredient */,
 			);
 			path = DataStores;
 			sourceTree = "<group>";
@@ -584,6 +594,42 @@
 			isa = PBXGroup;
 			children = (
 				A54816DC282CF5B1006001FC /* FavoriteRepositoryTests.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A54816E1282CFBCC006001FC /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC30E4282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift */,
+				A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */,
+			);
+			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		A54816E2282CFBD1006001FC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				A54816E3282CFBE0006001FC /* FavoriteRepositoryProtocol.swift */,
+				A54816E5282CFC52006001FC /* FavoriteRepository.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
+		A54816E7282CFC7C006001FC /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC30DC282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift */,
+				A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */,
+			);
+			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		A54816E8282CFC80006001FC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */,
+				A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -863,13 +909,13 @@
 			path = SearchHistory;
 			sourceTree = "<group>";
 		};
-		A5EC30DB282CCC6900C551D7 /* SearchHistory */ = {
+		A5EC30DB282CCC6900C551D7 /* SearchIngredient */ = {
 			isa = PBXGroup;
 			children = (
-				A5EC30DC282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift */,
-				A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */,
+				A54816E8282CFC80006001FC /* Favorite */,
+				A54816E7282CFC7C006001FC /* SearchHistory */,
 			);
-			path = SearchHistory;
+			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
 		A5EC30E0282CD03400C551D7 /* SearchIngredient */ = {
@@ -883,8 +929,8 @@
 		A5EC30E3282CD77700C551D7 /* SearchHistory */ = {
 			isa = PBXGroup;
 			children = (
-				A5EC30E4282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift */,
-				A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */,
+				A54816E2282CFBD1006001FC /* Favorite */,
+				A54816E1282CFBCC006001FC /* SearchHistory */,
 			);
 			path = SearchHistory;
 			sourceTree = "<group>";
@@ -894,6 +940,7 @@
 			children = (
 				A5EC30EC282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift */,
 				A5EC30EE282CDAE900C551D7 /* RealmIngredient+Mapping.swift */,
+				A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -1140,6 +1187,7 @@
 				A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */,
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5EC30CB282CC06800C551D7 /* SignedInMyPageViewModel.swift in Sources */,
+				A54816EA282CFC91006001FC /* FavoriteDataStoreProtocol.swift in Sources */,
 				A5DC01DB2828CA9E00CC063A /* RememberMeUseCase.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5DC01DD2828CA9E00CC063A /* WithdrawalUseCase.swift in Sources */,
@@ -1171,6 +1219,7 @@
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
 				A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
+				A54816E6282CFC52006001FC /* FavoriteRepository.swift in Sources */,
 				A54816E0282CF695006001FC /* Favorite.swift in Sources */,
 				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
 				A5EC30D1282CC4F000C551D7 /* SignInViewModel.swift in Sources */,
@@ -1179,13 +1228,16 @@
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
 				A5CC1AA1282BA8D900512D8B /* UserSessionDelegate.swift in Sources */,
+				A54816E4282CFBE0006001FC /* FavoriteRepositoryProtocol.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
 				A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */,
 				A5EC30DD282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift in Sources */,
+				A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
 				A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */,
 				A5EC30F4282CE46200C551D7 /* Date+.swift in Sources */,
+				A54816EE282CFE85006001FC /* RealmFavorite+Mapping.swift in Sources */,
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
 				A5EC30ED282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift in Sources */,
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
