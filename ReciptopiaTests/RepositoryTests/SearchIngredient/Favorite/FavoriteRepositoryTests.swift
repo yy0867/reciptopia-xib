@@ -80,7 +80,7 @@ class FavoriteRepositoryTests: XCTestCase {
     func test_FavoriteRepository_updateFail_shouldReturnError() {
         // Given
         dev.favoriteDataStore.favorites = generateRandomFavorites()
-        let randomId = Int.random(in: (dev.searchHistoryDataStore.searchHistories.count + 1)...100)
+        let randomId = Int.random(in: (dev.favoriteDataStore.favorites.count + 1)...100)
         let newFavorite = Favorite(id: randomId, postId: 1, title: generateRandomString())
         
         // When
