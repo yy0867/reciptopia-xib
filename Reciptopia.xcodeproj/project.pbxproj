@@ -99,6 +99,8 @@
 		A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01E12828CABF00CC063A /* SignUpUseCasesTests.swift */; };
 		A5DC01E52828CABF00CC063A /* SignInUseCasesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */; };
 		A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */; };
+		A5EC30B8282CA7D500C551D7 /* MyPageViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */; };
+		A5EC30BA282CA84600C551D7 /* MyPageProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30B9282CA84600C551D7 /* MyPageProviderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,6 +226,8 @@
 		A5DC01E12828CABF00CC063A /* SignUpUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCasesTests.swift; sourceTree = "<group>"; };
 		A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInUseCasesTests.swift; sourceTree = "<group>"; };
 		A5EA340F282923EE00944FC0 /* PictureIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewModel.swift; sourceTree = "<group>"; };
+		A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewControllerProtocol.swift; sourceTree = "<group>"; };
+		A5EC30B9282CA84600C551D7 /* MyPageProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageProviderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,7 +583,7 @@
 				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
 				A5061FD92829502C000EBF21 /* RxTest+.swift */,
 				A5818B492825177A00EB11AB /* DevInstances */,
-				A5CC1AA2282BA98500512D8B /* DIContainerTests */,
+				A5CC1AA2282BA98500512D8B /* ServiceTests */,
 				A5EA3411282923FC00944FC0 /* VIewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
 				A5818B362825141100EB11AB /* RepositoryTests */,
@@ -676,12 +680,13 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
-		A5CC1AA2282BA98500512D8B /* DIContainerTests */ = {
+		A5CC1AA2282BA98500512D8B /* ServiceTests */ = {
 			isa = PBXGroup;
 			children = (
 				A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */,
+				A5EC30B9282CA84600C551D7 /* MyPageProviderTests.swift */,
 			);
-			path = DIContainerTests;
+			path = ServiceTests;
 			sourceTree = "<group>";
 		};
 		A5CE6E4B282AA21A00C46BCC /* ImageCell */ = {
@@ -705,6 +710,7 @@
 		A5DAE171282BC3DD00975F09 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC30B7282CA7D500C551D7 /* MyPageViewControllerProtocol.swift */,
 				A502B1C0282C9FB700CC3A0E /* NotSignedIn */,
 				A502B1BF282C9FB400CC3A0E /* SignedIn */,
 			);
@@ -1031,6 +1037,7 @@
 				A502B1D6282CA3C700CC3A0E /* SignedInMyPageViewController.swift in Sources */,
 				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
 				A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */,
+				A5EC30B8282CA7D500C551D7 /* MyPageViewControllerProtocol.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1048,6 +1055,7 @@
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
+				A5EC30BA282CA84600C551D7 /* MyPageProviderTests.swift in Sources */,
 				A59E2114282A73190081A851 /* CheckIngredientViewModelTests.swift in Sources */,
 				A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */,
 				A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */,
