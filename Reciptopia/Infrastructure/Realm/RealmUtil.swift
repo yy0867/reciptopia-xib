@@ -31,6 +31,7 @@ final class RealmUtil {
         guard let realm = realm else { throw ReciptopiaError.notFound }
         
         try realm.write { realm.add(entity) }
+        return entity
     }
     
     func update<Entity>(
@@ -43,6 +44,7 @@ final class RealmUtil {
         }
         
         try realm.write { updateAction(entityToUpdate) }
+        return entity
     }
     
     func delete<Entity>(entity: Entity) throws where Entity: Object & Identifiable {
