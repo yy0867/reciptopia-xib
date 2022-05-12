@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50254E32829260700827137 /* PictureIngredientViewModelTests.swift */; };
+		A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502B1BD282C98B400CC3A0E /* UIImage+.swift */; };
+		A502B1C2282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A502B1C1282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard */; };
+		A502B1C4282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A502B1C3282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift */; };
 		A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FD92829502C000EBF21 /* RxTest+.swift */; };
 		A5061FDC28295588000EBF21 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FDB28295588000EBF21 /* Log.swift */; };
 		A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */; };
@@ -136,6 +139,9 @@
 
 /* Begin PBXFileReference section */
 		A50254E32829260700827137 /* PictureIngredientViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewModelTests.swift; sourceTree = "<group>"; };
+		A502B1BD282C98B400CC3A0E /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		A502B1C1282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotSignedInMyPageViewController.storyboard; sourceTree = "<group>"; };
+		A502B1C3282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotSignedInMyPageViewController.swift; sourceTree = "<group>"; };
 		A5061FD92829502C000EBF21 /* RxTest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxTest+.swift"; sourceTree = "<group>"; };
 		A5061FDB28295588000EBF21 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		A5061FDE28295705000EBF21 /* BehaviorRelay+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BehaviorRelay+.swift"; sourceTree = "<group>"; };
@@ -268,6 +274,22 @@
 			path = PictureIngredients;
 			sourceTree = "<group>";
 		};
+		A502B1BF282C9FB400CC3A0E /* SignedIn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignedIn;
+			sourceTree = "<group>";
+		};
+		A502B1C0282C9FB700CC3A0E /* NotSignedIn */ = {
+			isa = PBXGroup;
+			children = (
+				A502B1C1282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard */,
+				A502B1C3282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift */,
+			);
+			path = NotSignedIn;
+			sourceTree = "<group>";
+		};
 		A5061FDD282956FD000EBF21 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +297,7 @@
 				A544C127282A318100EAD7F6 /* UICollectionViewCell+.swift */,
 				A544C129282A39F400EAD7F6 /* UICollectionView+.swift */,
 				A544C12D282A3BDF00EAD7F6 /* UIView+.swift */,
+				A502B1BD282C98B400CC3A0E /* UIImage+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -492,6 +515,7 @@
 				A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */,
 				A527A2712828EC0F00212FD8 /* PictureIngredient */,
 				A59E2115282A75BB0081A851 /* CheckIngredient */,
+				A5DAE171282BC3DD00975F09 /* MyPage */,
 			);
 			path = "Presenters+Dependencies";
 			sourceTree = "<group>";
@@ -670,6 +694,15 @@
 				A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */,
 			);
 			path = IngredientCell;
+			sourceTree = "<group>";
+		};
+		A5DAE171282BC3DD00975F09 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				A502B1C0282C9FB700CC3A0E /* NotSignedIn */,
+				A502B1BF282C9FB400CC3A0E /* SignedIn */,
+			);
+			path = MyPage;
 			sourceTree = "<group>";
 		};
 		A5DC01CA2828CA9E00CC063A /* SignUp */ = {
@@ -902,6 +935,7 @@
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
+				A502B1C2282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard in Resources */,
 				A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */,
 				A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */,
 			);
@@ -963,6 +997,7 @@
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
 				A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */,
+				A502B1C4282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift in Sources */,
 				A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */,
 				A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
@@ -987,6 +1022,7 @@
 				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
 				A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */,
 				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
+				A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
