@@ -18,6 +18,7 @@ class SearchHistoryRepositoryTests: XCTestCase {
     var subscription: Disposable!
     
     override func setUp() {
+        dev.searchHistoryDataStore.searchHistories = []
         self.repository = SearchHistoryRepository(dataStore: dev.searchHistoryDataStore)
         self.scheduler = TestScheduler(initialClock: 0)
     }
@@ -47,24 +48,18 @@ class SearchHistoryRepositoryTests: XCTestCase {
     
     func test_SearchHistoryRepository_saveSuccess_shouldReturnSavedSearchHistory() {
         // Given
-        let searchHistories = [
-            SearchHistory(id: 1, ingredients: generateRandomIngredients()),
-            SearchHistory(id: 2, ingredients: generateRandomIngredients()),
-            SearchHistory(id: 3, ingredients: generateRandomIngredients()),
-            SearchHistory(id: 4, ingredients: generateRandomIngredients()),
-        ]
-        let observable = scheduler.createColdObservable(makeRecordedEvents(by: searchHistories))
+        let searchHistory = SearchHistory(id: 1, ingredients: generateRandomIngredients())
         
         // When
-        subscription = observable.bind(onNext: { searchHistory in
-            repository.save(searchHistory)
-        })
-        
-        scheduler.start()
+        guard let results = try? repository.save(searchHistory)
+            .toBlocking()
+            .toArray() else {
+            XCTFail("failed" + getLocation())
+            return
+        }
         
         // Then
-        let results = dev.searchHistoryDataStore.searchHistories
-        XCTAssertEqual(results, dev.searchHistoryDataStore.searchHistories)
+        XCTAssertEqual(dev.searchHistoryDataStore.searchHistories, results)
     }
     
     func test_SearchHistoryRepository_saveFail_shouldReturnError() {
@@ -90,7 +85,7 @@ class SearchHistoryRepositoryTests: XCTestCase {
         // When
         guard let result = try? repository.update(newSearchHistory)
             .toBlocking()
-            .first() else {
+            .toArray() else {
             XCTFail("failed" + getLocation())
             return
         }
