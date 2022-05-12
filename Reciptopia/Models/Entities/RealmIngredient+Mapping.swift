@@ -36,3 +36,14 @@ extension Ingredient {
         )
     }
 }
+
+extension RealmIngredient {
+    func toModel() -> Ingredient {
+        return Ingredient(
+            id: nil,
+            name: name,
+            detail: detail,
+            isMainIngredient: isMainIngredient
+        )
+    }
+}

@@ -29,3 +29,10 @@ extension SearchHistory {
         return RealmSearchHistory(ingredients: ingredients)
     }
 }
+
+extension RealmSearchHistory {
+    func toModel() -> SearchHistory {
+        let mappedIngredients = Array(ingredients.map { $0.toModel() })
+        return SearchHistory(id: id, ingredients: mappedIngredients)
+    }
+}
