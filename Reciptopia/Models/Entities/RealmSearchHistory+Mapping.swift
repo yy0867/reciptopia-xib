@@ -9,7 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class RealmSearchHistory: Object {
+class RealmSearchHistory: Object, Identifiable {
     
     @Persisted(primaryKey: true)
     var id: Int = 0
@@ -17,7 +17,11 @@ class RealmSearchHistory: Object {
     @Persisted
     var ingredients: List<RealmIngredient> = List<RealmIngredient>()
     
+    @Persisted
+    var timestamp: Date = Date()
+    
     convenience init(ingredients: [Ingredient]) {
+        self.init()
         let ingredientEntities = ingredients.map { $0.toEntity() }
         self.ingredients.removeAll()
         self.ingredients.append(objectsIn: ingredientEntities)
@@ -33,6 +37,10 @@ extension SearchHistory {
 extension RealmSearchHistory {
     func toModel() -> SearchHistory {
         let mappedIngredients = Array(ingredients.map { $0.toModel() })
-        return SearchHistory(id: id, ingredients: mappedIngredients)
+        return SearchHistory(
+            id: id,
+            ingredients: mappedIngredients,
+            timestamp: timestamp
+        )
     }
 }

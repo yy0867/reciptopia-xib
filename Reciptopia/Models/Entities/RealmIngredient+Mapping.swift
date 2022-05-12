@@ -21,6 +21,7 @@ class RealmIngredient: Object {
     var isMainIngredient: Bool = false
     
     convenience init(name: String, detail: String? = nil, isMainIngredient: Bool = false) {
+        self.init()
         self.name = name
         self.detail = detail
         self.isMainIngredient = isMainIngredient

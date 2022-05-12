@@ -10,11 +10,13 @@ import Foundation
 struct SearchHistory {
     let id: Int?
     let ingredients: [Ingredient]
+    let timestamp: Date
     
-    init(id: Int? = nil, ingredients: [Ingredient]) {
+    init(id: Int? = nil, ingredients: [Ingredient], timestamp: Date = Date()) {
         self.id = id
         self.ingredients = ingredients
+        self.timestamp = timestamp
     }
 }
 
-extension SearchHistory: Equatable {}
+extension SearchHistory: Identifiable, Equatable {}
