@@ -14,21 +14,10 @@ import RxTest
 class SearchHistoryRepositoryTests: XCTestCase {
 
     var repository: SearchHistoryRepositoryProtocol!
-    var scheduler: TestScheduler!
-    var subscription: Disposable!
     
     override func setUp() {
         dev.searchHistoryDataStore.searchHistories = []
         self.repository = SearchHistoryRepository(dataStore: dev.searchHistoryDataStore)
-        self.scheduler = TestScheduler(initialClock: 0)
-    }
-    
-    override func tearDown() {
-        scheduler.scheduleAt(1000) { [weak self] in
-            self?.subscription.dispose()
-        }
-        scheduler = nil
-        super.tearDown()
     }
     
     func test_SearchHistoryRepository_fetch_shouldReturnSearchHistories() {
@@ -96,6 +85,7 @@ class SearchHistoryRepositoryTests: XCTestCase {
     }
     
     func test_SearchHistoryRepository_updateFail_shouldReturnSearchHistory() {
+        // Given
         dev.searchHistoryDataStore.searchHistories = [
             SearchHistory(id: 1, ingredients: generateRandomIngredients()),
             SearchHistory(id: 2, ingredients: generateRandomIngredients()),

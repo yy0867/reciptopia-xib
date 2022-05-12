@@ -55,4 +55,5 @@ struct DevInstances {
     let succeedTokenDataStore = FakeTokenDataStore(isSucceedCase: true)
     let failTokenDataStore = FakeTokenDataStore(isSucceedCase: false)
     let searchHistoryDataStore = FakeSearchHistoryDataStore()
+    let favoriteDataStore = FakeFavoriteDataStore()
 }

@@ -1,5 +1,5 @@
 //
-//  SearchHistoryInstances.swift
+//  SearchIngredientInstances.swift
 //  ReciptopiaTests
 //
 //  Created by 김세영 on 2022/05/12.
@@ -57,6 +57,62 @@ extension DevInstances {
                 return Observable.error(ReciptopiaError.unknown)
             }
             searchHistories.remove(at: index)
+            
+            return Observable.create { observer in
+                observer.onNext(())
+                observer.onCompleted()
+                
+                return Disposables.create()
+            }
+        }
+    }
+    
+    class FakeFavoriteDataStore: FavoriteDataStoreProtocol {
+        
+        var favorites = [Favorite]()
+        
+        func fetch() -> Observable<[Favorite]> {
+            return Observable.create { [weak self] observer in
+                guard let self = self else {
+                    observer.onError(ReciptopiaError.unknown)
+                    return Disposables.create()
+                }
+                observer.onNext(self.favorites)
+                observer.onCompleted()
+                
+                return Disposables.create()
+            }
+        }
+        
+        func save(_ favorite: Favorite) -> Observable<Favorite> {
+            favorites.append(favorite)
+            return Observable.create { observer in
+                observer.onNext(favorite)
+                observer.onCompleted()
+                
+                return Disposables.create()
+            }
+        }
+        
+        func update(_ favorite: Favorite) -> Observable<Favorite> {
+            guard let index = favorites.firstIndex(where: { $0.id == favorite.id }) else {
+                return Observable.error(ReciptopiaError.notFound)
+            }
+            favorites[index] = favorite
+            
+            return Observable.create { observer in
+                observer.onNext(favorite)
+                observer.onCompleted()
+                
+                return Disposables.create()
+            }
+        }
+        
+        func delete(_ favorite: Favorite) -> Observable<Void> {
+            guard let index = favorites.firstIndex(where: { $0.id == favorite.id }) else {
+                return Observable.error(ReciptopiaError.unknown)
+            }
+            favorites.remove(at: index)
             
             return Observable.create { observer in
                 observer.onNext(())
