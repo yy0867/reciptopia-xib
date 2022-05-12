@@ -43,6 +43,8 @@
 		A544C162282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */; };
 		A544C164282A4E9B00EAD7F6 /* XCUIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */; };
 		A54816D7282CEFD9006001FC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A54816D6282CEFD9006001FC /* Realm */; };
+		A54816DD282CF5B1006001FC /* FavoriteRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816DC282CF5B1006001FC /* FavoriteRepositoryTests.swift */; };
+		A54816E0282CF695006001FC /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816DF282CF695006001FC /* Favorite.swift */; };
 		A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */; };
 		A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */; };
 		A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */; };
@@ -112,7 +114,7 @@
 		A5EC30DA282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30D9282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift */; };
 		A5EC30DD282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30DC282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift */; };
 		A5EC30DF282CCC8D00C551D7 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */; };
-		A5EC30E2282CD04800C551D7 /* SearchHistoryInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E1282CD04800C551D7 /* SearchHistoryInstances.swift */; };
+		A5EC30E2282CD04800C551D7 /* SearchIngredientInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E1282CD04800C551D7 /* SearchIngredientInstances.swift */; };
 		A5EC30E5282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E4282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift */; };
 		A5EC30E7282CD88600C551D7 /* SearchHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */; };
 		A5EC30EA282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */; };
@@ -200,6 +202,8 @@
 		A544C155282A4BE000EAD7F6 /* ReciptopiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReciptopiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureIngredientViewControllerTests.swift; sourceTree = "<group>"; };
 		A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCUIApplication+.swift"; sourceTree = "<group>"; };
+		A54816DC282CF5B1006001FC /* FavoriteRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepositoryTests.swift; sourceTree = "<group>"; };
+		A54816DF282CF695006001FC /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckIngredientViewController.storyboard; sourceTree = "<group>"; };
 		A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewController.swift; sourceTree = "<group>"; };
@@ -255,7 +259,7 @@
 		A5EC30D9282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRepositoryTests.swift; sourceTree = "<group>"; };
 		A5EC30DC282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
-		A5EC30E1282CD04800C551D7 /* SearchHistoryInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryInstances.swift; sourceTree = "<group>"; };
+		A5EC30E1282CD04800C551D7 /* SearchIngredientInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIngredientInstances.swift; sourceTree = "<group>"; };
 		A5EC30E4282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRepository.swift; sourceTree = "<group>"; };
 		A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSearchHistoryDataStore.swift; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 				A583988828262E6600C5E3BD /* Exist.swift */,
 				A583988F2826302400C5E3BD /* ReciptopiaError.swift */,
 				A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */,
+				A54816DF282CF695006001FC /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,6 +571,23 @@
 			path = PictureIngredient;
 			sourceTree = "<group>";
 		};
+		A54816DA282CF4D7006001FC /* SearchIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A54816DB282CF599006001FC /* Favorite */,
+				A5EC30D8282CCC1F00C551D7 /* SearchHistory */,
+			);
+			path = SearchIngredient;
+			sourceTree = "<group>";
+		};
+		A54816DB282CF599006001FC /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				A54816DC282CF5B1006001FC /* FavoriteRepositoryTests.swift */,
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		A5628127282558280062BFA6 /* Presenters+Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,7 +666,7 @@
 			children = (
 				A562812F282570E00062BFA6 /* UserSession */,
 				A5818B392825142300EB11AB /* PictureIngredient */,
-				A5EC30D8282CCC1F00C551D7 /* SearchHistory */,
+				A54816DA282CF4D7006001FC /* SearchIngredient */,
 			);
 			path = RepositoryTests;
 			sourceTree = "<group>";
@@ -678,7 +700,7 @@
 			isa = PBXGroup;
 			children = (
 				A51BEDFE28254DC300703E52 /* PictureIngredient */,
-				A5EC30E0282CD03400C551D7 /* SearchHistory */,
+				A5EC30E0282CD03400C551D7 /* SearchIngredient */,
 			);
 			path = DevInstances;
 			sourceTree = "<group>";
@@ -850,12 +872,12 @@
 			path = SearchHistory;
 			sourceTree = "<group>";
 		};
-		A5EC30E0282CD03400C551D7 /* SearchHistory */ = {
+		A5EC30E0282CD03400C551D7 /* SearchIngredient */ = {
 			isa = PBXGroup;
 			children = (
-				A5EC30E1282CD04800C551D7 /* SearchHistoryInstances.swift */,
+				A5EC30E1282CD04800C551D7 /* SearchIngredientInstances.swift */,
 			);
-			path = SearchHistory;
+			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
 		A5EC30E3282CD77700C551D7 /* SearchHistory */ = {
@@ -1149,6 +1171,7 @@
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
 				A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
+				A54816E0282CF695006001FC /* Favorite.swift in Sources */,
 				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
 				A5EC30D1282CC4F000C551D7 /* SignInViewModel.swift in Sources */,
 				A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */,
@@ -1189,11 +1212,12 @@
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A5EC30DA282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift in Sources */,
 				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
-				A5EC30E2282CD04800C551D7 /* SearchHistoryInstances.swift in Sources */,
+				A5EC30E2282CD04800C551D7 /* SearchIngredientInstances.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
 				A5EC30BA282CA84600C551D7 /* MyPageViewControllerProviderTests.swift in Sources */,
+				A54816DD282CF5B1006001FC /* FavoriteRepositoryTests.swift in Sources */,
 				A59E2114282A73190081A851 /* CheckIngredientViewModelTests.swift in Sources */,
 				A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */,
 				A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */,
