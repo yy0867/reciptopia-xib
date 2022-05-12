@@ -42,6 +42,7 @@
 		A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C12D282A3BDF00EAD7F6 /* UIView+.swift */; };
 		A544C162282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C161282A4C1A00EAD7F6 /* PictureIngredientViewControllerTests.swift */; };
 		A544C164282A4E9B00EAD7F6 /* XCUIApplication+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A544C163282A4E9B00EAD7F6 /* XCUIApplication+.swift */; };
+		A54816D7282CEFD9006001FC /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A54816D6282CEFD9006001FC /* Realm */; };
 		A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */; };
 		A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */; };
 		A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */; };
@@ -114,6 +115,11 @@
 		A5EC30E2282CD04800C551D7 /* SearchHistoryInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E1282CD04800C551D7 /* SearchHistoryInstances.swift */; };
 		A5EC30E5282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E4282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift */; };
 		A5EC30E7282CD88600C551D7 /* SearchHistoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */; };
+		A5EC30EA282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */; };
+		A5EC30ED282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30EC282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift */; };
+		A5EC30EF282CDAE900C551D7 /* RealmIngredient+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30EE282CDAE900C551D7 /* RealmIngredient+Mapping.swift */; };
+		A5EC30F2282CDECF00C551D7 /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30F1282CDECF00C551D7 /* RealmUtil.swift */; };
+		A5EC30F4282CE46200C551D7 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EC30F3282CE46200C551D7 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -252,6 +258,11 @@
 		A5EC30E1282CD04800C551D7 /* SearchHistoryInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryInstances.swift; sourceTree = "<group>"; };
 		A5EC30E4282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryRepository.swift; sourceTree = "<group>"; };
+		A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmSearchHistoryDataStore.swift; sourceTree = "<group>"; };
+		A5EC30EC282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmSearchHistory+Mapping.swift"; sourceTree = "<group>"; };
+		A5EC30EE282CDAE900C551D7 /* RealmIngredient+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmIngredient+Mapping.swift"; sourceTree = "<group>"; };
+		A5EC30F1282CDECF00C551D7 /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
+		A5EC30F3282CE46200C551D7 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +279,7 @@
 			files = (
 				A528C240282B3B270017F9A0 /* RxSwift in Frameworks */,
 				A528C23E282B3B270017F9A0 /* RxRelay in Frameworks */,
+				A54816D7282CEFD9006001FC /* Realm in Frameworks */,
 				A528C23C282B3B270017F9A0 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,6 +350,7 @@
 				A544C129282A39F400EAD7F6 /* UICollectionView+.swift */,
 				A544C12D282A3BDF00EAD7F6 /* UIView+.swift */,
 				A502B1BD282C98B400CC3A0E /* UIImage+.swift */,
+				A5EC30F3282CE46200C551D7 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -349,6 +362,7 @@
 				A5061FDB28295588000EBF21 /* Log.swift */,
 				A527A2862828F6ED00212FD8 /* Presenter */,
 				A527A2852828F6B000212FD8 /* Network */,
+				A5EC30F0282CDEC800C551D7 /* Realm */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -382,6 +396,7 @@
 		A5078E132824B42A00CBC26B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A5EC30EB282CDA9000C551D7 /* Entities */,
 				A5078E142824B43100CBC26B /* Ingredient.swift */,
 				A562812B282570030062BFA6 /* UserSession.swift */,
 				A562812D282570190062BFA6 /* Account+Credential.swift */,
@@ -830,6 +845,7 @@
 			isa = PBXGroup;
 			children = (
 				A5EC30DC282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift */,
+				A5EC30E9282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift */,
 			);
 			path = SearchHistory;
 			sourceTree = "<group>";
@@ -849,6 +865,23 @@
 				A5EC30E6282CD88600C551D7 /* SearchHistoryRepository.swift */,
 			);
 			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		A5EC30EB282CDA9000C551D7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC30EC282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift */,
+				A5EC30EE282CDAE900C551D7 /* RealmIngredient+Mapping.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A5EC30F0282CDEC800C551D7 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				A5EC30F1282CDECF00C551D7 /* RealmUtil.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -901,6 +934,7 @@
 				A528C23B282B3B270017F9A0 /* RxCocoa */,
 				A528C23D282B3B270017F9A0 /* RxRelay */,
 				A528C23F282B3B270017F9A0 /* RxSwift */,
+				A54816D6282CEFD9006001FC /* Realm */,
 			);
 			productName = ReciptopiaUITests;
 			productReference = A544C155282A4BE000EAD7F6 /* ReciptopiaUITests.xctest */;
@@ -1078,6 +1112,7 @@
 			files = (
 				A59E2117282A75C80081A851 /* CheckIngredientViewModel.swift in Sources */,
 				A544C12E282A3BDF00EAD7F6 /* UIView+.swift in Sources */,
+				A5EC30EF282CDAE900C551D7 /* RealmIngredient+Mapping.swift in Sources */,
 				A5DC01DE2828CA9E00CC063A /* SignOutUseCase.swift in Sources */,
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
 				A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */,
@@ -1099,6 +1134,7 @@
 				A5EC30DF282CCC8D00C551D7 /* SearchHistory.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
+				A5EC30EA282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift in Sources */,
 				A5EC30C9282CC06100C551D7 /* NotSignedInMyPageViewModel.swift in Sources */,
 				A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */,
 				A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */,
@@ -1126,10 +1162,13 @@
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
 				A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */,
+				A5EC30F4282CE46200C551D7 /* Date+.swift in Sources */,
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
+				A5EC30ED282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift in Sources */,
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
 				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
 				A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */,
+				A5EC30F2282CDECF00C551D7 /* RealmUtil.swift in Sources */,
 				A502B1D6282CA3C700CC3A0E /* SignedInMyPageViewController.swift in Sources */,
 				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
 				A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */,
@@ -1363,6 +1402,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-fprofile-instr-generate";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1417,6 +1457,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-fprofile-instr-generate";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1617,6 +1658,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		A54816D6282CEFD9006001FC /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A5EC30D3282CCB9B00C551D7 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
 		};
 		A5818B3D2825161100EB11AB /* RxBlocking */ = {
 			isa = XCSwiftPackageProductDependency;
