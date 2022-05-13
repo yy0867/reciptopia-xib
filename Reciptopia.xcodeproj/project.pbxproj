@@ -722,7 +722,7 @@
 				A5061FD92829502C000EBF21 /* RxTest+.swift */,
 				A5818B492825177A00EB11AB /* DevInstances */,
 				A5CC1AA2282BA98500512D8B /* ServiceTests */,
-				A5EA3411282923FC00944FC0 /* VIewModelTests */,
+				A5EA3411282923FC00944FC0 /* ViewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
 				A5818B362825141100EB11AB /* RepositoryTests */,
 			);
@@ -912,13 +912,13 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
-		A5EA3411282923FC00944FC0 /* VIewModelTests */ = {
+		A5EA3411282923FC00944FC0 /* ViewModelTests */ = {
 			isa = PBXGroup;
 			children = (
 				A50254E2282925F900827137 /* PictureIngredients */,
 				A59E2112282A73080081A851 /* CheckIngredients */,
 			);
-			path = VIewModelTests;
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		A5EC30CC282CC4E000C551D7 /* SignIn */ = {
