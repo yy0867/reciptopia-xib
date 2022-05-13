@@ -47,13 +47,20 @@ struct DevInstances {
     
     // MARK: - Repositories
     let pictureIngredientRepository = FakePictureIngredientRepository()
+    
     let succeedUserSessionRepository = FakeUserSessionRepository(isSucceedCase: true)
     let failUserSessionRepository = FakeUserSessionRepository(isSucceedCase: false)
     
+    lazy var searchHistoryRepository: SearchHistoryRepository = {
+        return SearchHistoryRepository(dataStore: searchHistoryDataStore)
+    }()
+    
     // MARK: - DataStores
     let pictureIngredientDataStore = FakePictureIngredientDataStore()
+    
     let succeedTokenDataStore = FakeTokenDataStore(isSucceedCase: true)
     let failTokenDataStore = FakeTokenDataStore(isSucceedCase: false)
+    
     let searchHistoryDataStore = FakeSearchHistoryDataStore()
     let favoriteDataStore = FakeFavoriteDataStore()
 }
