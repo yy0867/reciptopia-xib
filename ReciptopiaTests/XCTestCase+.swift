@@ -47,13 +47,23 @@ struct DevInstances {
     
     // MARK: - Repositories
     let pictureIngredientRepository = FakePictureIngredientRepository()
+    
     let succeedUserSessionRepository = FakeUserSessionRepository(isSucceedCase: true)
     let failUserSessionRepository = FakeUserSessionRepository(isSucceedCase: false)
     
+    let searchHistoryRepository: SearchHistoryRepositoryProtocol
+    
     // MARK: - DataStores
     let pictureIngredientDataStore = FakePictureIngredientDataStore()
+    
     let succeedTokenDataStore = FakeTokenDataStore(isSucceedCase: true)
     let failTokenDataStore = FakeTokenDataStore(isSucceedCase: false)
+    
     let searchHistoryDataStore = FakeSearchHistoryDataStore()
     let favoriteDataStore = FakeFavoriteDataStore()
+    
+    // MARK: - Init
+    init() {
+        self.searchHistoryRepository = SearchHistoryRepository(dataStore: searchHistoryDataStore)
+    }
 }
