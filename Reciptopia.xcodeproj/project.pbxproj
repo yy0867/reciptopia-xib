@@ -50,9 +50,13 @@
 		A54816EA282CFC91006001FC /* FavoriteDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */; };
 		A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */; };
 		A54816EE282CFE85006001FC /* RealmFavorite+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */; };
+		A5552BD5282D038900D97D5A /* SearchIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5552BD3282D038900D97D5A /* SearchIngredientViewController.storyboard */; };
+		A5552BD6282D038900D97D5A /* SearchIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5552BD4282D038900D97D5A /* SearchIngredientViewController.swift */; };
+		A5552BD8282D03A300D97D5A /* SearchIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5552BD7282D03A300D97D5A /* SearchIngredientViewModel.swift */; };
 		A55584A1282A519100F6F57B /* ManagePictureViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */; };
 		A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */; };
 		A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */; };
+		A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5602571282E42F7000E904A /* FloatingActionButton.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
@@ -214,9 +218,13 @@
 		A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFavoriteDataStore.swift; sourceTree = "<group>"; };
 		A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmFavorite+Mapping.swift"; sourceTree = "<group>"; };
+		A5552BD3282D038900D97D5A /* SearchIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchIngredientViewController.storyboard; sourceTree = "<group>"; };
+		A5552BD4282D038900D97D5A /* SearchIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIngredientViewController.swift; sourceTree = "<group>"; };
+		A5552BD7282D03A300D97D5A /* SearchIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIngredientViewModel.swift; sourceTree = "<group>"; };
 		A55584A0282A519100F6F57B /* ManagePictureViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagePictureViewControllerTests.swift; sourceTree = "<group>"; };
 		A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckIngredientViewController.storyboard; sourceTree = "<group>"; };
 		A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewController.swift; sourceTree = "<group>"; };
+		A5602571282E42F7000E904A /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -393,7 +401,7 @@
 			children = (
 				A583988528262C7C00C5E3BD /* UserSession */,
 				A5078E0E2824AD7900CBC26B /* PictureIngredient */,
-				A5EC30E3282CD77700C551D7 /* SearchHistory */,
+				A5EC30E3282CD77700C551D7 /* SearchIngredient */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -546,6 +554,7 @@
 		A544C11F282A2EBF00EAD7F6 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				A5602571282E42F7000E904A /* FloatingActionButton.swift */,
 				A528C241282B3E620017F9A0 /* AddIngredient */,
 				A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */,
 				A544C122282A2F0000EAD7F6 /* CollectionViewCell */,
@@ -634,6 +643,18 @@
 			path = Favorite;
 			sourceTree = "<group>";
 		};
+		A54816EF282D022F006001FC /* SearchIngredient */ = {
+			isa = PBXGroup;
+			children = (
+				A5552BD3282D038900D97D5A /* SearchIngredientViewController.storyboard */,
+				A5552BD4282D038900D97D5A /* SearchIngredientViewController.swift */,
+				A5552BD7282D03A300D97D5A /* SearchIngredientViewModel.swift */,
+				A5BB94E2282E491B004FB57C /* SearchHistory */,
+				A5BB94E3282E4932004FB57C /* Favorite */,
+			);
+			path = SearchIngredient;
+			sourceTree = "<group>";
+		};
 		A5628127282558280062BFA6 /* Presenters+Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,6 +663,7 @@
 				A527A2712828EC0F00212FD8 /* PictureIngredient */,
 				A59E2115282A75BB0081A851 /* CheckIngredient */,
 				A5DAE171282BC3DD00975F09 /* MyPage */,
+				A54816EF282D022F006001FC /* SearchIngredient */,
 			);
 			path = "Presenters+Dependencies";
 			sourceTree = "<group>";
@@ -798,6 +820,20 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
+		A5BB94E2282E491B004FB57C /* SearchHistory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SearchHistory;
+			sourceTree = "<group>";
+		};
+		A5BB94E3282E4932004FB57C /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Favorite;
+			sourceTree = "<group>";
+		};
 		A5CC1AA2282BA98500512D8B /* ServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -926,13 +962,13 @@
 			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
-		A5EC30E3282CD77700C551D7 /* SearchHistory */ = {
+		A5EC30E3282CD77700C551D7 /* SearchIngredient */ = {
 			isa = PBXGroup;
 			children = (
 				A54816E2282CFBD1006001FC /* Favorite */,
 				A54816E1282CFBCC006001FC /* SearchHistory */,
 			);
-			path = SearchHistory;
+			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
 		A5EC30EB282CDA9000C551D7 /* Entities */ = {
@@ -1135,6 +1171,7 @@
 			files = (
 				A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */,
 				A502B1D5282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard in Resources */,
+				A5552BD5282D038900D97D5A /* SearchIngredientViewController.storyboard in Resources */,
 				A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
@@ -1200,6 +1237,7 @@
 				A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */,
 				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A528C243282B3E790017F9A0 /* AddIngredientTextField.swift in Sources */,
+				A5552BD6282D038900D97D5A /* SearchIngredientViewController.swift in Sources */,
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A5EC30DF282CCC8D00C551D7 /* SearchHistory.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
@@ -1241,6 +1279,7 @@
 				A562812C282570030062BFA6 /* UserSession.swift in Sources */,
 				A5EC30ED282CDA9900C551D7 /* RealmSearchHistory+Mapping.swift in Sources */,
 				A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */,
+				A5552BD8282D03A300D97D5A /* SearchIngredientViewModel.swift in Sources */,
 				A583988928262E6600C5E3BD /* Exist.swift in Sources */,
 				A583988728262C8B00C5E3BD /* UserSessionRepositoryProtocol.swift in Sources */,
 				A5EC30F2282CDECF00C551D7 /* RealmUtil.swift in Sources */,
@@ -1248,6 +1287,7 @@
 				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
 				A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */,
 				A5EC30B8282CA7D500C551D7 /* MyPageViewControllerProtocol.swift in Sources */,
+				A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
 				A5EC30E5282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift in Sources */,
 			);
