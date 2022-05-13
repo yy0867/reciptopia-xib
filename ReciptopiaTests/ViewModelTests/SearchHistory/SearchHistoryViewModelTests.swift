@@ -109,7 +109,7 @@ class SearchHistoryViewModelTests: XCTestCase {
         XCTAssertLessThan(targetHistory.timestamp, updatedHistory.timestamp)
     }
     
-    func test_SearchHistoryViewModel_delete_shouldDeleteHistory() {
+    func test_SearchHistoryViewModel_delete_shouldDeleteHistoryAndFetch() {
         // Given
         let targetHistory = dev.searchHistoryDataStore.searchHistories.randomElement()!
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [()]))
