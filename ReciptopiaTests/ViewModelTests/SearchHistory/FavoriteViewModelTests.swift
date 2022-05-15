@@ -97,6 +97,7 @@ class FavoriteViewModelTests: XCTestCase {
         let selectedIndex = dev.favoriteDataStore.favorites.indices.randomElement()!
         let targetFavorite = dev.favoriteDataStore.favorites[selectedIndex]
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [selectedIndex]))
+        viewModel.favorites.accept(dev.favoriteDataStore.favorites)
         
         // When
         subscription = observable.bind(onNext: { [weak self] index in

@@ -90,6 +90,7 @@ class SearchHistoryViewModelTests: XCTestCase {
         let selectedIndex = dev.searchHistoryDataStore.searchHistories.indices.randomElement()!
         let targetHistory = dev.searchHistoryDataStore.searchHistories[selectedIndex]
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [selectedIndex]))
+        viewModel.histories.accept(dev.searchHistoryDataStore.searchHistories)
         
         // When
         subscription = observable.bind(onNext: { [weak self] index in
@@ -115,6 +116,7 @@ class SearchHistoryViewModelTests: XCTestCase {
         let selectedIndex = dev.searchHistoryDataStore.searchHistories.indices.randomElement()!
         let targetHistory = dev.searchHistoryDataStore.searchHistories[selectedIndex]
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [selectedIndex]))
+        viewModel.histories.accept(dev.searchHistoryDataStore.searchHistories)
         
         // When
         subscription = observable.bind(onNext: { [weak self] index in
