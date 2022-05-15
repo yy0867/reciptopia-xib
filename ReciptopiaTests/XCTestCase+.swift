@@ -52,6 +52,7 @@ struct DevInstances {
     let failUserSessionRepository = FakeUserSessionRepository(isSucceedCase: false)
     
     let searchHistoryRepository: SearchHistoryRepositoryProtocol
+    let favoriteRepository: FavoriteRepositoryProtocol
     
     // MARK: - DataStores
     let pictureIngredientDataStore = FakePictureIngredientDataStore()
@@ -65,5 +66,6 @@ struct DevInstances {
     // MARK: - Init
     init() {
         self.searchHistoryRepository = SearchHistoryRepository(dataStore: searchHistoryDataStore)
+        self.favoriteRepository = FavoriteRepository(dataStore: favoriteDataStore)
     }
 }
