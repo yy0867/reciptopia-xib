@@ -87,12 +87,14 @@ class SearchHistoryViewModelTests: XCTestCase {
     
     func test_SearchHistoryViewModel_update_shouldUpdateTimestamp() {
         // Given
-        let targetHistory = dev.searchHistoryDataStore.searchHistories.randomElement()!
-        let observable = scheduler.createColdObservable(makeRecordedEvents(by: [()]))
+        let selectedIndex = dev.searchHistoryDataStore.searchHistories.indices.randomElement()!
+        let targetHistory = dev.searchHistoryDataStore.searchHistories[selectedIndex]
+        let observable = scheduler.createColdObservable(makeRecordedEvents(by: [selectedIndex]))
+        viewModel.histories.accept(dev.searchHistoryDataStore.searchHistories)
         
         // When
-        subscription = observable.bind(onNext: { [weak self] _ in
-            self?.viewModel.update(targetHistory)
+        subscription = observable.bind(onNext: { [weak self] index in
+            self?.viewModel.update(at: index)
         })
         
         scheduler.start()
@@ -111,12 +113,14 @@ class SearchHistoryViewModelTests: XCTestCase {
     
     func test_SearchHistoryViewModel_delete_shouldDeleteHistoryAndFetch() {
         // Given
-        let targetHistory = dev.searchHistoryDataStore.searchHistories.randomElement()!
-        let observable = scheduler.createColdObservable(makeRecordedEvents(by: [()]))
+        let selectedIndex = dev.searchHistoryDataStore.searchHistories.indices.randomElement()!
+        let targetHistory = dev.searchHistoryDataStore.searchHistories[selectedIndex]
+        let observable = scheduler.createColdObservable(makeRecordedEvents(by: [selectedIndex]))
+        viewModel.histories.accept(dev.searchHistoryDataStore.searchHistories)
         
         // When
-        subscription = observable.bind(onNext: { [weak self] _ in
-            self?.viewModel.delete(targetHistory)
+        subscription = observable.bind(onNext: { [weak self] index in
+            self?.viewModel.delete(at: index)
         })
         
         scheduler.start()
