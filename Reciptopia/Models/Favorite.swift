@@ -9,8 +9,14 @@ import Foundation
 
 struct Favorite {
     let id: Int?
-    let postId: Int?
+    let postId: Int
     let title: String
+    
+    init(id: Int? = nil, postId: Int, title: String) {
+        self.id = id
+        self.postId = postId
+        self.title = title
+    }
 }
 
 extension Favorite: Identifiable, Equatable {}
