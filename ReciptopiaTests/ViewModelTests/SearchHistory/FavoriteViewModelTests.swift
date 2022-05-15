@@ -94,12 +94,13 @@ class FavoriteViewModelTests: XCTestCase {
     
     func test_FavoriteViewModel_delete_shouldDeleteFavoriteAndFetch() {
         // Given
-        let observable = scheduler.createColdObservable(makeRecordedEvents(by: [()]))
-        let targetFavorite = dev.favoriteDataStore.favorites.randomElement()!
+        let selectedIndex = dev.favoriteDataStore.favorites.indices.randomElement()!
+        let targetFavorite = dev.favoriteDataStore.favorites[selectedIndex]
+        let observable = scheduler.createColdObservable(makeRecordedEvents(by: [selectedIndex]))
         
         // When
-        subscription = observable.bind(onNext: { [weak self] in
-            self?.viewModel.delete(targetFavorite)
+        subscription = observable.bind(onNext: { [weak self] index in
+            self?.viewModel.delete(at: index)
         })
         
         scheduler.start()
