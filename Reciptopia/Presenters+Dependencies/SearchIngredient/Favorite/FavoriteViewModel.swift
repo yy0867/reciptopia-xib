@@ -51,7 +51,8 @@ final class FavoriteViewModel {
             )
     }
     
-    func delete(_ favorite: Favorite) {
+    func delete(at index: Int) {
+        let favorite = favorites.value[index]
         subscription = repository.delete(favorite)
             .subscribe(
                 onNext: { [weak self] _ in self?.fetch() },

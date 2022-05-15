@@ -50,7 +50,8 @@ final class SearchHistoryViewModel {
             )
     }
     
-    func update(_ history: SearchHistory) {
+    func update(at index: Int) {
+        let history = histories.value[index]
         let updatedHistory = SearchHistory(
             id: history.id,
             ingredients: history.ingredients,
@@ -64,7 +65,8 @@ final class SearchHistoryViewModel {
             )
     }
     
-    func delete(_ history: SearchHistory) {
+    func delete(at index: Int) {
+        let history = histories.value[index]
         subscription = repository.delete(history)
             .subscribe(
                 onNext: { [weak self] _ in self?.fetch() },
