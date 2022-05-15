@@ -40,6 +40,8 @@ class FavoriteViewModelTests: XCTestCase {
             self?.viewModel.fetch()
         })
         
+        scheduler.start()
+        
         guard let result = try? viewModel.favorites
             .toBlocking()
             .first() else {
@@ -55,6 +57,7 @@ class FavoriteViewModelTests: XCTestCase {
         // Given
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [()]))
         let post = Post(
+            id: Int.random(in: 1...100),
             ownerId: 1,
             title: generateRandomString(),
             content: generateRandomString(length: 100),
@@ -72,6 +75,8 @@ class FavoriteViewModelTests: XCTestCase {
         subscription = observable.bind(onNext: { [weak self] in
             self?.viewModel.save(post: post)
         })
+        
+        scheduler.start()
         
         guard let result = try? viewModel.favorites
             .toBlocking()
@@ -96,6 +101,8 @@ class FavoriteViewModelTests: XCTestCase {
         subscription = observable.bind(onNext: { [weak self] in
             self?.viewModel.delete(targetFavorite)
         })
+        
+        scheduler.start()
         
         guard let result = try? viewModel.favorites
             .toBlocking()
