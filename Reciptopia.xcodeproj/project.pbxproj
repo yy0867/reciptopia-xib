@@ -98,6 +98,8 @@
 		A5CD36E52824EB3F00A96B3E /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E142824B43100CBC26B /* Ingredient.swift */; };
 		A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5078E1A2824BA0A00CBC26B /* PictureIngredientRepository.swift */; };
 		A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5283E732824CF5D00761679 /* PictureIngredientDataStoreProtocol.swift */; };
+		A5CDA42C28326A8100843350 /* SearchHistoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5CDA42A28326A8100843350 /* SearchHistoryViewController.storyboard */; };
+		A5CDA42D28326A8100843350 /* SearchHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CDA42B28326A8100843350 /* SearchHistoryViewController.swift */; };
 		A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E49282A9EE700C46BCC /* BorderImageButton.swift */; };
 		A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */; };
 		A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */; };
@@ -259,6 +261,8 @@
 		A5BF7153282EA2CE00014331 /* SearchHistoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewModelTests.swift; sourceTree = "<group>"; };
 		A5BF7155282EB02E00014331 /* SearchHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewModel.swift; sourceTree = "<group>"; };
 		A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegate.swift; sourceTree = "<group>"; };
+		A5CDA42A28326A8100843350 /* SearchHistoryViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchHistoryViewController.storyboard; sourceTree = "<group>"; };
+		A5CDA42B28326A8100843350 /* SearchHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewController.swift; sourceTree = "<group>"; };
 		A5CE6E49282A9EE700C46BCC /* BorderImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderImageButton.swift; sourceTree = "<group>"; };
 		A5CE6E4D282AA26D00C46BCC /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
@@ -835,6 +839,8 @@
 			isa = PBXGroup;
 			children = (
 				A5BF7155282EB02E00014331 /* SearchHistoryViewModel.swift */,
+				A5CDA42A28326A8100843350 /* SearchHistoryViewController.storyboard */,
+				A5CDA42B28326A8100843350 /* SearchHistoryViewController.swift */,
 			);
 			path = SearchHistory;
 			sourceTree = "<group>";
@@ -1202,6 +1208,7 @@
 				A502B1C2282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard in Resources */,
 				A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */,
 				A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */,
+				A5CDA42C28326A8100843350 /* SearchHistoryViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,6 +1271,7 @@
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A5EC30DF282CCC8D00C551D7 /* SearchHistory.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
+				A5CDA42D28326A8100843350 /* SearchHistoryViewController.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5EC30EA282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift in Sources */,
 				A5EC30C9282CC06100C551D7 /* NotSignedInMyPageViewModel.swift in Sources */,
