@@ -7,30 +7,31 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 final class SearchHistoryRepository: SearchHistoryRepositoryProtocol {
     
     // MARK: - Properties
-    private let dataStore: SearchHistoryDataStoreProtocol
+    let dataStore: BehaviorRelay<SearchHistoryDataStoreProtocol>
     
     // MARK: - Methods
-    init(dataStore: SearchHistoryDataStoreProtocol) {
+    init(dataStore: BehaviorRelay<SearchHistoryDataStoreProtocol>) {
         self.dataStore = dataStore
     }
     
     func fetch() -> Observable<[SearchHistory]> {
-        return dataStore.fetch()
+        return dataStore.value.fetch()
     }
     
     func save(_ searchHistory: SearchHistory) -> Observable<SearchHistory> {
-        return dataStore.save(searchHistory)
+        return dataStore.value.save(searchHistory)
     }
     
     func update(_ searchHistory: SearchHistory) -> Observable<SearchHistory> {
-        return dataStore.update(searchHistory)
+        return dataStore.value.update(searchHistory)
     }
     
     func delete(_ searchHistory: SearchHistory) -> Observable<Void> {
-        return dataStore.delete(searchHistory)
+        return dataStore.value.delete(searchHistory)
     }
 }

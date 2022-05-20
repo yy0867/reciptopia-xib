@@ -14,6 +14,7 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     
     typealias ManagePictureViewControllerFactory = () -> ManagePictureViewController
     typealias CheckIngredientViewControllerFactory = ([Ingredient]) -> CheckIngredientViewController
+    typealias SearchIngredientViewControllerFactory = () -> SearchIngredientViewController
     
     // MARK: - Outlets
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -30,18 +31,21 @@ final class PictureIngredientViewController: UIViewController, StoryboardInstant
     private var viewModel: PictureIngredientViewModel!
     private var makeManagePictureViewController: ManagePictureViewControllerFactory!
     private var makeCheckIngredientViewController: CheckIngredientViewControllerFactory!
+    private var makeSearchIngredientViewController: SearchIngredientViewControllerFactory!
     private let disposeBag = DisposeBag()
     
     // MARK: - Methods
     static func create(
         with viewModel: PictureIngredientViewModel,
         managePictureViewControllerFactory: @escaping ManagePictureViewControllerFactory,
-        checkIngredientViewControllerFactory: @escaping CheckIngredientViewControllerFactory
+        checkIngredientViewControllerFactory: @escaping CheckIngredientViewControllerFactory,
+        searchIngredientViewControllerFactory: @escaping SearchIngredientViewControllerFactory
     ) -> Self {
         let vc = self.instantiateViewController()
         vc.viewModel = viewModel
         vc.makeManagePictureViewController = managePictureViewControllerFactory
         vc.makeCheckIngredientViewController = checkIngredientViewControllerFactory
+        vc.makeSearchIngredientViewController = searchIngredientViewControllerFactory
         return vc
     }
     
@@ -153,6 +157,17 @@ extension PictureIngredientViewController {
 
 // MARK: - IBActions
 extension PictureIngredientViewController {
+    
+    @IBAction func presentSearchIngredient(_ sender: UIButton!) {
+        let vc = makeSearchIngredientViewController()
+        let navigationVC = UINavigationController(rootViewController: vc)
+        
+        navigationVC.modalPresentationStyle = .fullScreen
+        navigationVC.modalTransitionStyle = .crossDissolve
+        navigationVC.isNavigationBarHidden = true
+        
+        present(navigationVC, animated: true)
+    }
     
     @IBAction func takePhoto(_ sender: UIButton!) {
         #if targetEnvironment(simulator)

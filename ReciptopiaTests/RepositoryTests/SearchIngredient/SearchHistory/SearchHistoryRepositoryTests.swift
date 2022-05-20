@@ -9,15 +9,18 @@ import XCTest
 import RxSwift
 import RxBlocking
 import RxTest
+import RxRelay
 @testable import Reciptopia
 
 class SearchHistoryRepositoryTests: XCTestCase {
 
     var repository: SearchHistoryRepositoryProtocol!
+    var dataStore: BehaviorRelay<SearchHistoryDataStoreProtocol>!
     
     override func setUp() {
         dev.searchHistoryDataStore.searchHistories = []
-        self.repository = SearchHistoryRepository(dataStore: dev.searchHistoryDataStore)
+        self.dataStore = BehaviorRelay(value: dev.searchHistoryDataStore)
+        self.repository = SearchHistoryRepository(dataStore: dataStore)
     }
     
     func test_SearchHistoryRepository_fetch_shouldReturnSearchHistories() {

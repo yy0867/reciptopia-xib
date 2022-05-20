@@ -14,7 +14,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7Hz-Yl-Woy">
             <objects>
-                <navigationController id="iki-7d-hcn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchIngredientNavigationController" id="iki-7d-hcn" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lXc-46-BjB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,7 +30,7 @@
         <!--Search Ingredient View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="SearchIngredientViewController" id="Y6W-OH-hqX" customClass="SearchIngredientViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchIngredientViewController" id="Y6W-OH-hqX" customClass="SearchIngredientViewController" customModule="Reciptopia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

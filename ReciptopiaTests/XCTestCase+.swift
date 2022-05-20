@@ -7,6 +7,7 @@
 
 import XCTest
 import RxSwift
+import RxRelay
 @testable import Reciptopia
 
 extension XCTestCase {
@@ -63,9 +64,15 @@ struct DevInstances {
     let searchHistoryDataStore = FakeSearchHistoryDataStore()
     let favoriteDataStore = FakeFavoriteDataStore()
     
+    var searchHistoryDataStoreRelay: BehaviorRelay<SearchHistoryDataStoreProtocol>!
+    var favoriteDataStoreRelay: BehaviorRelay<FavoriteDataStoreProtocol>!
+    
     // MARK: - Init
     init() {
-        self.searchHistoryRepository = SearchHistoryRepository(dataStore: searchHistoryDataStore)
-        self.favoriteRepository = FavoriteRepository(dataStore: favoriteDataStore)
+        searchHistoryDataStoreRelay = BehaviorRelay(value: searchHistoryDataStore)
+        favoriteDataStoreRelay = BehaviorRelay(value: favoriteDataStore)
+        
+        self.searchHistoryRepository = SearchHistoryRepository(dataStore: searchHistoryDataStoreRelay)
+        self.favoriteRepository = FavoriteRepository(dataStore: favoriteDataStoreRelay)
     }
 }

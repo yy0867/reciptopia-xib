@@ -141,6 +141,9 @@
                             <state key="normal" title="이름으로 검색" image="magnifyingglass" catalog="system">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </state>
+                            <connections>
+                                <action selector="presentSearchIngredient:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YPr-1h-1sX"/>
+                            </connections>
                         </button>
                     </navigationItem>
                     <connections>
