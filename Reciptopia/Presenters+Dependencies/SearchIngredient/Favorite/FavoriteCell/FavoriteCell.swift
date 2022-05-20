@@ -8,16 +8,23 @@
 import UIKit
 
 class FavoriteCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    @IBOutlet weak var favoriteLabel: UILabel!
+    
+    // MARK: - Properties
 
+    // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(false, animated: animated)
-
-        // Configure the view for the selected state
     }
     
+    func configureCell(_ favorite: Favorite) {
+        let title = favorite.title
+        favoriteLabel.text = title
+    }
 }
