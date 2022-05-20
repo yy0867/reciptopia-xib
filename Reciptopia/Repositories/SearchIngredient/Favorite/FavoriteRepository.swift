@@ -7,26 +7,27 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 
 final class FavoriteRepository: FavoriteRepositoryProtocol {
     
     // MARK: - Properties
-    private let dataStore: FavoriteDataStoreProtocol
+    private let dataStore: BehaviorRelay<FavoriteDataStoreProtocol>
     
     // MARK: - Methods
-    init(dataStore: FavoriteDataStoreProtocol) {
+    init(dataStore: BehaviorRelay<FavoriteDataStoreProtocol>) {
         self.dataStore = dataStore
     }
     
     func fetch() -> Observable<[Favorite]> {
-        return dataStore.fetch()
+        return dataStore.value.fetch()
     }
     
     func save(_ favorite: Favorite) -> Observable<Favorite> {
-        return dataStore.save(favorite)
+        return dataStore.value.save(favorite)
     }
     
     func delete(_ favorite: Favorite) -> Observable<Void> {
-        return dataStore.delete(favorite)
+        return dataStore.value.delete(favorite)
     }
 }
