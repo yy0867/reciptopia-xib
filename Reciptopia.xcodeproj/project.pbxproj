@@ -850,6 +850,13 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
+		A5ADC755283773C5001FD935 /* FavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavoriteCell;
+			sourceTree = "<group>";
+		};
 		A5BB94E2282E491B004FB57C /* SearchHistory */ = {
 			isa = PBXGroup;
 			children = (
@@ -862,6 +869,7 @@
 		A5BB94E3282E4932004FB57C /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				A5ADC755283773C5001FD935 /* FavoriteCell */,
 				A5904C88283095A8009F8593 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
