@@ -80,6 +80,26 @@ extension SearchIngredientViewController {
     
     // MARK: Favorite
     private func bindFavoriteTableView() {
-        
+        favoriteViewModel.favorites
+            .bind(to: favoriteTableView.rx.items(
+                cellIdentifier: FavoriteCell.reuseIdentifier,
+                cellType: FavoriteCell.self
+            ))(bindFavoriteCell)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindFavoriteCell(index: Int, item: Favorite, cell: FavoriteCell) {
+        cell.configureCell(item)
+    }
+}
+
+// MARK: - UITableView Delegate
+extension SearchIngredientViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == searchHistoryTableView {
+            print("search history")
+        } else if tableView == favoriteTableView {
+            print("favorite")
+        }
     }
 }

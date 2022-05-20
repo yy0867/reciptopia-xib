@@ -89,6 +89,8 @@
 		A5904C89283095A8009F8593 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C88283095A8009F8593 /* FavoriteViewModel.swift */; };
 		A59E2114282A73190081A851 /* CheckIngredientViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E2113282A73190081A851 /* CheckIngredientViewModelTests.swift */; };
 		A59E2117282A75C80081A851 /* CheckIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */; };
+		A5ADC75828377515001FD935 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ADC75628377515001FD935 /* FavoriteCell.swift */; };
+		A5ADC75928377515001FD935 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5ADC75728377515001FD935 /* FavoriteCell.xib */; };
 		A5BF7154282EA2CE00014331 /* SearchHistoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF7153282EA2CE00014331 /* SearchHistoryViewModelTests.swift */; };
 		A5BF7156282EB02E00014331 /* SearchHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BF7155282EB02E00014331 /* SearchHistoryViewModel.swift */; };
 		A5CC1AA1282BA8D900512D8B /* UserSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */; };
@@ -264,6 +266,8 @@
 		A5904C88283095A8009F8593 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		A59E2113282A73190081A851 /* CheckIngredientViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModelTests.swift; sourceTree = "<group>"; };
 		A59E2116282A75C80081A851 /* CheckIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewModel.swift; sourceTree = "<group>"; };
+		A5ADC75628377515001FD935 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		A5ADC75728377515001FD935 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		A5BF7153282EA2CE00014331 /* SearchHistoryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewModelTests.swift; sourceTree = "<group>"; };
 		A5BF7155282EB02E00014331 /* SearchHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryViewModel.swift; sourceTree = "<group>"; };
 		A5CC1AA0282BA8D900512D8B /* UserSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegate.swift; sourceTree = "<group>"; };
@@ -853,6 +857,8 @@
 		A5ADC755283773C5001FD935 /* FavoriteCell */ = {
 			isa = PBXGroup;
 			children = (
+				A5ADC75628377515001FD935 /* FavoriteCell.swift */,
+				A5ADC75728377515001FD935 /* FavoriteCell.xib */,
 			);
 			path = FavoriteCell;
 			sourceTree = "<group>";
@@ -1225,6 +1231,7 @@
 				A55413872835FD22008E51FE /* SearchHistoryCell.xib in Resources */,
 				A5552BD5282D038900D97D5A /* SearchIngredientViewController.storyboard in Resources */,
 				A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */,
+				A5ADC75928377515001FD935 /* FavoriteCell.xib in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
@@ -1310,6 +1317,7 @@
 				A5CD36E72824EB3F00A96B3E /* PictureIngredientDataStoreProtocol.swift in Sources */,
 				A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */,
 				A5CE6E4F282AA26D00C46BCC /* IngredientCell.swift in Sources */,
+				A5ADC75828377515001FD935 /* FavoriteCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A54816E6282CFC52006001FC /* FavoriteRepository.swift in Sources */,
 				A54816E0282CF695006001FC /* Favorite.swift in Sources */,
