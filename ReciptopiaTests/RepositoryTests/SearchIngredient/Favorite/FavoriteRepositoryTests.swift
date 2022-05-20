@@ -7,15 +7,18 @@
 
 import XCTest
 import RxBlocking
+import RxRelay
 @testable import Reciptopia
 
 class FavoriteRepositoryTests: XCTestCase {
     
     var repository: FavoriteRepositoryProtocol!
+    var dataStore: BehaviorRelay<FavoriteDataStoreProtocol>!
     
     override func setUp() {
         dev.favoriteDataStore.favorites = []
-        self.repository = FavoriteRepository(dataStore: dev.favoriteDataStore)
+        self.dataStore = BehaviorRelay(value: dev.favoriteDataStore)
+        self.repository = FavoriteRepository(dataStore: dataStore)
     }
     
     func test_FavoriteRepository_fetch_shouldReturnFavorites() {
