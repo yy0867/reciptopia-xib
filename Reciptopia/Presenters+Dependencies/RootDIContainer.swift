@@ -48,7 +48,8 @@ class RootDIContainer {
         return PictureIngredientViewController.create(
             with: viewModel,
             managePictureViewControllerFactory: makeManagePictureIngredientViewController,
-            checkIngredientViewControllerFactory: makeCheckIngredientViewController
+            checkIngredientViewControllerFactory: makeCheckIngredientViewController,
+            searchIngredientViewControllerFactory: makeSearchIngredientViewController
         )
     }
     
@@ -60,6 +61,11 @@ class RootDIContainer {
     func makeCheckIngredientViewController(_ analyzeResult: [Ingredient]) -> CheckIngredientViewController {
         let viewModel = CheckIngredientViewModel(ingredients: analyzeResult)
         return CheckIngredientViewController.create(with: viewModel)
+    }
+    
+    func makeSearchIngredientViewController() -> SearchIngredientViewController {
+        let searchIngredientDIContainer = SearchIngredientDIContainer(userSession: userSession)
+        return searchIngredientDIContainer.makeSearchIngredientViewController()
     }
 }
 
