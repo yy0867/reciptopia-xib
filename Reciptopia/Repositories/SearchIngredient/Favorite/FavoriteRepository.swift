@@ -12,7 +12,7 @@ import RxRelay
 final class FavoriteRepository: FavoriteRepositoryProtocol {
     
     // MARK: - Properties
-    private let dataStore: BehaviorRelay<FavoriteDataStoreProtocol>
+    let dataStore: BehaviorRelay<FavoriteDataStoreProtocol>
     
     // MARK: - Methods
     init(dataStore: BehaviorRelay<FavoriteDataStoreProtocol>) {

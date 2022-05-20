@@ -12,7 +12,7 @@ import RxRelay
 final class SearchHistoryRepository: SearchHistoryRepositoryProtocol {
     
     // MARK: - Properties
-    private let dataStore: BehaviorRelay<SearchHistoryDataStoreProtocol>
+    let dataStore: BehaviorRelay<SearchHistoryDataStoreProtocol>
     
     // MARK: - Methods
     init(dataStore: BehaviorRelay<SearchHistoryDataStoreProtocol>) {
