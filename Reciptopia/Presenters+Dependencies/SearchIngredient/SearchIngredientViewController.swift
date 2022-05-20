@@ -92,3 +92,14 @@ extension SearchIngredientViewController {
         cell.configureCell(item)
     }
 }
+
+// MARK: - UITableView Delegate
+extension SearchIngredientViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == searchHistoryTableView {
+            print("search history")
+        } else if tableView == favoriteTableView {
+            print("favorite")
+        }
+    }
+}
