@@ -96,12 +96,14 @@
                                     <segment title="즐겨찾기"/>
                                 </segments>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gr2-p0-854">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="c6T-GZ-lLO">
                                 <rect key="frame" x="0.0" y="195" width="414" height="701"/>
-                                <connections>
-                                    <segue destination="enP-Ju-2Vu" kind="embed" id="BZp-NK-eaV"/>
-                                </connections>
-                            </containerView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="VRJ-4l-RCe">
+                                <rect key="frame" x="0.0" y="195" width="414" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzg-Cc-F3b" customClass="FloatingActionButton" customModule="Reciptopia" customModuleProvider="target">
                                 <rect key="frame" x="334" y="782" width="50" height="50"/>
                                 <color key="backgroundColor" name="AccentColor"/>
@@ -118,20 +120,24 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Gr2-p0-854" firstAttribute="top" secondItem="cyC-bD-SDA" secondAttribute="bottom" id="7KL-z6-xXc"/>
+                            <constraint firstItem="c6T-GZ-lLO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5xM-g7-3YB"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="jzg-Cc-F3b" secondAttribute="bottom" constant="30" id="7bV-9L-LcI"/>
-                            <constraint firstItem="Gr2-p0-854" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9rC-Su-mTh"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gr2-p0-854" secondAttribute="trailing" id="BNA-8Z-ljZ"/>
                             <constraint firstAttribute="trailing" secondItem="cyC-bD-SDA" secondAttribute="trailing" id="E45-xf-j36"/>
+                            <constraint firstItem="c6T-GZ-lLO" firstAttribute="top" secondItem="cyC-bD-SDA" secondAttribute="bottom" id="Fdm-wq-iqP"/>
                             <constraint firstItem="0sb-Ja-iDN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IsT-CO-uxj"/>
+                            <constraint firstItem="VRJ-4l-RCe" firstAttribute="top" secondItem="cyC-bD-SDA" secondAttribute="bottom" id="LAr-pl-omh"/>
                             <constraint firstItem="cyC-bD-SDA" firstAttribute="top" secondItem="0sb-Ja-iDN" secondAttribute="bottom" id="Uf9-6W-laO"/>
                             <constraint firstItem="0sb-Ja-iDN" firstAttribute="top" secondItem="pFx-oj-ISZ" secondAttribute="bottom" id="V0o-5u-LDR"/>
                             <constraint firstItem="pFx-oj-ISZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="WXH-cA-iRI"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pFx-oj-ISZ" secondAttribute="trailing" constant="15" id="YXN-m7-KqN"/>
-                            <constraint firstAttribute="bottom" secondItem="Gr2-p0-854" secondAttribute="bottom" id="Yrn-VU-qXD"/>
+                            <constraint firstAttribute="bottom" secondItem="c6T-GZ-lLO" secondAttribute="bottom" id="aay-p5-fZP"/>
                             <constraint firstItem="pFx-oj-ISZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="bcq-oY-Yt7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="VRJ-4l-RCe" secondAttribute="trailing" id="gLk-Cf-9dX"/>
                             <constraint firstItem="cyC-bD-SDA" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="gzM-b5-SmT"/>
+                            <constraint firstAttribute="bottom" secondItem="VRJ-4l-RCe" secondAttribute="bottom" id="hgz-5B-de1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="c6T-GZ-lLO" secondAttribute="trailing" id="iVb-XJ-5JV"/>
                             <constraint firstAttribute="trailing" secondItem="0sb-Ja-iDN" secondAttribute="trailing" id="j6K-Jb-ie4"/>
+                            <constraint firstItem="VRJ-4l-RCe" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xZh-ub-Rm8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jzg-Cc-F3b" secondAttribute="trailing" constant="30" id="yzb-iM-Hua"/>
                         </constraints>
                     </view>
@@ -140,20 +146,15 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="favoriteTableView" destination="VRJ-4l-RCe" id="fJC-4U-rIQ"/>
                         <outlet property="ingredientSearchBar" destination="ckN-JY-WLG" id="iph-It-km5"/>
+                        <outlet property="pageSegment" destination="cyC-bD-SDA" id="39l-FL-DjN"/>
+                        <outlet property="searchHistoryTableView" destination="c6T-GZ-lLO" id="9kY-xn-fmE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-514.49275362318849" y="-46.205357142857139"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="lGj-ns-e3F">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="enP-Ju-2Vu" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yEJ-dM-CSd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="261" y="19"/>
         </scene>
     </scenes>
     <designables>

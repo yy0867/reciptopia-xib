@@ -50,6 +50,10 @@
 		A54816EA282CFC91006001FC /* FavoriteDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */; };
 		A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */; };
 		A54816EE282CFE85006001FC /* RealmFavorite+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */; };
+		A55413862835FD22008E51FE /* SearchHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55413842835FD22008E51FE /* SearchHistoryCell.swift */; };
+		A55413872835FD22008E51FE /* SearchHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A55413852835FD22008E51FE /* SearchHistoryCell.xib */; };
+		A55413892835FE75008E51FE /* UITableViewCell+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55413882835FE75008E51FE /* UITableViewCell+.swift */; };
+		A554138B2835FE7F008E51FE /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A554138A2835FE7F008E51FE /* UITableView+.swift */; };
 		A5552BD5282D038900D97D5A /* SearchIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5552BD3282D038900D97D5A /* SearchIngredientViewController.storyboard */; };
 		A5552BD6282D038900D97D5A /* SearchIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5552BD4282D038900D97D5A /* SearchIngredientViewController.swift */; };
 		A5552BD8282D03A300D97D5A /* SearchIngredientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5552BD7282D03A300D97D5A /* SearchIngredientViewModel.swift */; };
@@ -223,6 +227,10 @@
 		A54816E9282CFC91006001FC /* FavoriteDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDataStoreProtocol.swift; sourceTree = "<group>"; };
 		A54816EB282CFDE4006001FC /* RealmFavoriteDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFavoriteDataStore.swift; sourceTree = "<group>"; };
 		A54816ED282CFE85006001FC /* RealmFavorite+Mapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RealmFavorite+Mapping.swift"; sourceTree = "<group>"; };
+		A55413842835FD22008E51FE /* SearchHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryCell.swift; sourceTree = "<group>"; };
+		A55413852835FD22008E51FE /* SearchHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryCell.xib; sourceTree = "<group>"; };
+		A55413882835FE75008E51FE /* UITableViewCell+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+.swift"; sourceTree = "<group>"; };
+		A554138A2835FE7F008E51FE /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		A5552BD3282D038900D97D5A /* SearchIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchIngredientViewController.storyboard; sourceTree = "<group>"; };
 		A5552BD4282D038900D97D5A /* SearchIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIngredientViewController.swift; sourceTree = "<group>"; };
 		A5552BD7282D03A300D97D5A /* SearchIngredientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchIngredientViewModel.swift; sourceTree = "<group>"; };
@@ -383,6 +391,8 @@
 				A544C12D282A3BDF00EAD7F6 /* UIView+.swift */,
 				A502B1BD282C98B400CC3A0E /* UIImage+.swift */,
 				A5EC30F3282CE46200C551D7 /* Date+.swift */,
+				A55413882835FE75008E51FE /* UITableViewCell+.swift */,
+				A554138A2835FE7F008E51FE /* UITableView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -666,6 +676,15 @@
 			path = SearchIngredient;
 			sourceTree = "<group>";
 		};
+		A55413832835FCF6008E51FE /* SearchHistoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				A55413842835FD22008E51FE /* SearchHistoryCell.swift */,
+				A55413852835FD22008E51FE /* SearchHistoryCell.xib */,
+			);
+			path = SearchHistoryCell;
+			sourceTree = "<group>";
+		};
 		A5628127282558280062BFA6 /* Presenters+Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -831,9 +850,17 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
+		A5ADC755283773C5001FD935 /* FavoriteCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FavoriteCell;
+			sourceTree = "<group>";
+		};
 		A5BB94E2282E491B004FB57C /* SearchHistory */ = {
 			isa = PBXGroup;
 			children = (
+				A55413832835FCF6008E51FE /* SearchHistoryCell */,
 				A5BF7155282EB02E00014331 /* SearchHistoryViewModel.swift */,
 			);
 			path = SearchHistory;
@@ -842,6 +869,7 @@
 		A5BB94E3282E4932004FB57C /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
+				A5ADC755283773C5001FD935 /* FavoriteCell */,
 				A5904C88283095A8009F8593 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
@@ -1194,6 +1222,7 @@
 			files = (
 				A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */,
 				A502B1D5282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard in Resources */,
+				A55413872835FD22008E51FE /* SearchHistoryCell.xib in Resources */,
 				A5552BD5282D038900D97D5A /* SearchIngredientViewController.storyboard in Resources */,
 				A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
@@ -1252,6 +1281,7 @@
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5DC01DD2828CA9E00CC063A /* WithdrawalUseCase.swift in Sources */,
 				A5CD36E42824EB3F00A96B3E /* AnalyzePictureUseCase.swift in Sources */,
+				A55413892835FE75008E51FE /* UITableViewCell+.swift in Sources */,
 				A5DC01DA2828CA9E00CC063A /* SignInUseCases.swift in Sources */,
 				A5061FDC28295588000EBF21 /* Log.swift in Sources */,
 				A527A2842828F6A900212FD8 /* Network.swift in Sources */,
@@ -1294,7 +1324,9 @@
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
 				A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */,
 				A5EC30DD282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift in Sources */,
+				A554138B2835FE7F008E51FE /* UITableView+.swift in Sources */,
 				A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */,
+				A55413862835FD22008E51FE /* SearchHistoryCell.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
 				A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */,
