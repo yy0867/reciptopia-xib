@@ -69,6 +69,7 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         let ingredients = searchIngredientViewModel.ingredients.value
         guard !ingredients.isEmpty else { return }
         
+        searchIngredientViewModel.ingredients.accept([])
         searchHistoryViewModel.save(ingredients)
     }
 }
