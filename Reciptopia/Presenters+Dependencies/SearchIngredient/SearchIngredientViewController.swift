@@ -65,6 +65,10 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         favoriteTableView.registerNib(FavoriteCell.self)
     }
     
+    @IBAction func onCancelButtonClicked(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
+    
     @IBAction func onSearchButtonClicked(_ sender: UIButton) {
         let ingredients = searchIngredientViewModel.ingredients.value
         guard !ingredients.isEmpty else { return }
