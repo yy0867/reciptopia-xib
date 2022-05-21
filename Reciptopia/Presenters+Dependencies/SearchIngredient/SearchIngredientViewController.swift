@@ -71,6 +71,13 @@ extension SearchIngredientViewController {
 // MARK: - Bind ViewModel
 extension SearchIngredientViewController {
     
+    private func bindViewModel() {
+        bindSelectedPageToTableView()
+        bindIngredientCollectionView()
+        bindSearchHistoryTableView()
+        bindFavoriteTableView()
+    }
+    
     // MARK: Ingredient
     private func bindIngredientCollectionView() {
         searchIngredientViewModel.ingredients
@@ -123,7 +130,7 @@ extension SearchIngredientViewController {
     }
 }
 
-// MARK: - UITableView Delegate
+// MARK: - Delegates
 extension SearchIngredientViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == searchHistoryTableView {
@@ -131,5 +138,24 @@ extension SearchIngredientViewController: UITableViewDelegate {
         } else if tableView == favoriteTableView {
             print("favorite")
         }
+    }
+}
+
+extension SearchIngredientViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text,
+              !text.isEmpty else { return }
+        searchBar.text = ""
+        searchIngredientViewModel.addIngredient(text)
+    }
+}
+
+extension SearchIngredientViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 0, height: 35)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchIngredientViewModel.toggleState(at: indexPath.item)
     }
 }
