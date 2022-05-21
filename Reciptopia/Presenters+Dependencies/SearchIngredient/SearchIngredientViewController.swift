@@ -180,6 +180,41 @@ extension SearchIngredientViewController: UITableViewDelegate {
             print("favorite")
         }
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if tableView == searchHistoryTableView {
+            return searchHistoryDeleteActionConfiguration(at: indexPath.row)
+        } else if tableView == favoriteTableView {
+            return favoriteDeleteActionConfiguration(at: indexPath.row)
+        }
+        return nil
+    }
+    
+    private func searchHistoryDeleteActionConfiguration(at index: Int) -> UISwipeActionsConfiguration {
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "삭제"
+        ) { [weak self] (_, _, completion) in
+            self?.searchHistoryViewModel.delete(at: index)
+            FeedbackGenerator.shared.execute()
+            completion(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    private func favoriteDeleteActionConfiguration(at index: Int) -> UISwipeActionsConfiguration {
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "삭제"
+        ) { [weak self] (_, _, completion) in
+            self?.favoriteViewModel.delete(at: index)
+            FeedbackGenerator.shared.execute()
+            completion(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
 
 extension SearchIngredientViewController: UISearchBarDelegate {
