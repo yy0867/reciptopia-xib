@@ -19,11 +19,13 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Outlets
     @IBOutlet weak var ingredientSearchBar: UISearchBar!
+    @IBOutlet weak var ingredientCollectionView: UICollectionView!
     @IBOutlet weak var pageSegment: UISegmentedControl!
     @IBOutlet weak var searchHistoryTableView: UITableView!
     @IBOutlet weak var favoriteTableView: UITableView!
     
     // MARK: - Properties
+    private var searchIngredientViewModel: SearchIngredientViewModel!
     private var searchHistoryViewModel: SearchHistoryViewModel!
     private var favoriteViewModel: FavoriteViewModel!
     
@@ -32,10 +34,12 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Methods
     static func create(
+        searchIngredientViewModel: SearchIngredientViewModel,
         searchHistoryViewModel: SearchHistoryViewModel,
         favoriteViewModel: FavoriteViewModel
     ) -> Self {
         let vc = self.instantiateViewController()
+        vc.searchIngredientViewModel = searchIngredientViewModel
         vc.searchHistoryViewModel = searchHistoryViewModel
         vc.favoriteViewModel = favoriteViewModel
         return vc
@@ -63,6 +67,11 @@ extension SearchIngredientViewController {
 
 // MARK: - Bind ViewModel
 extension SearchIngredientViewController {
+    
+    // MARK: Ingredient
+    private func bindIngredientsCollectionView() {
+        
+    }
     
     // MARK: Search History
     private func bindSearchHistoryTableView() {

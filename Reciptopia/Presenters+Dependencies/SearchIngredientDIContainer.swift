@@ -86,13 +86,19 @@ final class SearchIngredientDIContainer {
     
     // MARK: - Factories
     func makeSearchIngredientViewController() -> SearchIngredientViewController {
+        let searchIngredientViewModel = makeSearchIngredientViewModel()
         let searchHistoryViewModel = makeSearchHistoryViewModel()
         let favoriteViewModel = makeFavoriteViewModel()
         
         return SearchIngredientViewController.create(
+            searchIngredientViewModel: searchIngredientViewModel,
             searchHistoryViewModel: searchHistoryViewModel,
             favoriteViewModel: favoriteViewModel
         )
+    }
+    
+    func makeSearchIngredientViewModel() -> SearchIngredientViewModel {
+        return SearchIngredientViewModel()
     }
     
     func makeSearchHistoryViewModel() -> SearchHistoryViewModel {

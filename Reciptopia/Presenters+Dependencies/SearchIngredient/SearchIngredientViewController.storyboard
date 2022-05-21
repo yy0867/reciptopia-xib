@@ -153,6 +153,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="favoriteTableView" destination="VRJ-4l-RCe" id="fJC-4U-rIQ"/>
+                        <outlet property="ingredientCollectionView" destination="0sb-Ja-iDN" id="Ym5-Co-aWF"/>
                         <outlet property="ingredientSearchBar" destination="ckN-JY-WLG" id="iph-It-km5"/>
                         <outlet property="pageSegment" destination="cyC-bD-SDA" id="39l-FL-DjN"/>
                         <outlet property="searchHistoryTableView" destination="c6T-GZ-lLO" id="9kY-xn-fmE"/>
