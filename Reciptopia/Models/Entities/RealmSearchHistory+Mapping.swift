@@ -9,7 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class RealmSearchHistory: Object, Identifiable {
+class RealmSearchHistory: Object, RealmIdentifiable {
     
     @Persisted(primaryKey: true)
     var id: Int = 0

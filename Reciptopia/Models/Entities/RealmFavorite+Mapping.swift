@@ -9,13 +9,7 @@ import Foundation
 import Realm
 import RealmSwift
 
-class RealmFavorite: Object, Identifiable {
-    
-    /*
-     let id: Int?
-     let postId: Int?
-     let title: String
-     */
+class RealmFavorite: Object, RealmIdentifiable {
     
     @Persisted(primaryKey: true)
     var id: Int = 0
@@ -38,7 +32,7 @@ extension Favorite {
     func toEntity() -> RealmFavorite {
         return RealmFavorite(
             id: id ?? 0,
-            postId: postId ?? 0,
+            postId: postId,
             title: title
         )
     }
