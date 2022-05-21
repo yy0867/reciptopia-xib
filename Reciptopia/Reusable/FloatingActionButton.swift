@@ -24,10 +24,16 @@ open class FloatingActionButton: UIButton {
     
     private var _sideLength: CGFloat = 50
     private var _centerImage: UIImage? = nil
+    
+    deinit {
+        removeKeyboardObserver()
+        print("deinit")
+    }
 
     open override func draw(_ rect: CGRect) {
         super.draw(rect)
         
+        addKeyboardObserver()
         backgroundColor = UIColor(named: "AccentColor")
         configureCornerRadius(with: rect)
         addImage()
@@ -51,5 +57,48 @@ open class FloatingActionButton: UIButton {
                 imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             ])
         }
+    }
+    
+    private func addKeyboardObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc func keyboardWillShow(_ sender: NSNotification) {
+        if let keyboardSize = (sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey]
+                               as? NSValue)?.cgRectValue {
+            UIView.animate(withDuration: 0.3) {
+                self.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height)
+            }
+        }
+    }
+    
+    @objc func keyboardWillHide(_ sender: NSNotification) {
+        self.transform = .identity
+    }
+    
+    private func removeKeyboardObserver() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
 }
