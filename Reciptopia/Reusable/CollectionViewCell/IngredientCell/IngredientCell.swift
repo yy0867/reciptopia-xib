@@ -31,6 +31,11 @@ open class IngredientCell: UICollectionViewCell {
         layer.cornerRadius = rect.height / 2
     }
     
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        layer.cornerRadius = frame.height / 2
+    }
+    
     public func configureCell(
         ingredient: Ingredient,
         removeHandler removeAction: @escaping () -> Void

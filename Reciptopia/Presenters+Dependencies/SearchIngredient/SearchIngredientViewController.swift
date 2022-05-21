@@ -19,11 +19,13 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Outlets
     @IBOutlet weak var ingredientSearchBar: UISearchBar!
+    @IBOutlet weak var ingredientCollectionView: UICollectionView!
     @IBOutlet weak var pageSegment: UISegmentedControl!
     @IBOutlet weak var searchHistoryTableView: UITableView!
     @IBOutlet weak var favoriteTableView: UITableView!
     
     // MARK: - Properties
+    private var searchIngredientViewModel: SearchIngredientViewModel!
     private var searchHistoryViewModel: SearchHistoryViewModel!
     private var favoriteViewModel: FavoriteViewModel!
     
@@ -32,10 +34,12 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     
     // MARK: - Methods
     static func create(
+        searchIngredientViewModel: SearchIngredientViewModel,
         searchHistoryViewModel: SearchHistoryViewModel,
         favoriteViewModel: FavoriteViewModel
     ) -> Self {
         let vc = self.instantiateViewController()
+        vc.searchIngredientViewModel = searchIngredientViewModel
         vc.searchHistoryViewModel = searchHistoryViewModel
         vc.favoriteViewModel = favoriteViewModel
         return vc
@@ -44,7 +48,20 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindSelectedPageToTableView()
+        registerCells()
+        bindViewModel()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        ingredientSearchBar.becomeFirstResponder()
+    }
+    
+    private func registerCells() {
+        ingredientCollectionView.registerNib(IngredientCell.self)
+        searchHistoryTableView.registerNib(SearchHistoryCell.self)
+        favoriteTableView.registerNib(FavoriteCell.self)
     }
 }
 
@@ -63,6 +80,36 @@ extension SearchIngredientViewController {
 
 // MARK: - Bind ViewModel
 extension SearchIngredientViewController {
+    
+    private func bindViewModel() {
+        bindSelectedPageToTableView()
+        bindIngredientCollectionView()
+        bindSearchHistoryTableView()
+        bindFavoriteTableView()
+    }
+    
+    // MARK: Ingredient
+    private func bindIngredientCollectionView() {
+        searchIngredientViewModel.ingredients
+            .bind(to: ingredientCollectionView.rx.items(
+                cellIdentifier: IngredientCell.reuseIdentifier,
+                cellType: IngredientCell.self
+            ))(bindIngredientCell)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindIngredientCell(index: Int, item: Ingredient, cell: IngredientCell) {
+        cell.configureCell(
+            ingredient: item,
+            removeHandler: removeIngredient(at: index)
+        )
+    }
+    
+    private func removeIngredient(at index: Int) -> (() -> Void) {
+        return { [weak self] in
+            self?.searchIngredientViewModel.removeIngredient(at: index)
+        }
+    }
     
     // MARK: Search History
     private func bindSearchHistoryTableView() {
@@ -93,7 +140,7 @@ extension SearchIngredientViewController {
     }
 }
 
-// MARK: - UITableView Delegate
+// MARK: - Delegates
 extension SearchIngredientViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == searchHistoryTableView {
@@ -101,5 +148,24 @@ extension SearchIngredientViewController: UITableViewDelegate {
         } else if tableView == favoriteTableView {
             print("favorite")
         }
+    }
+}
+
+extension SearchIngredientViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text,
+              !text.isEmpty else { return }
+        searchBar.text = ""
+        searchIngredientViewModel.addIngredient(text)
+    }
+}
+
+extension SearchIngredientViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 0, height: 35)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        searchIngredientViewModel.toggleState(at: indexPath.item)
     }
 }
