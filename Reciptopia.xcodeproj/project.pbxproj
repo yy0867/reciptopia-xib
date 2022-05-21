@@ -61,6 +61,7 @@
 		A557B7F6282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */; };
 		A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */; };
 		A55B9B5B2838B5FC00259AC3 /* RealmIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B9B5A2838B5FC00259AC3 /* RealmIdentifiable.swift */; };
+		A55B9B5D2838C53000259AC3 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55B9B5C2838C53000259AC3 /* FeedbackGenerator.swift */; };
 		A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5602571282E42F7000E904A /* FloatingActionButton.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
@@ -244,6 +245,7 @@
 		A557B7F5282A7EAA00ADFD96 /* CheckIngredientViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CheckIngredientViewController.storyboard; sourceTree = "<group>"; };
 		A557B7F7282A7EBB00ADFD96 /* CheckIngredientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckIngredientViewController.swift; sourceTree = "<group>"; };
 		A55B9B5A2838B5FC00259AC3 /* RealmIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmIdentifiable.swift; sourceTree = "<group>"; };
+		A55B9B5C2838C53000259AC3 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		A5602571282E42F7000E904A /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 		A544C11F282A2EBF00EAD7F6 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				A55B9B5C2838C53000259AC3 /* FeedbackGenerator.swift */,
 				A5602571282E42F7000E904A /* FloatingActionButton.swift */,
 				A528C241282B3E620017F9A0 /* AddIngredient */,
 				A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */,
@@ -1374,6 +1377,7 @@
 				A502B1D6282CA3C700CC3A0E /* SignedInMyPageViewController.swift in Sources */,
 				A527A2882828F6F700212FD8 /* StoryboardInstantiable.swift in Sources */,
 				A502B1BE282C98B400CC3A0E /* UIImage+.swift in Sources */,
+				A55B9B5D2838C53000259AC3 /* FeedbackGenerator.swift in Sources */,
 				A5EC30B8282CA7D500C551D7 /* MyPageViewControllerProtocol.swift in Sources */,
 				A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
