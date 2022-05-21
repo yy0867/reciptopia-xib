@@ -12,9 +12,9 @@ import RxCocoa
 
 class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     
-    enum Page {
-        case searchHistory
-        case favorite
+    enum Page: Int {
+        case searchHistory = 0
+        case favorite = 1
     }
     
     // MARK: - Outlets
@@ -23,6 +23,7 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var pageSegment: UISegmentedControl!
     @IBOutlet weak var searchHistoryTableView: UITableView!
     @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var searchButton: FloatingActionButton!
     
     // MARK: - Properties
     private var searchIngredientViewModel: SearchIngredientViewModel!
@@ -63,11 +64,20 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         searchHistoryTableView.registerNib(SearchHistoryCell.self)
         favoriteTableView.registerNib(FavoriteCell.self)
     }
+    
+    @IBAction func onSearchButtonClicked(_ sender: UIButton) {
+        
+    }
 }
 
 // MARK: - Bind Page State
 extension SearchIngredientViewController {
     private func bindSelectedPageToTableView() {
+        pageSegment.rx.selectedSegmentIndex
+            .map { Page(rawValue: $0) ?? .searchHistory }
+            .bind(to: selectedPage)
+            .disposed(by: disposeBag)
+        
         selectedPage
             .map { $0 == .searchHistory }
             .bind(
@@ -82,13 +92,31 @@ extension SearchIngredientViewController {
 extension SearchIngredientViewController {
     
     private func bindViewModel() {
+        bindIngredientToView()
         bindSelectedPageToTableView()
-        bindIngredientCollectionView()
         bindSearchHistoryTableView()
         bindFavoriteTableView()
     }
     
     // MARK: Ingredient
+    private func bindIngredientToView() {
+        bindIngredientToSearchButton()
+        bindIngredientCollectionView()
+    }
+    
+    private func bindIngredientToSearchButton() {
+        searchIngredientViewModel.ingredients
+            .map { !$0.isEmpty }
+            .bind(to: searchButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        searchIngredientViewModel.ingredients
+            .map { !$0.isEmpty }
+            .map { $0 ? UIColor(named: "AccentColor") : .lightGray }
+            .bind(to: searchButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+    }
+    
     private func bindIngredientCollectionView() {
         searchIngredientViewModel.ingredients
             .bind(to: ingredientCollectionView.rx.items(
