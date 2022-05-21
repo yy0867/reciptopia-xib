@@ -27,8 +27,9 @@ final class RealmUtil {
         return Array(result)
     }
     
-    func save<Entity>(entity: Entity) throws -> Entity where Entity: Object {
+    func save<Entity>(entity: Entity) throws -> Entity where Entity: RealmIdentifiable {
         guard let realm = realm else { throw ReciptopiaError.notFound }
+        entity.setToNextId()
         
         try realm.write { realm.add(entity) }
         return entity

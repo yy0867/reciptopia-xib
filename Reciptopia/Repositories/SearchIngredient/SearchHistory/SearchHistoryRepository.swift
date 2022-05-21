@@ -21,6 +21,7 @@ final class SearchHistoryRepository: SearchHistoryRepositoryProtocol {
     
     func fetch() -> Observable<[SearchHistory]> {
         return dataStore.value.fetch()
+            .map(sortByTimestamp)
     }
     
     func save(_ searchHistory: SearchHistory) -> Observable<SearchHistory> {
@@ -33,5 +34,10 @@ final class SearchHistoryRepository: SearchHistoryRepositoryProtocol {
     
     func delete(_ searchHistory: SearchHistory) -> Observable<Void> {
         return dataStore.value.delete(searchHistory)
+    }
+    
+    private func sortByTimestamp(_ histories: [SearchHistory]) -> [SearchHistory] {
+        let sortedHistories = histories.sorted { $0.timestamp > $1.timestamp }
+        return sortedHistories
     }
 }

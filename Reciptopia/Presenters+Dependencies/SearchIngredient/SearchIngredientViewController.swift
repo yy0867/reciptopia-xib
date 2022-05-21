@@ -12,9 +12,9 @@ import RxCocoa
 
 class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     
-    enum Page {
-        case searchHistory
-        case favorite
+    enum Page: Int {
+        case searchHistory = 0
+        case favorite = 1
     }
     
     // MARK: - Outlets
@@ -23,6 +23,7 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     @IBOutlet weak var pageSegment: UISegmentedControl!
     @IBOutlet weak var searchHistoryTableView: UITableView!
     @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var searchButton: FloatingActionButton!
     
     // MARK: - Properties
     private var searchIngredientViewModel: SearchIngredientViewModel!
@@ -63,11 +64,23 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         searchHistoryTableView.registerNib(SearchHistoryCell.self)
         favoriteTableView.registerNib(FavoriteCell.self)
     }
+    
+    @IBAction func onSearchButtonClicked(_ sender: UIButton) {
+        let ingredients = searchIngredientViewModel.ingredients.value
+        guard !ingredients.isEmpty else { return }
+        
+        searchHistoryViewModel.save(ingredients)
+    }
 }
 
 // MARK: - Bind Page State
 extension SearchIngredientViewController {
     private func bindSelectedPageToTableView() {
+        pageSegment.rx.selectedSegmentIndex
+            .map { Page(rawValue: $0) ?? .searchHistory }
+            .bind(to: selectedPage)
+            .disposed(by: disposeBag)
+        
         selectedPage
             .map { $0 == .searchHistory }
             .bind(
@@ -82,13 +95,31 @@ extension SearchIngredientViewController {
 extension SearchIngredientViewController {
     
     private func bindViewModel() {
+        bindIngredientToView()
         bindSelectedPageToTableView()
-        bindIngredientCollectionView()
         bindSearchHistoryTableView()
         bindFavoriteTableView()
     }
     
     // MARK: Ingredient
+    private func bindIngredientToView() {
+        bindIngredientToSearchButton()
+        bindIngredientCollectionView()
+    }
+    
+    private func bindIngredientToSearchButton() {
+        searchIngredientViewModel.ingredients
+            .map { !$0.isEmpty }
+            .bind(to: searchButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        searchIngredientViewModel.ingredients
+            .map { !$0.isEmpty }
+            .map { $0 ? UIColor(named: "AccentColor") : .lightGray }
+            .bind(to: searchButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+    }
+    
     private func bindIngredientCollectionView() {
         searchIngredientViewModel.ingredients
             .bind(to: ingredientCollectionView.rx.items(
@@ -144,10 +175,45 @@ extension SearchIngredientViewController {
 extension SearchIngredientViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == searchHistoryTableView {
-            print("search history")
+            searchHistoryViewModel.update(at: indexPath.row)
         } else if tableView == favoriteTableView {
             print("favorite")
         }
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        if tableView == searchHistoryTableView {
+            return searchHistoryDeleteActionConfiguration(at: indexPath.row)
+        } else if tableView == favoriteTableView {
+            return favoriteDeleteActionConfiguration(at: indexPath.row)
+        }
+        return nil
+    }
+    
+    private func searchHistoryDeleteActionConfiguration(at index: Int) -> UISwipeActionsConfiguration {
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "삭제"
+        ) { [weak self] (_, _, completion) in
+            self?.searchHistoryViewModel.delete(at: index)
+            FeedbackGenerator.shared.execute()
+            completion(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    private func favoriteDeleteActionConfiguration(at index: Int) -> UISwipeActionsConfiguration {
+        let action = UIContextualAction(
+            style: .destructive,
+            title: "삭제"
+        ) { [weak self] (_, _, completion) in
+            self?.favoriteViewModel.delete(at: index)
+            FeedbackGenerator.shared.execute()
+            completion(true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
 

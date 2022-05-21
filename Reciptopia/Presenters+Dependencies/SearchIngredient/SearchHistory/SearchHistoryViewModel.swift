@@ -28,6 +28,8 @@ final class SearchHistoryViewModel {
     // MARK: - Methods
     init(repository: SearchHistoryRepositoryProtocol) {
         self.repository = repository
+        
+        fetch()
     }
     
     func fetch() {

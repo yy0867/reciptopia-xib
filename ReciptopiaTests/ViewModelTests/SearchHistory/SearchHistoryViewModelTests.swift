@@ -50,7 +50,11 @@ class SearchHistoryViewModelTests: XCTestCase {
         }
         
         // Then
-        XCTAssertEqual(result, dev.searchHistoryDataStore.searchHistories)
+        let sortedDataStoreIngredients = dev.searchHistoryDataStore
+            .searchHistories
+            .sorted { $0.timestamp > $1.timestamp }
+        
+        XCTAssertEqual(result, sortedDataStoreIngredients)
     }
     
     func test_SearchHistoryViewModel_saveIngredients_shouldAddToHistoryAtDataStoreAndFetch() {
@@ -76,12 +80,13 @@ class SearchHistoryViewModelTests: XCTestCase {
         }
         
         // Then
+        let sortedDataStoreIngredients = dev.searchHistoryDataStore
+            .searchHistories
+            .sorted { $0.timestamp > $1.timestamp }
+        
         XCTAssertEqual(result.count, dev.searchHistoryDataStore.searchHistories.count)
         for i in 0..<result.count {
-            XCTAssertEqual(
-                result[i].ingredients,
-                dev.searchHistoryDataStore.searchHistories[i].ingredients
-            )
+            XCTAssertEqual(result[i].ingredients, sortedDataStoreIngredients[i].ingredients)
         }
     }
     

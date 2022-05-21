@@ -28,6 +28,8 @@ final class FavoriteViewModel {
     // MARK: - Methods
     init(repository: FavoriteRepositoryProtocol) {
         self.repository = repository
+        
+        fetch()
     }
     
     func fetch() {
