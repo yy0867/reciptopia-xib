@@ -66,7 +66,10 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     }
     
     @IBAction func onSearchButtonClicked(_ sender: UIButton) {
+        let ingredients = searchIngredientViewModel.ingredients.value
+        guard !ingredients.isEmpty else { return }
         
+        searchHistoryViewModel.save(ingredients)
     }
 }
 
