@@ -52,6 +52,12 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         bindViewModel()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        ingredientSearchBar.becomeFirstResponder()
+    }
+    
     private func registerCells() {
         ingredientCollectionView.registerNib(IngredientCell.self)
         searchHistoryTableView.registerNib(SearchHistoryCell.self)
