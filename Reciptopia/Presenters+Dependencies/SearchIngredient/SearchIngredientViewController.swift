@@ -48,10 +48,14 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        bindSelectedPageToTableView()
-        bindIngredientCollectionView()
-        bindSearchHistoryTableView()
-        bindFavoriteTableView()
+        registerCells()
+        bindViewModel()
+    }
+    
+    private func registerCells() {
+        ingredientCollectionView.registerNib(IngredientCell.self)
+        searchHistoryTableView.registerNib(SearchHistoryCell.self)
+        favoriteTableView.registerNib(FavoriteCell.self)
     }
 }
 
