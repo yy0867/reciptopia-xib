@@ -175,7 +175,7 @@ extension SearchIngredientViewController {
 extension SearchIngredientViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if tableView == searchHistoryTableView {
-            print("search history")
+            searchHistoryViewModel.update(at: indexPath.row)
         } else if tableView == favoriteTableView {
             print("favorite")
         }

@@ -20,8 +20,10 @@ class RealmSearchHistory: Object, RealmIdentifiable {
     @Persisted
     var timestamp: Date = Date()
     
-    convenience init(ingredients: [Ingredient]) {
+    convenience init(id: Int, ingredients: [Ingredient], timestamp: Date) {
         self.init()
+        self.id = id
+        self.timestamp = timestamp
         let ingredientEntities = ingredients.map { $0.toEntity() }
         self.ingredients.removeAll()
         self.ingredients.append(objectsIn: ingredientEntities)
@@ -30,7 +32,11 @@ class RealmSearchHistory: Object, RealmIdentifiable {
 
 extension SearchHistory {
     func toEntity() -> RealmSearchHistory {
-        return RealmSearchHistory(ingredients: ingredients)
+        return RealmSearchHistory(
+            id: id ?? 0,
+            ingredients: ingredients,
+            timestamp: timestamp
+        )
     }
 }
 
