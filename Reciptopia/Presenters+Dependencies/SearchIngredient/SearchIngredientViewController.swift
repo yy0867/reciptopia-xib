@@ -49,6 +49,9 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         super.viewDidLoad()
         
         bindSelectedPageToTableView()
+        bindIngredientCollectionView()
+        bindSearchHistoryTableView()
+        bindFavoriteTableView()
     }
 }
 
@@ -69,8 +72,26 @@ extension SearchIngredientViewController {
 extension SearchIngredientViewController {
     
     // MARK: Ingredient
-    private func bindIngredientsCollectionView() {
-        
+    private func bindIngredientCollectionView() {
+        searchIngredientViewModel.ingredients
+            .bind(to: ingredientCollectionView.rx.items(
+                cellIdentifier: IngredientCell.reuseIdentifier,
+                cellType: IngredientCell.self
+            ))(bindIngredientCell)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindIngredientCell(index: Int, item: Ingredient, cell: IngredientCell) {
+        cell.configureCell(
+            ingredient: item,
+            removeHandler: removeIngredient(at: index)
+        )
+    }
+    
+    private func removeIngredient(at index: Int) -> (() -> Void) {
+        return { [weak self] in
+            self?.searchIngredientViewModel.removeIngredient(at: index)
+        }
     }
     
     // MARK: Search History
