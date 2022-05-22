@@ -65,6 +65,13 @@
 		A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5602571282E42F7000E904A /* FloatingActionButton.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
+		A5779762283AF19B003C625E /* PostInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779761283AF19B003C625E /* PostInstances.swift */; };
+		A5779765283AF1E6003C625E /* PostDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779764283AF1E6003C625E /* PostDataStoreProtocol.swift */; };
+		A5779769283AF299003C625E /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779768283AF299003C625E /* PostDTO.swift */; };
+		A577976B283AF3A5003C625E /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577976A283AF3A5003C625E /* Sorting.swift */; };
+		A577976E283AF46A003C625E /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577976D283AF46A003C625E /* Paging.swift */; };
+		A5779770283AF4D7003C625E /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577976F283AF4D7003C625E /* EndpointTests.swift */; };
+		A57A2E0C283A54560034DB36 /* PostRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A2E0B283A54560034DB36 /* PostRepositoryTests.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* RootViewController.swift */; };
 		A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB42822C33C00F93329 /* Assets.xcassets */; };
@@ -249,6 +256,13 @@
 		A5602571282E42F7000E904A /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
+		A5779761283AF19B003C625E /* PostInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInstances.swift; sourceTree = "<group>"; };
+		A5779764283AF1E6003C625E /* PostDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataStoreProtocol.swift; sourceTree = "<group>"; };
+		A5779768283AF299003C625E /* PostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
+		A577976A283AF3A5003C625E /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
+		A577976D283AF46A003C625E /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
+		A577976F283AF4D7003C625E /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
+		A57A2E0B283A54560034DB36 /* PostRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryTests.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAF2822C33B00F93329 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -452,15 +466,10 @@
 		A5078E132824B42A00CBC26B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A577976C283AF455003C625E /* Endpoints */,
+				A5779767283AF292003C625E /* DTOs */,
+				A5779766283AF25F003C625E /* Models */,
 				A5EC30EB282CDA9000C551D7 /* Entities */,
-				A5078E142824B43100CBC26B /* Ingredient.swift */,
-				A562812B282570030062BFA6 /* UserSession.swift */,
-				A562812D282570190062BFA6 /* Account+Credential.swift */,
-				A583988828262E6600C5E3BD /* Exist.swift */,
-				A583988F2826302400C5E3BD /* ReciptopiaError.swift */,
-				A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */,
-				A54816DF282CF695006001FC /* Favorite.swift */,
-				A5904C86283093AB009F8593 /* Post.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -723,6 +732,62 @@
 			path = UserSession;
 			sourceTree = "<group>";
 		};
+		A5779760283AF189003C625E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A5779761283AF19B003C625E /* PostInstances.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		A5779763283AF1D7003C625E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A5779764283AF1E6003C625E /* PostDataStoreProtocol.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
+		A5779766283AF25F003C625E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A5078E142824B43100CBC26B /* Ingredient.swift */,
+				A562812B282570030062BFA6 /* UserSession.swift */,
+				A562812D282570190062BFA6 /* Account+Credential.swift */,
+				A583988828262E6600C5E3BD /* Exist.swift */,
+				A583988F2826302400C5E3BD /* ReciptopiaError.swift */,
+				A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */,
+				A54816DF282CF695006001FC /* Favorite.swift */,
+				A5904C86283093AB009F8593 /* Post.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5779767283AF292003C625E /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				A5779768283AF299003C625E /* PostDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		A577976C283AF455003C625E /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				A577976A283AF3A5003C625E /* Sorting.swift */,
+				A577976D283AF46A003C625E /* Paging.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		A57A2E0A283A54460034DB36 /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A57A2E0B283A54560034DB36 /* PostRepositoryTests.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		A57B9A9F2822C33B00F93329 = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +847,7 @@
 				A562812F282570E00062BFA6 /* UserSession */,
 				A5818B392825142300EB11AB /* PictureIngredient */,
 				A54816DA282CF4D7006001FC /* SearchIngredient */,
+				A57A2E0A283A54460034DB36 /* Post */,
 			);
 			path = RepositoryTests;
 			sourceTree = "<group>";
@@ -816,6 +882,7 @@
 			children = (
 				A51BEDFE28254DC300703E52 /* PictureIngredient */,
 				A5EC30E0282CD03400C551D7 /* SearchIngredient */,
+				A5779760283AF189003C625E /* Post */,
 			);
 			path = DevInstances;
 			sourceTree = "<group>";
@@ -917,6 +984,7 @@
 			children = (
 				A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */,
 				A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */,
+				A577976F283AF4D7003C625E /* EndpointTests.swift */,
 			);
 			path = ServiceTests;
 			sourceTree = "<group>";
@@ -1029,6 +1097,7 @@
 			children = (
 				A54816E8282CFC80006001FC /* Favorite */,
 				A54816E7282CFC7C006001FC /* SearchHistory */,
+				A5779763283AF1D7003C625E /* Post */,
 			);
 			path = SearchIngredient;
 			sourceTree = "<group>";
@@ -1332,6 +1401,7 @@
 				A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */,
 				A502B1C4282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift in Sources */,
 				A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */,
+				A5779769283AF299003C625E /* PostDTO.swift in Sources */,
 				A5EC30E7282CD88600C551D7 /* SearchHistoryRepository.swift in Sources */,
 				A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
@@ -1346,10 +1416,12 @@
 				A5ADC75828377515001FD935 /* FavoriteCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A54816E6282CFC52006001FC /* FavoriteRepository.swift in Sources */,
+				A5779765283AF1E6003C625E /* PostDataStoreProtocol.swift in Sources */,
 				A54816E0282CF695006001FC /* Favorite.swift in Sources */,
 				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
 				A5EC30D1282CC4F000C551D7 /* SignInViewModel.swift in Sources */,
 				A58398822826059900C5E3BD /* KeychainTokenDataStore.swift in Sources */,
+				A577976E283AF46A003C625E /* Paging.swift in Sources */,
 				A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
@@ -1363,6 +1435,7 @@
 				A55413862835FD22008E51FE /* SearchHistoryCell.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
+				A577976B283AF3A5003C625E /* Sorting.swift in Sources */,
 				A544C119282A273700EAD7F6 /* RootDIContainer.swift in Sources */,
 				A5EC30F4282CE46200C551D7 /* Date+.swift in Sources */,
 				A5BF7156282EB02E00014331 /* SearchHistoryViewModel.swift in Sources */,
@@ -1392,13 +1465,16 @@
 			files = (
 				A5DC01E52828CABF00CC063A /* SignInUseCasesTests.swift in Sources */,
 				A5DC01E32828CABF00CC063A /* SignedInUseCasesTests.swift in Sources */,
+				A5779770283AF4D7003C625E /* EndpointTests.swift in Sources */,
 				A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */,
 				A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */,
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A5EC30DA282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift in Sources */,
 				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
 				A5EC30E2282CD04800C551D7 /* SearchIngredientInstances.swift in Sources */,
+				A5779762283AF19B003C625E /* PostInstances.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
+				A57A2E0C283A54560034DB36 /* PostRepositoryTests.swift in Sources */,
 				A5BF7154282EA2CE00014331 /* SearchHistoryViewModelTests.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
