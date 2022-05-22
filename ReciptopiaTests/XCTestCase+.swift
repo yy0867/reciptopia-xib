@@ -19,15 +19,6 @@ extension XCTestCase {
     func getLocation(_ file: String = #file, _ function: String = #function) -> String {
         return " at \(file) - \(function)"
     }
-    
-    func generateRandomString(length: Int = 10) -> String {
-        let pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        var generatedString = ""
-        for _ in 0..<length {
-            generatedString.append(pool.randomElement()!)
-        }
-        return generatedString
-    }
 }
 
 struct DevInstances {
@@ -74,5 +65,15 @@ struct DevInstances {
         
         self.searchHistoryRepository = SearchHistoryRepository(dataStore: searchHistoryDataStoreRelay)
         self.favoriteRepository = FavoriteRepository(dataStore: favoriteDataStoreRelay)
+    }
+    
+    // MARK: - Methods
+    func generateRandomString(length: Int = 10) -> String {
+        let pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var generatedString = ""
+        for _ in 0..<length {
+            generatedString.append(pool.randomElement()!)
+        }
+        return generatedString
     }
 }
