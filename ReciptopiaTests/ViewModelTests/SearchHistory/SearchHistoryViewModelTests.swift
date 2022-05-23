@@ -60,7 +60,7 @@ class SearchHistoryViewModelTests: XCTestCase {
     func test_SearchHistoryViewModel_saveIngredients_shouldAddToHistoryAtDataStoreAndFetch() {
         // Given
         let ingredients = [Ingredient](
-            repeating: Ingredient(name: dev.generateRandomString()),
+            repeating: Ingredient(name: DevInstances.generateRandomString()),
             count: Int.random(in: 1...10)
         )
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [ingredients]))
@@ -147,7 +147,7 @@ class SearchHistoryViewModelTests: XCTestCase {
             histories.append(SearchHistory(
                 id: i,
                 ingredients: [Ingredient](
-                    repeating: Ingredient(name: dev.generateRandomString()),
+                    repeating: Ingredient(name: DevInstances.generateRandomString()),
                     count: Int.random(in: 1...10))
                 ,
                 timestamp: Date.timestamp.addingTimeInterval(-100))

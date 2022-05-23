@@ -16,12 +16,12 @@ class PostRepositoryTests: XCTestCase {
         // Given
         let repository = PostRepository(dataStore: dev.succeedPostDataStore)
         
-        let ingredients = dev.generateRandomIngredients()
+        let ingredients = DevInstances.generateRandomIngredients()
         let sorting = Sorting(property: .id, order: .ascending)
         let paging = Paging(page: 1)
         
         // When
-        guard let result = try? repository.fetch(ingredients, sorting, paging)
+        guard let result = try? repository.fetch(ingredients, paging, sorting)
             .toBlocking()
             .first() else {
             XCTFail("failed" + getLocation())
@@ -36,27 +36,29 @@ class PostRepositoryTests: XCTestCase {
         // Given
         let repository = PostRepository(dataStore: dev.failPostDataStore)
         
-        let ingredients = dev.generateRandomIngredients()
+        let ingredients = DevInstances.generateRandomIngredients()
         let sorting = Sorting(property: .id, order: .ascending)
         let paging = Paging(page: 1)
         
         // When
-        guard let result = try? repository.fetch(ingredients, sorting, paging)
+        let result = repository.fetch(ingredients, paging, sorting)
             .toBlocking()
-            .first() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+            .materialize()
         
         // Then
-        XCTAssertNotNil(result as? ReciptopiaError)
+        switch result {
+            case .completed:
+                XCTFail("result must not success." + getLocation())
+            case .failed:
+                break
+        }
     }
     
     // MARK: - Save
     func test_PostRepository_savePostSuccess_shouldReturnRequestedPost() {
         // Given
         let repository = PostRepository(dataStore: dev.succeedPostDataStore)
-        let post = dev.generateRandomPost(id: 1)
+        let post = DevInstances.generateRandomPost(id: 1)
         
         // When
         guard let result = try? repository.save(post)
@@ -73,25 +75,27 @@ class PostRepositoryTests: XCTestCase {
     func test_PostRepository_savePostFailed_shouldReturnError() {
         // Given
         let repository = PostRepository(dataStore: dev.failPostDataStore)
-        let post = dev.generateRandomPost(id: 1)
+        let post = DevInstances.generateRandomPost(id: 1)
         
         // When
-        guard let result = try? repository.save(post)
+        let result = repository.save(post)
             .toBlocking()
-            .first() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+            .materialize()
         
         // Then
-        XCTAssertNotNil(result as? ReciptopiaError)
+        switch result {
+            case .completed:
+                XCTFail("result must not success." + getLocation())
+            case .failed:
+                break
+        }
     }
     
     // MARK: - Update
     func test_PostRepository_updatePostSuccess_shouldReturnUpdatedPost() {
         // Given
         let repository = PostRepository(dataStore: dev.succeedPostDataStore)
-        let post = dev.generateRandomPost(id: 1)
+        let post = DevInstances.generateRandomPost(id: 1)
         
         // When
         guard let result = try? repository.update(post)
@@ -108,33 +112,32 @@ class PostRepositoryTests: XCTestCase {
     func test_PostRepository_updatePostFailed_shouldReturnError() {
         // Given
         let repository = PostRepository(dataStore: dev.failPostDataStore)
-        let post = dev.generateRandomPost(id: 1)
+        let post = DevInstances.generateRandomPost(id: 1)
         
         // When
-        guard let result = try? repository.update(post)
+        let result = repository.update(post)
             .toBlocking()
-            .first() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+            .materialize()
         
         // Then
-        XCTAssertNotNil(result as? ReciptopiaError)
+        switch result {
+            case .completed:
+                XCTFail("result must not success." + getLocation())
+            case .failed:
+                break
+        }
     }
     
     // MARK: - Delete
     func test_PostRepository_deletePostSuccess_shouldReturnVoid() {
         // Given
         let repository = PostRepository(dataStore: dev.succeedPostDataStore)
-        let post = dev.generateRandomPost(id: 1)
+        let post = DevInstances.generateRandomPost(id: 1)
         
         // When
-        guard let result = try? repository.delete(post)
+        let result = repository.delete(post)
             .toBlocking()
-            .materialize() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+            .materialize()
         
         // Then
         switch result {
@@ -148,15 +151,12 @@ class PostRepositoryTests: XCTestCase {
     func test_PostRepository_deletePostFailed_shouldReturnError() {
         // Given
         let repository = PostRepository(dataStore: dev.failPostDataStore)
-        let post = dev.generateRandomPost(id: 1)
+        let post = DevInstances.generateRandomPost(id: 1)
         
         // When
-        guard let result = try? repository.delete(post)
+        let result = repository.delete(post)
             .toBlocking()
-            .materialize() else {
-            XCTFail("failed" + getLocation())
-            return
-        }
+            .materialize()
         
         // Then
         switch result {

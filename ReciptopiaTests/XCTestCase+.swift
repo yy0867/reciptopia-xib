@@ -71,7 +71,7 @@ struct DevInstances {
     }
     
     // MARK: - Methods
-    func generateRandomString(length: Int = 10) -> String {
+    static func generateRandomString(length: Int = 10) -> String {
         let pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var generatedString = ""
         for _ in 0..<length {
@@ -80,7 +80,7 @@ struct DevInstances {
         return generatedString
     }
     
-    func generateRandomIngredients(_ length: Int = 10) -> [Ingredient] {
+    static func generateRandomIngredients(_ length: Int = 10) -> [Ingredient] {
         var ingredients = [Ingredient]()
         for _ in 1...length {
             ingredients.append(
@@ -90,7 +90,7 @@ struct DevInstances {
         return ingredients
     }
     
-    func generateRandomPost(id: Int) -> Post {
+    static func generateRandomPost(id: Int) -> Post {
         return Post(
             id: id,
             ownerId: id,

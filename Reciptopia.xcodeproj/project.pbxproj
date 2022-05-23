@@ -73,6 +73,8 @@
 		A5779776283AF914003C625E /* PostRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779775283AF914003C625E /* PostRepositoryTests.swift */; };
 		A5779778283AF91F003C625E /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779777283AF91F003C625E /* PostDTO.swift */; };
 		A577977B283AFD94003C625E /* PostDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977A283AFD94003C625E /* PostDTOTests.swift */; };
+		A577977E283B23E8003C625E /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977D283B23E8003C625E /* PostRepositoryProtocol.swift */; };
+		A5779780283B2457003C625E /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977F283B2457003C625E /* PostRepository.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* RootViewController.swift */; };
 		A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB42822C33C00F93329 /* Assets.xcassets */; };
@@ -265,6 +267,8 @@
 		A5779775283AF914003C625E /* PostRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRepositoryTests.swift; sourceTree = "<group>"; };
 		A5779777283AF91F003C625E /* PostDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
 		A577977A283AFD94003C625E /* PostDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTOTests.swift; sourceTree = "<group>"; };
+		A577977D283B23E8003C625E /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A577977F283B2457003C625E /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAF2822C33B00F93329 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -791,6 +795,15 @@
 			path = EndpointTests;
 			sourceTree = "<group>";
 		};
+		A577977C283B23C7003C625E /* Post */ = {
+			isa = PBXGroup;
+			children = (
+				A577977D283B23E8003C625E /* PostRepositoryProtocol.swift */,
+				A577977F283B2457003C625E /* PostRepository.swift */,
+			);
+			path = Post;
+			sourceTree = "<group>";
+		};
 		A57A2E0A283A54460034DB36 /* Post */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1139,7 @@
 			children = (
 				A54816E2282CFBD1006001FC /* Favorite */,
 				A54816E1282CFBCC006001FC /* SearchHistory */,
+				A577977C283B23C7003C625E /* Post */,
 			);
 			path = SearchIngredient;
 			sourceTree = "<group>";
@@ -1440,6 +1454,7 @@
 				A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */,
 				A5EC30DD282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift in Sources */,
 				A554138B2835FE7F008E51FE /* UITableView+.swift in Sources */,
+				A5779780283B2457003C625E /* PostRepository.swift in Sources */,
 				A5779774283AF90B003C625E /* PostDataStoreProtocol.swift in Sources */,
 				A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */,
 				A5779778283AF91F003C625E /* PostDTO.swift in Sources */,
@@ -1466,6 +1481,7 @@
 				A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */,
 				A5DC01D92828CA9E00CC063A /* SignInUseCase.swift in Sources */,
 				A5EC30E5282CD78600C551D7 /* SearchHistoryRepositoryProtocol.swift in Sources */,
+				A577977E283B23E8003C625E /* PostRepositoryProtocol.swift in Sources */,
 				A5904C89283095A8009F8593 /* FavoriteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

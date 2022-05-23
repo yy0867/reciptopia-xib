@@ -21,7 +21,7 @@ extension DevInstances {
         init(isSucceedCase: Bool = true) {
             self.isSucceedCase = isSucceedCase
             for i in 1...Int.random(in: 2...20) {
-                fakePosts.append(DevInstances.shared.generateRandomPost(id: i))
+                fakePosts.append(DevInstances.generateRandomPost(id: i))
             }
         }
         
