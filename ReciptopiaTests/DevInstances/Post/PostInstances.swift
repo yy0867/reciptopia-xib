@@ -15,51 +15,69 @@ extension DevInstances {
         
         // MARK: - Properties
         var fakePosts = [Post]()
+        let isSucceedCase: Bool
         
         // MARK: - Methods
-        init() {
+        init(isSucceedCase: Bool = true) {
+            self.isSucceedCase = isSucceedCase
             for i in 1...Int.random(in: 2...20) {
                 fakePosts.append(generateRandomPost(id: i))
             }
         }
         
         func fetch(_ dto: PostDTO.Search) -> Observable<[Post]> {
-            return Observable.create { [weak self] observer in
-                guard let self = self else {
-                    observer.onError(ReciptopiaError.unknown)
+            if !isSucceedCase {
+                return Observable.error(ReciptopiaError.unknown)
+            } else {
+                return Observable.create { [weak self] observer in
+                    guard let self = self else {
+                        observer.onError(ReciptopiaError.unknown)
+                        return Disposables.create()
+                    }
+                    observer.onNext(self.fakePosts)
+                    observer.onCompleted()
+                    
                     return Disposables.create()
                 }
-                observer.onNext(self.fakePosts)
-                observer.onCompleted()
-                
-                return Disposables.create()
             }
         }
         
         func save(_ post: Post) -> Observable<Post> {
-            return Observable.create { observer in
-                observer.onNext(post)
-                observer.onCompleted()
-                
-                return Disposables.create()
+            if !isSucceedCase {
+                return Observable.error(ReciptopiaError.unknown)
+            } else {
+                return Observable.create { observer in
+                    observer.onNext(post)
+                    observer.onCompleted()
+                    
+                    return Disposables.create()
+                }
             }
         }
         
         func update(_ post: Post) -> Observable<Post> {
-            return Observable.create { observer in
-                observer.onNext(post)
-                observer.onCompleted()
-                
-                return Disposables.create()
+            if !isSucceedCase {
+                return Observable.error(ReciptopiaError.unknown)
+            } else {
+                return Observable.create { observer in
+                    observer.onNext(post)
+                    observer.onCompleted()
+                    
+                    return Disposables.create()
+                }
             }
         }
         
         func delete(_ post: Post) -> Observable<Void> {
-            return Observable.create { observer in
-                observer.onNext(())
-                observer.onCompleted()
-                
-                return Disposables.create()
+            if !isSucceedCase {
+                return Observable.error(ReciptopiaError.unknown)
+            } else {
+                return Observable.create { observer in
+                    observer.onNext(())
+                    observer.onCompleted()
+                    
+                    return Disposables.create()
+                }
             }
         }
         

@@ -58,6 +58,9 @@ struct DevInstances {
     var searchHistoryDataStoreRelay: BehaviorRelay<SearchHistoryDataStoreProtocol>!
     var favoriteDataStoreRelay: BehaviorRelay<FavoriteDataStoreProtocol>!
     
+    let succeedPostDataStore = FakePostDataStore(isSucceedCase: true)
+    let failPostDataStore = FakePostDataStore(isSucceedCase: false)
+    
     // MARK: - Init
     init() {
         searchHistoryDataStoreRelay = BehaviorRelay(value: searchHistoryDataStore)
