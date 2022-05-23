@@ -24,6 +24,7 @@ struct Post {
         title: String,
         content: String,
         pictureUrls: [String],
+        views: Int = 0,
         isFavorite: Bool = false
     ) {
         self.id = id
@@ -31,7 +32,7 @@ struct Post {
         self.title = title
         self.content = content
         self.pictureUrls = pictureUrls
-        self.views = 0
+        self.views = views
         self.likeTags = 0
         self.comments = 0
         self.isFavorite = isFavorite
