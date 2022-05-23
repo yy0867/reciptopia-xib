@@ -62,7 +62,10 @@ class CheckIngredientViewModelTests: XCTestCase {
     
     func test_CheckIngredientViewModel_addIngredient_shouldAppendIngredientUnderMaxCount() {
         // Given
-        let randomIngredientNames = [String](repeating: generateRandomString(), count: Int.random(in: 1...100))
+        let randomIngredientNames = [String](
+            repeating: dev.generateRandomString(),
+            count: Int.random(in: 1...100)
+        )
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: randomIngredientNames))
         
         // When

@@ -59,8 +59,8 @@ class FavoriteViewModelTests: XCTestCase {
         let post = Post(
             id: Int.random(in: 1...100),
             ownerId: 1,
-            title: generateRandomString(),
-            content: generateRandomString(length: 100),
+            title: dev.generateRandomString(),
+            content: dev.generateRandomString(length: 100),
             pictureUrls: [
                 "https://www.example.com",
                 "https://www.example.com",
@@ -121,7 +121,7 @@ class FavoriteViewModelTests: XCTestCase {
         var favorites = [Favorite]()
         for i in 1...Int.random(in: 10...100) {
             favorites.append(
-                Favorite(id: i, postId: i, title: generateRandomString())
+                Favorite(id: i, postId: i, title: dev.generateRandomString())
             )
         }
         return favorites

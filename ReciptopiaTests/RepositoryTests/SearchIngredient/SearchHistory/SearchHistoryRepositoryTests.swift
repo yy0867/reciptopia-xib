@@ -169,7 +169,7 @@ class SearchHistoryRepositoryTests: XCTestCase {
         for i in 1...Int.random(in: 2...20) {
             ingredients.append(Ingredient(
                 id: i,
-                name: generateRandomString(),
+                name: dev.generateRandomString(),
                 detail: nil,
                 isMainIngredient: false
             ))

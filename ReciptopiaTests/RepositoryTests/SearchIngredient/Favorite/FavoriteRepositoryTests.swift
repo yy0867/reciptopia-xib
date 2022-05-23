@@ -38,7 +38,7 @@ class FavoriteRepositoryTests: XCTestCase {
     
     func test_FavoriteRepository_saveSuccess_shouldReturnSavedFavorite() {
         // Given
-        let favorite = Favorite(id: 1, postId: 1, title: generateRandomString())
+        let favorite = Favorite(id: 1, postId: 1, title: dev.generateRandomString())
         
         // When
         guard let results = try? repository.save(favorite)
