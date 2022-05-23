@@ -62,9 +62,9 @@ class PostDTOTests: XCTestCase {
     
     private func generateRandomIngredients(_ length: Int = 10) -> [Ingredient] {
         var ingredients = [Ingredient]()
-        for i in 1...length {
+        for _ in 1...length {
             ingredients.append(
-                Ingredient(name: generateRandomString())
+                Ingredient(name: dev.generateRandomString())
             )
         }
         return ingredients

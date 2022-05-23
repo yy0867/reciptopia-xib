@@ -65,13 +65,14 @@
 		A5602572282E42F7000E904A /* FloatingActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5602571282E42F7000E904A /* FloatingActionButton.swift */; };
 		A562812C282570030062BFA6 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812B282570030062BFA6 /* UserSession.swift */; };
 		A562812E2825701A0062BFA6 /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A562812D282570190062BFA6 /* Account+Credential.swift */; };
-		A5779762283AF19B003C625E /* PostInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779761283AF19B003C625E /* PostInstances.swift */; };
-		A5779765283AF1E6003C625E /* PostDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779764283AF1E6003C625E /* PostDataStoreProtocol.swift */; };
-		A5779769283AF299003C625E /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779768283AF299003C625E /* PostDTO.swift */; };
 		A577976B283AF3A5003C625E /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577976A283AF3A5003C625E /* Sorting.swift */; };
 		A577976E283AF46A003C625E /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577976D283AF46A003C625E /* Paging.swift */; };
 		A5779770283AF4D7003C625E /* EndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577976F283AF4D7003C625E /* EndpointTests.swift */; };
-		A57A2E0C283A54560034DB36 /* PostRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57A2E0B283A54560034DB36 /* PostRepositoryTests.swift */; };
+		A5779772283AF901003C625E /* PostInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779771283AF901003C625E /* PostInstances.swift */; };
+		A5779774283AF90B003C625E /* PostDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779773283AF90B003C625E /* PostDataStoreProtocol.swift */; };
+		A5779776283AF914003C625E /* PostRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779775283AF914003C625E /* PostRepositoryTests.swift */; };
+		A5779778283AF91F003C625E /* PostDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779777283AF91F003C625E /* PostDTO.swift */; };
+		A577977B283AFD94003C625E /* PostDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977A283AFD94003C625E /* PostDTOTests.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* RootViewController.swift */; };
 		A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB42822C33C00F93329 /* Assets.xcassets */; };
@@ -256,13 +257,14 @@
 		A5602571282E42F7000E904A /* FloatingActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingActionButton.swift; sourceTree = "<group>"; };
 		A562812B282570030062BFA6 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		A562812D282570190062BFA6 /* Account+Credential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
-		A5779761283AF19B003C625E /* PostInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInstances.swift; sourceTree = "<group>"; };
-		A5779764283AF1E6003C625E /* PostDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataStoreProtocol.swift; sourceTree = "<group>"; };
-		A5779768283AF299003C625E /* PostDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
 		A577976A283AF3A5003C625E /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
 		A577976D283AF46A003C625E /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		A577976F283AF4D7003C625E /* EndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointTests.swift; sourceTree = "<group>"; };
-		A57A2E0B283A54560034DB36 /* PostRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryTests.swift; sourceTree = "<group>"; };
+		A5779771283AF901003C625E /* PostInstances.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostInstances.swift; sourceTree = "<group>"; };
+		A5779773283AF90B003C625E /* PostDataStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDataStoreProtocol.swift; sourceTree = "<group>"; };
+		A5779775283AF914003C625E /* PostRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRepositoryTests.swift; sourceTree = "<group>"; };
+		A5779777283AF91F003C625E /* PostDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDTO.swift; sourceTree = "<group>"; };
+		A577977A283AFD94003C625E /* PostDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTOTests.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAF2822C33B00F93329 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -735,7 +737,7 @@
 		A5779760283AF189003C625E /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				A5779761283AF19B003C625E /* PostInstances.swift */,
+				A5779771283AF901003C625E /* PostInstances.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -743,7 +745,7 @@
 		A5779763283AF1D7003C625E /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				A5779764283AF1E6003C625E /* PostDataStoreProtocol.swift */,
+				A5779773283AF90B003C625E /* PostDataStoreProtocol.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -766,7 +768,7 @@
 		A5779767283AF292003C625E /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				A5779768283AF299003C625E /* PostDTO.swift */,
+				A5779777283AF91F003C625E /* PostDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -780,10 +782,19 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
+		A5779779283AFD79003C625E /* EndpointTests */ = {
+			isa = PBXGroup;
+			children = (
+				A577976F283AF4D7003C625E /* EndpointTests.swift */,
+				A577977A283AFD94003C625E /* PostDTOTests.swift */,
+			);
+			path = EndpointTests;
+			sourceTree = "<group>";
+		};
 		A57A2E0A283A54460034DB36 /* Post */ = {
 			isa = PBXGroup;
 			children = (
-				A57A2E0B283A54560034DB36 /* PostRepositoryTests.swift */,
+				A5779775283AF914003C625E /* PostRepositoryTests.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -833,6 +844,7 @@
 				A5818B4B2825179000EB11AB /* XCTestCase+.swift */,
 				A5061FD92829502C000EBF21 /* RxTest+.swift */,
 				A5818B492825177A00EB11AB /* DevInstances */,
+				A5779779283AFD79003C625E /* EndpointTests */,
 				A5CC1AA2282BA98500512D8B /* ServiceTests */,
 				A5EA3411282923FC00944FC0 /* ViewModelTests */,
 				A5818B372825141800EB11AB /* UseCaseTests */,
@@ -984,7 +996,6 @@
 			children = (
 				A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */,
 				A5EC30B9282CA84600C551D7 /* MyPageViewControllerProviderTests.swift */,
-				A577976F283AF4D7003C625E /* EndpointTests.swift */,
 			);
 			path = ServiceTests;
 			sourceTree = "<group>";
@@ -1401,7 +1412,6 @@
 				A544C125282A2F0B00EAD7F6 /* ImageCell.swift in Sources */,
 				A502B1C4282C9FED00CC3A0E /* NotSignedInMyPageViewController.swift in Sources */,
 				A527A2752828EC2D00212FD8 /* PictureIngredientViewController.swift in Sources */,
-				A5779769283AF299003C625E /* PostDTO.swift in Sources */,
 				A5EC30E7282CD88600C551D7 /* SearchHistoryRepository.swift in Sources */,
 				A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */,
 				A583988428262A6200C5E3BD /* FilebasedTokenDataStore.swift in Sources */,
@@ -1416,7 +1426,6 @@
 				A5ADC75828377515001FD935 /* FavoriteCell.swift in Sources */,
 				A5CD36E22824EB3F00A96B3E /* AnalyzePictureUseCaseProtocol.swift in Sources */,
 				A54816E6282CFC52006001FC /* FavoriteRepository.swift in Sources */,
-				A5779765283AF1E6003C625E /* PostDataStoreProtocol.swift in Sources */,
 				A54816E0282CF695006001FC /* Favorite.swift in Sources */,
 				A5061FDF28295705000EBF21 /* BehaviorRelay+.swift in Sources */,
 				A5EC30D1282CC4F000C551D7 /* SignInViewModel.swift in Sources */,
@@ -1431,7 +1440,9 @@
 				A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */,
 				A5EC30DD282CCC7500C551D7 /* SearchHistoryDataStoreProtocol.swift in Sources */,
 				A554138B2835FE7F008E51FE /* UITableView+.swift in Sources */,
+				A5779774283AF90B003C625E /* PostDataStoreProtocol.swift in Sources */,
 				A54816EC282CFDE4006001FC /* RealmFavoriteDataStore.swift in Sources */,
+				A5779778283AF91F003C625E /* PostDTO.swift in Sources */,
 				A55413862835FD22008E51FE /* SearchHistoryCell.swift in Sources */,
 				A5EA3410282923EE00944FC0 /* PictureIngredientViewModel.swift in Sources */,
 				A544C11E282A2A8A00EAD7F6 /* ManagePictureViewController.swift in Sources */,
@@ -1467,16 +1478,16 @@
 				A5DC01E32828CABF00CC063A /* SignedInUseCasesTests.swift in Sources */,
 				A5779770283AF4D7003C625E /* EndpointTests.swift in Sources */,
 				A5DC01E42828CABF00CC063A /* SignUpUseCasesTests.swift in Sources */,
+				A5779772283AF901003C625E /* PostInstances.swift in Sources */,
 				A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */,
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A5EC30DA282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift in Sources */,
 				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
 				A5EC30E2282CD04800C551D7 /* SearchIngredientInstances.swift in Sources */,
-				A5779762283AF19B003C625E /* PostInstances.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,
-				A57A2E0C283A54560034DB36 /* PostRepositoryTests.swift in Sources */,
 				A5BF7154282EA2CE00014331 /* SearchHistoryViewModelTests.swift in Sources */,
 				A5818B3C2825143600EB11AB /* PictureIngredientRepositoryTests.swift in Sources */,
+				A577977B283AFD94003C625E /* PostDTOTests.swift in Sources */,
 				A5818B48282516B600EB11AB /* PictureIngredientUseCaseTests.swift in Sources */,
 				A5EC30BA282CA84600C551D7 /* MyPageViewControllerProviderTests.swift in Sources */,
 				A59DF3732837DA700058980E /* SearchIngredientViewModelTests.swift in Sources */,
@@ -1484,6 +1495,7 @@
 				A59E2114282A73190081A851 /* CheckIngredientViewModelTests.swift in Sources */,
 				A5061FDA2829502C000EBF21 /* RxTest+.swift in Sources */,
 				A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */,
+				A5779776283AF914003C625E /* PostRepositoryTests.swift in Sources */,
 				A5818B4C2825179000EB11AB /* XCTestCase+.swift in Sources */,
 				A5904C852830916E009F8593 /* FavoriteViewModelTests.swift in Sources */,
 			);
