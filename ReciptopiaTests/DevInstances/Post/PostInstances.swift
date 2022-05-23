@@ -21,7 +21,7 @@ extension DevInstances {
         init(isSucceedCase: Bool = true) {
             self.isSucceedCase = isSucceedCase
             for i in 1...Int.random(in: 2...20) {
-                fakePosts.append(generateRandomPost(id: i))
+                fakePosts.append(DevInstances.shared.generateRandomPost(id: i))
             }
         }
         
@@ -79,17 +79,6 @@ extension DevInstances {
                     return Disposables.create()
                 }
             }
-        }
-        
-        private func generateRandomPost(id: Int) -> Post {
-            return Post(
-                id: id,
-                ownerId: id,
-                title: DevInstances.shared.generateRandomString(),
-                content: DevInstances.shared.generateRandomString(length: 100),
-                pictureUrls: [String](repeating: "https://www.example.com", count: 10),
-                views: Int.random(in: 1...10000)
-            )
         }
     }
 }

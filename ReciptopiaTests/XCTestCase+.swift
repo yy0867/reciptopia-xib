@@ -89,4 +89,15 @@ struct DevInstances {
         }
         return ingredients
     }
+    
+    func generateRandomPost(id: Int) -> Post {
+        return Post(
+            id: id,
+            ownerId: id,
+            title: generateRandomString(),
+            content: generateRandomString(length: 100),
+            pictureUrls: [String](repeating: "https://www.example.com", count: 10),
+            views: Int.random(in: 1...10000)
+        )
+    }
 }
