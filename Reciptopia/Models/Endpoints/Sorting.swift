@@ -31,7 +31,7 @@ struct Sorting {
     
     func asQuery() -> [URLQueryItem] {
         return [
-            URLQueryItem(name: property.rawValue, value: order.rawValue),
+            URLQueryItem(name: "sort", value: "\(property.rawValue),\(order.rawValue)")
         ]
     }
 }

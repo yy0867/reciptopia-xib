@@ -44,8 +44,8 @@ class EndpointTests: XCTestCase {
                 
                 // Then
                 XCTAssertNotNil(query)
-                XCTAssertEqual(query?.name, property.rawValue)
-                XCTAssertEqual(query?.value, order.rawValue)
+                XCTAssertEqual("sort", query?.name)
+                XCTAssertEqual("\(property.rawValue),\(order.rawValue)", query?.value)
             }
         }
     }

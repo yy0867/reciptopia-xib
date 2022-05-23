@@ -19,15 +19,6 @@ extension XCTestCase {
     func getLocation(_ file: String = #file, _ function: String = #function) -> String {
         return " at \(file) - \(function)"
     }
-    
-    func generateRandomString(length: Int = 10) -> String {
-        let pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        var generatedString = ""
-        for _ in 0..<length {
-            generatedString.append(pool.randomElement()!)
-        }
-        return generatedString
-    }
 }
 
 struct DevInstances {
@@ -67,6 +58,9 @@ struct DevInstances {
     var searchHistoryDataStoreRelay: BehaviorRelay<SearchHistoryDataStoreProtocol>!
     var favoriteDataStoreRelay: BehaviorRelay<FavoriteDataStoreProtocol>!
     
+    let succeedPostDataStore = FakePostDataStore(isSucceedCase: true)
+    let failPostDataStore = FakePostDataStore(isSucceedCase: false)
+    
     // MARK: - Init
     init() {
         searchHistoryDataStoreRelay = BehaviorRelay(value: searchHistoryDataStore)
@@ -74,5 +68,36 @@ struct DevInstances {
         
         self.searchHistoryRepository = SearchHistoryRepository(dataStore: searchHistoryDataStoreRelay)
         self.favoriteRepository = FavoriteRepository(dataStore: favoriteDataStoreRelay)
+    }
+    
+    // MARK: - Methods
+    static func generateRandomString(length: Int = 10) -> String {
+        let pool = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        var generatedString = ""
+        for _ in 0..<length {
+            generatedString.append(pool.randomElement()!)
+        }
+        return generatedString
+    }
+    
+    static func generateRandomIngredients(_ length: Int = 10) -> [Ingredient] {
+        var ingredients = [Ingredient]()
+        for _ in 1...length {
+            ingredients.append(
+                Ingredient(name: generateRandomString())
+            )
+        }
+        return ingredients
+    }
+    
+    static func generateRandomPost(id: Int) -> Post {
+        return Post(
+            id: id,
+            ownerId: id,
+            title: generateRandomString(),
+            content: generateRandomString(length: 100),
+            pictureUrls: [String](repeating: "https://www.example.com", count: 10),
+            views: Int.random(in: 1...10000)
+        )
     }
 }

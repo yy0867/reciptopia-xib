@@ -35,7 +35,7 @@ class SearchIngredientViewModelTests: XCTestCase {
         // Given
         var randomStrings = [String]()
         for _ in 1...Int.random(in: 2...10) {
-            randomStrings.append(generateRandomString())
+            randomStrings.append(DevInstances.generateRandomString())
         }
         
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: randomStrings))
@@ -60,7 +60,7 @@ class SearchIngredientViewModelTests: XCTestCase {
         // Given
         var randomStrings = [String]()
         for _ in 11...Int.random(in: 20...100) {
-            randomStrings.append(generateRandomString())
+            randomStrings.append(DevInstances.generateRandomString())
         }
         
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: randomStrings))
@@ -201,7 +201,7 @@ class SearchIngredientViewModelTests: XCTestCase {
         var ingredients = [Ingredient]()
         for _ in minLength...(minLength + range - 1) {
             ingredients.append(
-                Ingredient(name: generateRandomString(), isMainIngredient: false)
+                Ingredient(name: DevInstances.generateRandomString(), isMainIngredient: false)
             )
         }
         return ingredients
