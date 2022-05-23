@@ -12,7 +12,7 @@ class PostDTOTests: XCTestCase {
 
     func test_PostDTOSearch_asQuery_shouldReturnExpectedQuery() {
         // Given
-        let ingredients = generateRandomIngredients()
+        let ingredients = dev.generateRandomIngredients()
         let mainIngredients = ingredients.filter { $0.isMainIngredient }
         let subIngredients = ingredients.filter { !$0.isMainIngredient }
         
@@ -58,15 +58,5 @@ class PostDTOTests: XCTestCase {
                 value: "\(expectedSortingProperty.rawValue),\(expectedSortingOrder.rawValue)"
             )
         ))
-    }
-    
-    private func generateRandomIngredients(_ length: Int = 10) -> [Ingredient] {
-        var ingredients = [Ingredient]()
-        for _ in 1...length {
-            ingredients.append(
-                Ingredient(name: dev.generateRandomString())
-            )
-        }
-        return ingredients
     }
 }

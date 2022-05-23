@@ -79,4 +79,14 @@ struct DevInstances {
         }
         return generatedString
     }
+    
+    func generateRandomIngredients(_ length: Int = 10) -> [Ingredient] {
+        var ingredients = [Ingredient]()
+        for _ in 1...length {
+            ingredients.append(
+                Ingredient(name: generateRandomString())
+            )
+        }
+        return ingredients
+    }
 }
