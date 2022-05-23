@@ -10,7 +10,7 @@ import Foundation
 struct Paging {
     
     // MARK: - Properties
-    let page: Int
+    var page: Int
     let size: Int
     
     // MARK: - Methods
@@ -24,5 +24,9 @@ struct Paging {
             URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "size", value: String(size)),
         ]
+    }
+    
+    mutating func nextPage() {
+        self.page += 1
     }
 }
