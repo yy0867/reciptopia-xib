@@ -16,13 +16,21 @@ open class LoadableImageCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     
+    open override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+    }
+    
     public func loadImage(at url: URL) {
         defer { indicator.stopAnimating() }
         
         indicator.startAnimating()
-        guard let imageData = try? Data(contentsOf: url),
-              let image = UIImage(data: imageData) else { return }
-        
-        imageView.image = image
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+            self?.imageView.image = UIImage(systemName: "photo")
+        }
+//        guard let imageData = try? Data(contentsOf: url),
+//              let image = UIImage(data: imageData) else { return }
+//
+//        imageView.image = image
     }
 }
