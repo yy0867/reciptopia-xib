@@ -42,12 +42,13 @@ final class PictureIngredientViewModel {
     
     func analyze() {
         self.analyzeState.accept(.analyzing)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.subscription = self.useCase.execute(self.pictures.value)
-                .subscribe(onNext: self.analyzed, onError: self.errorDetected, onDisposed: { [weak self] in
-                    self?.subscription?.dispose()
-                })
-        }
+        
+        subscription = useCase.execute(pictures.value)
+            .subscribe(
+                onNext: analyzed,
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
     }
     
     // MARK: - Private
@@ -57,5 +58,9 @@ final class PictureIngredientViewModel {
     
     private func errorDetected(_ error: Error) {
         analyzeState.accept(.errorDetected)
+    }
+    
+    private func disposeSubscription() {
+        self.subscription?.dispose()
     }
 }

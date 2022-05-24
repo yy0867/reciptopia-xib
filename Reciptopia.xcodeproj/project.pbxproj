@@ -98,6 +98,9 @@
 		A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988F2826302400C5E3BD /* ReciptopiaError.swift */; };
 		A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */; };
 		A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5839893282631A700C5E3BD /* UserSessionInstances.swift */; };
+		A58EEB9C283C990400DAA4FA /* Analyze+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EEB9B283C990400DAA4FA /* Analyze+Result.swift */; };
+		A58EEBA2283CB98A00DAA4FA /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A58EEBA1283CB98A00DAA4FA /* RxAlamofire */; };
+		A58EEBA5283CBE8800DAA4FA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A58EEBA4283CBE8800DAA4FA /* Alamofire */; };
 		A5904C852830916E009F8593 /* FavoriteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C842830916E009F8593 /* FavoriteViewModelTests.swift */; };
 		A5904C87283093AB009F8593 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C86283093AB009F8593 /* Post.swift */; };
 		A5904C89283095A8009F8593 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C88283095A8009F8593 /* FavoriteViewModel.swift */; };
@@ -292,6 +295,7 @@
 		A583988F2826302400C5E3BD /* ReciptopiaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciptopiaError.swift; sourceTree = "<group>"; };
 		A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryTests.swift; sourceTree = "<group>"; };
 		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
+		A58EEB9B283C990400DAA4FA /* Analyze+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analyze+Result.swift"; sourceTree = "<group>"; };
 		A5904C842830916E009F8593 /* FavoriteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTests.swift; sourceTree = "<group>"; };
 		A5904C86283093AB009F8593 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A5904C88283095A8009F8593 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -367,10 +371,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5EC30D7282CCB9B00C551D7 /* RealmSwift in Frameworks */,
+				A58EEBA5283CBE8800DAA4FA /* Alamofire in Frameworks */,
 				A527A2AA2829077100212FD8 /* PhotoKit.framework in Frameworks */,
 				A5CD36DE2824EA3700A96B3E /* RxSwift in Frameworks */,
 				A5CD36DC2824EA3700A96B3E /* RxRelay in Frameworks */,
 				A5CD36DA2824EA3700A96B3E /* RxCocoa in Frameworks */,
+				A58EEBA2283CB98A00DAA4FA /* RxAlamofire in Frameworks */,
 				A5EC30D5282CCB9B00C551D7 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -770,6 +776,7 @@
 				A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */,
 				A54816DF282CF695006001FC /* Favorite.swift */,
 				A5904C86283093AB009F8593 /* Post.swift */,
+				A58EEB9B283C990400DAA4FA /* Analyze+Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1262,6 +1269,8 @@
 				A5CD36DD2824EA3700A96B3E /* RxSwift */,
 				A5EC30D4282CCB9B00C551D7 /* Realm */,
 				A5EC30D6282CCB9B00C551D7 /* RealmSwift */,
+				A58EEBA1283CB98A00DAA4FA /* RxAlamofire */,
+				A58EEBA4283CBE8800DAA4FA /* Alamofire */,
 			);
 			productName = Reciptopia;
 			productReference = A57B9AA82822C33B00F93329 /* Reciptopia.app */;
@@ -1333,6 +1342,8 @@
 			packageReferences = (
 				A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A5EC30D3282CCB9B00C551D7 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A58EEBA0283CB98A00DAA4FA /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				A58EEBA3283CBE8800DAA4FA /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = A57B9AA92822C33B00F93329 /* Products */;
 			projectDirPath = "";
@@ -1435,6 +1446,7 @@
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
 				A5EC30BC282CAADD00C551D7 /* MyPageViewControllerProvider.swift in Sources */,
 				A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */,
+				A58EEB9C283C990400DAA4FA /* Analyze+Result.swift in Sources */,
 				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A528C243282B3E790017F9A0 /* AddIngredientTextField.swift in Sources */,
 				A5552BD6282D038900D97D5A /* SearchIngredientViewController.swift in Sources */,
@@ -1820,6 +1832,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = App/LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1848,6 +1861,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = App/LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1973,6 +1987,22 @@
 				minimumVersion = 6.0.0;
 			};
 		};
+		A58EEBA0283CB98A00DAA4FA /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+		A58EEBA3283CBE8800DAA4FA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		A5EC30D3282CCB9B00C551D7 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -2028,6 +2058,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A5078DED28249DC000CBC26B /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxTest;
+		};
+		A58EEBA1283CB98A00DAA4FA /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A58EEBA0283CB98A00DAA4FA /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		A58EEBA4283CBE8800DAA4FA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A58EEBA3283CBE8800DAA4FA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		A5CD36D92824EA3700A96B3E /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
