@@ -11,6 +11,7 @@ enum ReciptopiaError: LocalizedError {
     case unknown
     case notFound
     case signInFail
+    case invalidURL(urlString: String)
     
     var errorDescription: String? {
         switch self {
@@ -20,6 +21,8 @@ enum ReciptopiaError: LocalizedError {
                 return "Item not found."
             case .signInFail:
                 return "Fail to sign in."
+            case .invalidURL(let urlString):
+                return "\(urlString) is invalid url."
         }
     }
 }
