@@ -17,6 +17,8 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         case favorite = 1
     }
     
+    typealias PostSearchViewControllerFactory = ([Ingredient]) -> PostSearchViewController
+    
     // MARK: - Outlets
     @IBOutlet weak var ingredientSearchBar: UISearchBar!
     @IBOutlet weak var ingredientCollectionView: UICollectionView!
@@ -29,6 +31,7 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     private var searchIngredientViewModel: SearchIngredientViewModel!
     private var searchHistoryViewModel: SearchHistoryViewModel!
     private var favoriteViewModel: FavoriteViewModel!
+    private var makePostSearchViewController: PostSearchViewControllerFactory!
     
     let selectedPage = BehaviorRelay<Page>(value: .searchHistory)
     private let disposeBag = DisposeBag()
@@ -37,12 +40,14 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
     static func create(
         searchIngredientViewModel: SearchIngredientViewModel,
         searchHistoryViewModel: SearchHistoryViewModel,
-        favoriteViewModel: FavoriteViewModel
+        favoriteViewModel: FavoriteViewModel,
+        postSearchViewControllerFactory: @escaping PostSearchViewControllerFactory
     ) -> Self {
         let vc = self.instantiateViewController()
         vc.searchIngredientViewModel = searchIngredientViewModel
         vc.searchHistoryViewModel = searchHistoryViewModel
         vc.favoriteViewModel = favoriteViewModel
+        vc.makePostSearchViewController = postSearchViewControllerFactory
         return vc
     }
     
@@ -75,6 +80,9 @@ class SearchIngredientViewController: UIViewController, StoryboardInstantiable {
         
         searchIngredientViewModel.ingredients.accept([])
         searchHistoryViewModel.save(ingredients)
+        
+        let vc = makePostSearchViewController(ingredients)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
