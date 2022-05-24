@@ -94,6 +94,7 @@ class PostSearchViewModelTests: XCTestCase {
     
     func test_PostSearchViewModel_removeFavoriteAtIndex_shouldUpdatePostsByMappingFavorites() {
         // Given
+        self.viewModel.posts.accept(dev.succeedPostDataStore.fakePosts)
         let randomIndex = Int.random(in: 0..<dev.succeedPostDataStore.fakePosts.count)
         let observable = scheduler.createColdObservable(makeRecordedEvents(by: [randomIndex]))
         

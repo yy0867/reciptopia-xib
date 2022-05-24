@@ -16,7 +16,7 @@ final class PictureIngredientDataStore: PictureIngredientDataStoreProtocol {
     // MARK: - Methods
     func analyze(_ pictures: [Data]) -> Observable<[String]> {
         guard let url = URL(string: url) else {
-            return .error(ReciptopiaError.invalidURL(urlString: url))
+            return .error(ReciptopiaError.invalidURL)
         }
         let analyze = Analyze(files: pictures)
         

@@ -42,20 +42,21 @@ final class PostSearchViewModel {
     }
     
     func addFavorite(at index: Int) {
-        let post = posts.value[index]
-        guard let postId = post.id else { return }
-        let favorite = Favorite(postId: postId, title: post.title)
-        
-        subscription = favoriteRepository.save(favorite)
+        subscription = favoriteRepository.save(makeFavorite(byPost: posts.value[index]))
             .subscribe(
+                onNext: { [weak self] _ in self?.updateIsFavorite(at: index, status: true) },
                 onError: errorDetected,
-                onCompleted: fetchFavoriteAndUpdatePosts,
                 onDisposed: disposeSubscription
             )
     }
     
     func removeFavorite(at index: Int) {
-        
+        subscription = favoriteRepository.delete(makeFavorite(byPost: posts.value[index]))
+            .subscribe(
+                onNext: { [weak self] _ in self?.updateIsFavorite(at: index, status: false) },
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
     }
     
     // MARK: - Private
@@ -73,28 +74,14 @@ final class PostSearchViewModel {
         posts.accept(receivedPosts)
     }
     
-    private func fetchFavoriteAndUpdatePosts() {
-        subscription = favoriteRepository.fetch()
-            .map(mapFavoriteAndPost)
-            .subscribe(
-                onNext: updatePost,
-                onError: errorDetected,
-                onDisposed: disposeSubscription
-            )
+    private func makeFavorite(byPost post: Post) -> Favorite {
+        return Favorite(postId: post.id ?? 0, title: post.title)
     }
     
-    private func mapFavoriteAndPost(_ favorites: [Favorite]) -> [Post] {
-        var dict = [Int: Bool]()
-        var mutablePosts = [Post]()
-        for favorite in favorites {
-            dict[favorite.postId] = true
-        }
-        for postId in dict.keys {
-            if let index = mutablePosts.firstIndex(where: { $0.id == postId }) {
-                mutablePosts[index].isFavorite = true
-            }
-        }
-        return mutablePosts
+    private func updateIsFavorite(at index: Int, status isFavorite: Bool) {
+        var mutablePosts = posts.value
+        mutablePosts[index].isFavorite = isFavorite
+        posts.accept(mutablePosts)
     }
     
     private func errorDetected(_ error: Error) {
