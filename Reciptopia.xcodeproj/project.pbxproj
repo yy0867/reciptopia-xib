@@ -75,6 +75,8 @@
 		A577977B283AFD94003C625E /* PostDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977A283AFD94003C625E /* PostDTOTests.swift */; };
 		A577977E283B23E8003C625E /* PostRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977D283B23E8003C625E /* PostRepositoryProtocol.swift */; };
 		A5779780283B2457003C625E /* PostRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A577977F283B2457003C625E /* PostRepository.swift */; };
+		A5779791283B2781003C625E /* PostSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779790283B2781003C625E /* PostSearchViewModel.swift */; };
+		A5779794283B27D6003C625E /* PostSearchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5779793283B27D6003C625E /* PostSearchViewModelTests.swift */; };
 		A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAB2822C33B00F93329 /* AppDelegate.swift */; };
 		A57B9AB02822C33B00F93329 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B9AAF2822C33B00F93329 /* RootViewController.swift */; };
 		A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57B9AB42822C33C00F93329 /* Assets.xcassets */; };
@@ -269,6 +271,8 @@
 		A577977A283AFD94003C625E /* PostDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDTOTests.swift; sourceTree = "<group>"; };
 		A577977D283B23E8003C625E /* PostRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A577977F283B2457003C625E /* PostRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRepository.swift; sourceTree = "<group>"; };
+		A5779790283B2781003C625E /* PostSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewModel.swift; sourceTree = "<group>"; };
+		A5779793283B27D6003C625E /* PostSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewModelTests.swift; sourceTree = "<group>"; };
 		A57B9AA82822C33B00F93329 /* Reciptopia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciptopia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A57B9AAB2822C33B00F93329 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A57B9AAF2822C33B00F93329 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -703,6 +707,7 @@
 				A5552BD7282D03A300D97D5A /* SearchIngredientViewModel.swift */,
 				A5BB94E2282E491B004FB57C /* SearchHistory */,
 				A5BB94E3282E4932004FB57C /* Favorite */,
+				A5779781283B272F003C625E /* PostSearch */,
 			);
 			path = SearchIngredient;
 			sourceTree = "<group>";
@@ -802,6 +807,22 @@
 				A577977F283B2457003C625E /* PostRepository.swift */,
 			);
 			path = Post;
+			sourceTree = "<group>";
+		};
+		A5779781283B272F003C625E /* PostSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A5779790283B2781003C625E /* PostSearchViewModel.swift */,
+			);
+			path = PostSearch;
+			sourceTree = "<group>";
+		};
+		A5779792283B27B2003C625E /* PostSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A5779793283B27D6003C625E /* PostSearchViewModelTests.swift */,
+			);
+			path = PostSearch;
 			sourceTree = "<group>";
 		};
 		A57A2E0A283A54460034DB36 /* Post */ = {
@@ -1088,6 +1109,7 @@
 				A50254E2282925F900827137 /* PictureIngredients */,
 				A59E2112282A73080081A851 /* CheckIngredients */,
 				A5BF7152282EA2B100014331 /* SearchHistory */,
+				A5779792283B27B2003C625E /* PostSearch */,
 			);
 			path = ViewModelTests;
 			sourceTree = "<group>";
@@ -1419,6 +1441,7 @@
 				A527A2832828F6A900212FD8 /* NetworkError.swift in Sources */,
 				A5EC30DF282CCC8D00C551D7 /* SearchHistory.swift in Sources */,
 				A544C12A282A39F400EAD7F6 /* UICollectionView+.swift in Sources */,
+				A5779791283B2781003C625E /* PostSearchViewModel.swift in Sources */,
 				A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */,
 				A5EC30EA282CDA5D00C551D7 /* RealmSearchHistoryDataStore.swift in Sources */,
 				A5EC30C9282CC06100C551D7 /* NotSignedInMyPageViewModel.swift in Sources */,
@@ -1498,6 +1521,7 @@
 				A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */,
 				A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */,
 				A5EC30DA282CCC3900C551D7 /* SearchHistoryRepositoryTests.swift in Sources */,
+				A5779794283B27D6003C625E /* PostSearchViewModelTests.swift in Sources */,
 				A50254E42829260700827137 /* PictureIngredientViewModelTests.swift in Sources */,
 				A5EC30E2282CD04800C551D7 /* SearchIngredientInstances.swift in Sources */,
 				A51BEE0128254DD800703E52 /* PictureIngredientInstances.swift in Sources */,

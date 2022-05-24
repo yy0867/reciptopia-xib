@@ -46,6 +46,8 @@ extension DevInstances {
             if !isSucceedCase {
                 return Observable.error(ReciptopiaError.unknown)
             } else {
+                fakePosts.append(post)
+                
                 return Observable.create { observer in
                     observer.onNext(post)
                     observer.onCompleted()
@@ -59,6 +61,11 @@ extension DevInstances {
             if !isSucceedCase {
                 return Observable.error(ReciptopiaError.unknown)
             } else {
+                guard let index = fakePosts.firstIndex(where: { $0.id == post.id }) else {
+                    return Observable.error(ReciptopiaError.notFound)
+                }
+                fakePosts[index] = post
+                
                 return Observable.create { observer in
                     observer.onNext(post)
                     observer.onCompleted()
@@ -72,6 +79,11 @@ extension DevInstances {
             if !isSucceedCase {
                 return Observable.error(ReciptopiaError.unknown)
             } else {
+                guard let index = fakePosts.firstIndex(where: { $0.id == post.id }) else {
+                    return Observable.error(ReciptopiaError.notFound)
+                }
+                fakePosts.remove(at: index)
+                
                 return Observable.create { observer in
                     observer.onNext(())
                     observer.onCompleted()
