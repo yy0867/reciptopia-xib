@@ -8,11 +8,13 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import RxAlamofire
+import Alamofire
 
 class Network {
     
     // MARK: - Properties
-    let shared = Network()
+    static let shared = Network()
     private init() {}
     
     // MARK: - Methods
@@ -51,42 +53,22 @@ class Network {
         return request(urlRequest)
     }
     
-    func postMultipart(_ url: URL, body: Encodable) -> Observable<Data> {
+    func postMultipart(_ url: URL, datas: [Data], parameters: [String: String]) -> Observable<Data> {
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "BODY"
-        configureMultipartHeader(of: &urlRequest)
-        urlRequest.httpBody = body.toData()
+        urlRequest.method = .post
+        urlRequest.addValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
         
-        return request(urlRequest)
+        return RxAlamofire.upload(
+            multipartFormData: configureMultipartFormData(with: datas, parameters: parameters),
+            urlRequest: urlRequest
+        ).flatMap { $0.rx.data() }
     }
     
     // MARK: PRIVATE
     private func request(_ urlRequest: URLRequest) -> Observable<Data> {
-        return Observable.create { observer in
-            let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-                guard let data = data else {
-                    observer.onError(NetworkError.nilData)
-                    return
-                }
-                if let error = error {
-                    observer.onError(error)
-                    return
-                }
-                if let response = response as? HTTPURLResponse,
-                   (200..<300).contains(response.statusCode) {
-                    observer.onError(NetworkError.badResponse(code: response.statusCode))
-                    return
-                }
-                observer.onNext(data)
-                observer.onCompleted()
-            }
-            task.resume()
-            
-            return Disposables.create {
-                task.cancel()
-            }
-        }
-        .observe(on: MainScheduler.instance)
+        return RxAlamofire.request(urlRequest)
+            .validate(statusCode: 200..<300)
+            .data()
     }
     
     private func configureJSONHeader(of urlRequest: inout URLRequest, token: String? = nil) {
@@ -96,13 +78,35 @@ class Network {
         }
     }
     
-    private func configureMultipartHeader(of urlRequest: inout URLRequest) {
-        urlRequest.addValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
+    private func configureMultipartFormData(
+        with datas: [Data],
+        parameters: [String: String]
+    ) -> ((MultipartFormData) -> Void) {
+        return { multipartFormData in
+            for (index, data) in datas.enumerated() {
+                multipartFormData.append(data, withName: "file\(index).jpeg")
+            }
+            for (key, value) in parameters {
+                multipartFormData.append(
+                    "\(value)".data(using: .utf8)!,
+                    withName: key,
+                    mimeType: "text/plain"
+                )
+            }
+        }
     }
 }
 
 fileprivate extension Encodable {
     func toData() -> Data? {
         return try? JSONEncoder().encode(self)
+    }
+}
+
+fileprivate extension NSMutableData {
+    func appendString(_ string: String) {
+        if let data = string.data(using: .utf8) {
+            self.append(data)
+        }
     }
 }

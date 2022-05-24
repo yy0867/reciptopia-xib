@@ -11,14 +11,35 @@ import RxSwift
 final class PictureIngredientDataStore: PictureIngredientDataStoreProtocol {
     
     // MARK: - Properties
+    let url = "http://ubinetlab.asuscomm.com:50001/multiple_predict"
     
     // MARK: - Methods
     func analyze(_ pictures: [Data]) -> Observable<[String]> {
-        return Observable.create { observer in
-            observer.onNext(["다진 마늘", "스팸", "김치"])
-            observer.onCompleted()
-            
-            return Disposables.create()
+        guard let url = URL(string: url) else {
+            return .error(ReciptopiaError.invalidURL(urlString: url))
         }
+        let analyze = Analyze(files: pictures)
+        
+        return Network.shared.postMultipart(url, datas: pictures, parameters: [
+            "appKey": analyze.appKey,
+            "version": analyze.version,
+        ]).flatMap(handleResponse)
+    }
+    
+    private func handleResponse(_ response: Data) -> Observable<[String]> {
+        guard let response = try? JSONDecoder().decode(AnalyzeResult.self, from: response) else {
+            return .error(ReciptopiaError.unknown)
+        }
+        
+        switch response.status {
+            case .success:
+                if let predicts = response.responseData.predicts {
+                    return .just(Array(predicts.values))
+                }
+            case .failure:
+                Log.print(response.responseData.message ?? "analyze fail.")
+        }
+        
+        return .error(ReciptopiaError.unknown)
     }
 }
