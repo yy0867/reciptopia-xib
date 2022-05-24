@@ -20,7 +20,7 @@ class Network {
     func get(_ url: URL) -> Observable<Data> {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-        configureHeader(of: &urlRequest)
+        configureJSONHeader(of: &urlRequest)
         
         return request(urlRequest)
     }
@@ -29,7 +29,7 @@ class Network {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.httpBody = body.toData()
-        configureHeader(of: &urlRequest, token: token)
+        configureJSONHeader(of: &urlRequest, token: token)
         
         return request(urlRequest)
     }
@@ -38,7 +38,7 @@ class Network {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "PATCH"
         urlRequest.httpBody = body.toData()
-        configureHeader(of: &urlRequest, token: token)
+        configureJSONHeader(of: &urlRequest, token: token)
         
         return request(urlRequest)
     }
@@ -46,7 +46,16 @@ class Network {
     func delete(_ url: URL, token: String? = nil) -> Observable<Data> {
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "DELETE"
-        configureHeader(of: &urlRequest, token: token)
+        configureJSONHeader(of: &urlRequest, token: token)
+        
+        return request(urlRequest)
+    }
+    
+    func postMultipart(_ url: URL, body: Encodable) -> Observable<Data> {
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "BODY"
+        configureMultipartHeader(of: &urlRequest)
+        urlRequest.httpBody = body.toData()
         
         return request(urlRequest)
     }
@@ -80,11 +89,15 @@ class Network {
         .observe(on: MainScheduler.instance)
     }
     
-    private func configureHeader(of urlRequest: inout URLRequest, token: String? = nil) {
+    private func configureJSONHeader(of urlRequest: inout URLRequest, token: String? = nil) {
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         if let token = token {
             urlRequest.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         }
+    }
+    
+    private func configureMultipartHeader(of urlRequest: inout URLRequest) {
+        urlRequest.addValue("multipart/form-data", forHTTPHeaderField: "Content-Type")
     }
 }
 
