@@ -14,6 +14,7 @@ final class PostSearchViewModel {
     // MARK: - Properties
     let posts = BehaviorRelay<[Post]>(value: [])
     
+    
     private let postRepository: PostRepositoryProtocol
     private let favoriteRepository: FavoriteRepositoryProtocol
     private var paging = Paging(page: 0)
@@ -41,10 +42,18 @@ final class PostSearchViewModel {
         fetch(with: paging)
     }
     
+    func toggleFavorite(at index: Int) {
+        if posts.value[index].isFavorite {
+            removeFavorite(at: index)
+        } else {
+            addFavorite(at: index)
+        }
+    }
+    
     func addFavorite(at index: Int) {
         subscription = favoriteRepository.save(makeFavorite(byPost: posts.value[index]))
             .subscribe(
-                onNext: { [weak self] _ in self?.updateIsFavorite(at: index, status: true) },
+                onNext: { [weak self] _ in self?.updateIsFavorite(true, at: index) },
                 onError: errorDetected,
                 onDisposed: disposeSubscription
             )
@@ -53,7 +62,7 @@ final class PostSearchViewModel {
     func removeFavorite(at index: Int) {
         subscription = favoriteRepository.delete(makeFavorite(byPost: posts.value[index]))
             .subscribe(
-                onNext: { [weak self] _ in self?.updateIsFavorite(at: index, status: false) },
+                onNext: { [weak self] _ in self?.updateIsFavorite(false, at: index) },
                 onError: errorDetected,
                 onDisposed: disposeSubscription
             )
@@ -78,7 +87,7 @@ final class PostSearchViewModel {
         return Favorite(postId: post.id ?? 0, title: post.title)
     }
     
-    private func updateIsFavorite(at index: Int, status isFavorite: Bool) {
+    private func updateIsFavorite(_ isFavorite: Bool, at index: Int) {
         var mutablePosts = posts.value
         mutablePosts[index].isFavorite = isFavorite
         posts.accept(mutablePosts)
