@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="189" height="212"/>
                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
-                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="f30-FS-sKG">
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="f30-FS-sKG">
                         <rect key="frame" x="0.0" y="0.0" width="189" height="212"/>
                         <color key="backgroundColor" name="IndicatorBackgroundColor"/>
                     </activityIndicatorView>
@@ -40,6 +40,10 @@
                 <constraint firstItem="f30-FS-sKG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="uUk-SE-FSy"/>
             </constraints>
             <size key="customSize" width="189" height="212"/>
+            <connections>
+                <outlet property="imageView" destination="3b3-Lq-UPH" id="oFK-GC-sWi"/>
+                <outlet property="indicator" destination="f30-FS-sKG" id="bfM-ZQ-Vcd"/>
+            </connections>
             <point key="canvasLocation" x="232.60869565217394" y="133.92857142857142"/>
         </collectionViewCell>
     </objects>

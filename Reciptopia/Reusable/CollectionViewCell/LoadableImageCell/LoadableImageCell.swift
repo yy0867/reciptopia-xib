@@ -7,10 +7,22 @@
 
 import UIKit
 
-class LoadableImageCell: UICollectionViewCell {
+open class LoadableImageCell: UICollectionViewCell {
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    @IBOutlet weak var imageView: UIImageView!
 
-    override func awakeFromNib() {
+    open override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    public func loadImage(at url: URL) {
+        defer { indicator.stopAnimating() }
+        
+        indicator.startAnimating()
+        guard let imageData = try? Data(contentsOf: url),
+              let image = UIImage(data: imageData) else { return }
+        
+        imageView.image = image
     }
 }
