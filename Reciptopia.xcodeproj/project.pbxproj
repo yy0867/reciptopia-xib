@@ -98,6 +98,7 @@
 		A58398902826302400C5E3BD /* ReciptopiaError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A583988F2826302400C5E3BD /* ReciptopiaError.swift */; };
 		A58398922826315D00C5E3BD /* UserSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */; };
 		A5839894282631A700C5E3BD /* UserSessionInstances.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5839893282631A700C5E3BD /* UserSessionInstances.swift */; };
+		A58EEB9C283C990400DAA4FA /* Analyze.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EEB9B283C990400DAA4FA /* Analyze.swift */; };
 		A5904C852830916E009F8593 /* FavoriteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C842830916E009F8593 /* FavoriteViewModelTests.swift */; };
 		A5904C87283093AB009F8593 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C86283093AB009F8593 /* Post.swift */; };
 		A5904C89283095A8009F8593 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C88283095A8009F8593 /* FavoriteViewModel.swift */; };
@@ -292,6 +293,7 @@
 		A583988F2826302400C5E3BD /* ReciptopiaError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciptopiaError.swift; sourceTree = "<group>"; };
 		A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryTests.swift; sourceTree = "<group>"; };
 		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
+		A58EEB9B283C990400DAA4FA /* Analyze.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Analyze.swift; sourceTree = "<group>"; };
 		A5904C842830916E009F8593 /* FavoriteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTests.swift; sourceTree = "<group>"; };
 		A5904C86283093AB009F8593 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A5904C88283095A8009F8593 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -770,6 +772,7 @@
 				A5EC30DE282CCC8D00C551D7 /* SearchHistory.swift */,
 				A54816DF282CF695006001FC /* Favorite.swift */,
 				A5904C86283093AB009F8593 /* Post.swift */,
+				A58EEB9B283C990400DAA4FA /* Analyze.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1435,6 +1438,7 @@
 				A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */,
 				A5EC30BC282CAADD00C551D7 /* MyPageViewControllerProvider.swift in Sources */,
 				A5CE6E4A282A9EE700C46BCC /* BorderImageButton.swift in Sources */,
+				A58EEB9C283C990400DAA4FA /* Analyze.swift in Sources */,
 				A557B7F8282A7EBB00ADFD96 /* CheckIngredientViewController.swift in Sources */,
 				A528C243282B3E790017F9A0 /* AddIngredientTextField.swift in Sources */,
 				A5552BD6282D038900D97D5A /* SearchIngredientViewController.swift in Sources */,
