@@ -38,6 +38,7 @@ final class PostDataStore: PostDataStoreProtocol {
         
         let post = Array(posts[(page * size)..<((page + 1) * size)])
         return .just(post)
+            .delay(.seconds(2), scheduler: MainScheduler.asyncInstance)
     }
     
     func save(_ post: Post) -> Observable<Post> {
