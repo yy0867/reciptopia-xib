@@ -18,6 +18,7 @@ class PostSearchViewController: UIViewController, StoryboardInstantiable {
     // MARK: - Properties
     private var viewModel: PostSearchViewModel!
     private let disposeBag = DisposeBag()
+    private let postRefreshControl = UIRefreshControl()
     
     // MARK: - Methods
     static func create(with viewModel: PostSearchViewModel) -> Self {
@@ -40,13 +41,7 @@ class PostSearchViewController: UIViewController, StoryboardInstantiable {
     }
     
     private func configureRefreshControl() {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
-        postTableView.refreshControl = refreshControl
-    }
-    
-    @objc func handleRefresh(_ sender: UIRefreshControl) {
-        viewModel.fetch()
+        postTableView.refreshControl = postRefreshControl
     }
     
     @IBAction func dismissView(_ sender: UIButton) {
@@ -57,11 +52,28 @@ class PostSearchViewController: UIViewController, StoryboardInstantiable {
 // MARK: - Bind ViewModel
 extension PostSearchViewController {
     func bindPostTableView() {
+        bindPostsToPostTableView()
+        bindPostRefreshingState()
+    }
+    
+    private func bindPostsToPostTableView() {
         viewModel.posts
             .bind(to: postTableView.rx.items(
                 cellIdentifier: PostCell.reuseIdentifier,
                 cellType: PostCell.self
             ))(bindPostCell)
+            .disposed(by: disposeBag)
+    }
+    
+    private func bindPostRefreshingState() {
+        postRefreshControl.rx.controlEvent(.valueChanged)
+            .bind(onNext: { [weak self] _ in
+                self?.viewModel.fetch()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.isRefreshingPost
+            .bind(to: postRefreshControl.rx.isRefreshing)
             .disposed(by: disposeBag)
     }
     
@@ -95,5 +107,14 @@ extension PostSearchViewController: UISearchBarDelegate, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 275
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        let currentOffset = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        
+        if maximumOffset < currentOffset {
+            viewModel.fetchNextPage()
+        }
     }
 }

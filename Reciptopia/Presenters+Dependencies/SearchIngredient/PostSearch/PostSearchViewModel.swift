@@ -13,7 +13,7 @@ final class PostSearchViewModel {
     
     // MARK: - Properties
     let posts = BehaviorRelay<[Post]>(value: [])
-    
+    let isRefreshingPost = PublishRelay<Bool>()
     
     private let postRepository: PostRepositoryProtocol
     private let favoriteRepository: FavoriteRepositoryProtocol
@@ -34,12 +34,27 @@ final class PostSearchViewModel {
     
     func fetch() {
         paging = Paging(page: 0)
-        fetch(with: paging)
+        isRefreshingPost.accept(true)
+        
+        subscription = postRepository
+            .fetch(ingredients, paging, Sorting(property: .id, order: .ascending))
+            .subscribe(
+                onNext: updatePost,
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
     }
     
     func fetchNextPage() {
         paging.nextPage()
-        fetch(with: paging)
+        
+        subscription = postRepository
+            .fetch(ingredients, paging, Sorting(property: .id, order: .ascending))
+            .subscribe(
+                onNext: appendPost,
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
     }
     
     func toggleFavorite(at index: Int) {
@@ -69,18 +84,12 @@ final class PostSearchViewModel {
     }
     
     // MARK: - Private
-    private func fetch(with paging: Paging) {
-        subscription = postRepository
-            .fetch(ingredients, paging, Sorting(property: .id, order: .ascending))
-            .subscribe(
-                onNext: updatePost,
-                onError: errorDetected,
-                onDisposed: disposeSubscription
-            )
-    }
-    
     private func updatePost(_ receivedPosts: [Post]) {
         posts.accept(receivedPosts)
+    }
+    
+    private func appendPost(_ receivedPosts: [Post]) {
+        posts.append(contentsOf: receivedPosts)
     }
     
     private func makeFavorite(byPost post: Post) -> Favorite {
@@ -98,6 +107,7 @@ final class PostSearchViewModel {
     }
     
     private func disposeSubscription() {
+        isRefreshingPost.accept(false)
         subscription?.dispose()
     }
 }
