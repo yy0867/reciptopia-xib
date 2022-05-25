@@ -101,6 +101,12 @@
 		A58EEB9C283C990400DAA4FA /* Analyze+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EEB9B283C990400DAA4FA /* Analyze+Result.swift */; };
 		A58EEBA2283CB98A00DAA4FA /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A58EEBA1283CB98A00DAA4FA /* RxAlamofire */; };
 		A58EEBA5283CBE8800DAA4FA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A58EEBA4283CBE8800DAA4FA /* Alamofire */; };
+		A58EEBA8283CC4E100DAA4FA /* PostSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58EEBA6283CC4E100DAA4FA /* PostSearchViewController.storyboard */; };
+		A58EEBA9283CC4E100DAA4FA /* PostSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EEBA7283CC4E100DAA4FA /* PostSearchViewController.swift */; };
+		A58EEBAD283CC53600DAA4FA /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EEBAB283CC53600DAA4FA /* PostCell.swift */; };
+		A58EEBAE283CC53600DAA4FA /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58EEBAC283CC53600DAA4FA /* PostCell.xib */; };
+		A58EEBB2283CCFF700DAA4FA /* LoadableImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58EEBB0283CCFF700DAA4FA /* LoadableImageCell.swift */; };
+		A58EEBB3283CCFF700DAA4FA /* LoadableImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A58EEBB1283CCFF700DAA4FA /* LoadableImageCell.xib */; };
 		A5904C852830916E009F8593 /* FavoriteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C842830916E009F8593 /* FavoriteViewModelTests.swift */; };
 		A5904C87283093AB009F8593 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C86283093AB009F8593 /* Post.swift */; };
 		A5904C89283095A8009F8593 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5904C88283095A8009F8593 /* FavoriteViewModel.swift */; };
@@ -129,6 +135,7 @@
 		A5CE6E50282AA26D00C46BCC /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */; };
 		A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */; };
 		A5DAE170282BAA2B00975F09 /* UserSessionDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */; };
+		A5DBA5A5283D18BF00044D68 /* PostDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DBA5A4283D18BF00044D68 /* PostDataStore.swift */; };
 		A5DC01D62828CA9E00CC063A /* SignUpUseCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */; };
 		A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */; };
 		A5DC01D82828CA9E00CC063A /* CheckEmailExistsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */; };
@@ -296,6 +303,12 @@
 		A58398912826315D00C5E3BD /* UserSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryTests.swift; sourceTree = "<group>"; };
 		A5839893282631A700C5E3BD /* UserSessionInstances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionInstances.swift; sourceTree = "<group>"; };
 		A58EEB9B283C990400DAA4FA /* Analyze+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Analyze+Result.swift"; sourceTree = "<group>"; };
+		A58EEBA6283CC4E100DAA4FA /* PostSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PostSearchViewController.storyboard; sourceTree = "<group>"; };
+		A58EEBA7283CC4E100DAA4FA /* PostSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostSearchViewController.swift; sourceTree = "<group>"; };
+		A58EEBAB283CC53600DAA4FA /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		A58EEBAC283CC53600DAA4FA /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		A58EEBB0283CCFF700DAA4FA /* LoadableImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadableImageCell.swift; sourceTree = "<group>"; };
+		A58EEBB1283CCFF700DAA4FA /* LoadableImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadableImageCell.xib; sourceTree = "<group>"; };
 		A5904C842830916E009F8593 /* FavoriteViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModelTests.swift; sourceTree = "<group>"; };
 		A5904C86283093AB009F8593 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A5904C88283095A8009F8593 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
@@ -314,6 +327,7 @@
 		A5CE6E4E282AA26D00C46BCC /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		A5DAE16F282BAA2B00975F09 /* UserSessionDelegateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegateTests.swift; sourceTree = "<group>"; };
+		A5DBA5A4283D18BF00044D68 /* PostDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDataStore.swift; sourceTree = "<group>"; };
 		A5DC01CB2828CA9E00CC063A /* SignUpUseCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCases.swift; sourceTree = "<group>"; };
 		A5DC01CC2828CA9E00CC063A /* SignUpUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpUseCase.swift; sourceTree = "<group>"; };
 		A5DC01CD2828CA9E00CC063A /* CheckEmailExistsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckEmailExistsUseCase.swift; sourceTree = "<group>"; };
@@ -619,6 +633,7 @@
 				A528C241282B3E620017F9A0 /* AddIngredient */,
 				A5CE6E53282ABC4900C46BCC /* UIViewController+.swift */,
 				A544C122282A2F0000EAD7F6 /* CollectionViewCell */,
+				A58EEBAA283CC51F00DAA4FA /* TableViewCell */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -628,6 +643,7 @@
 			children = (
 				A5CE6E4C282AA25000C46BCC /* IngredientCell */,
 				A5CE6E4B282AA21A00C46BCC /* ImageCell */,
+				A58EEBAF283CCFDC00DAA4FA /* LoadableImageCell */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -761,6 +777,7 @@
 			isa = PBXGroup;
 			children = (
 				A5779773283AF90B003C625E /* PostDataStoreProtocol.swift */,
+				A5DBA5A4283D18BF00044D68 /* PostDataStore.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -819,6 +836,8 @@
 		A5779781283B272F003C625E /* PostSearch */ = {
 			isa = PBXGroup;
 			children = (
+				A58EEBA6283CC4E100DAA4FA /* PostSearchViewController.storyboard */,
+				A58EEBA7283CC4E100DAA4FA /* PostSearchViewController.swift */,
 				A5779790283B2781003C625E /* PostSearchViewModel.swift */,
 			);
 			path = PostSearch;
@@ -957,6 +976,23 @@
 				A583988A28262EC800C5E3BD /* UserSessionRepository.swift */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A58EEBAA283CC51F00DAA4FA /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A5DCCDA3283D2E26004F4B3F /* PostCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		A58EEBAF283CCFDC00DAA4FA /* LoadableImageCell */ = {
+			isa = PBXGroup;
+			children = (
+				A58EEBB0283CCFF700DAA4FA /* LoadableImageCell.swift */,
+				A58EEBB1283CCFF700DAA4FA /* LoadableImageCell.xib */,
+			);
+			path = LoadableImageCell;
 			sourceTree = "<group>";
 		};
 		A5991CA428389B9100515962 /* SearchIngredient */ = {
@@ -1108,6 +1144,15 @@
 				A5DC01E22828CABF00CC063A /* SignInUseCasesTests.swift */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5DCCDA3283D2E26004F4B3F /* PostCell */ = {
+			isa = PBXGroup;
+			children = (
+				A58EEBAB283CC53600DAA4FA /* PostCell.swift */,
+				A58EEBAC283CC53600DAA4FA /* PostCell.xib */,
+			);
+			path = PostCell;
 			sourceTree = "<group>";
 		};
 		A5EA3411282923FC00944FC0 /* ViewModelTests */ = {
@@ -1379,10 +1424,13 @@
 				A527A2732828EC1C00212FD8 /* PictureIngredientViewController.storyboard in Resources */,
 				A502B1D5282CA3C700CC3A0E /* SignedInMyPageViewController.storyboard in Resources */,
 				A55413872835FD22008E51FE /* SearchHistoryCell.xib in Resources */,
+				A58EEBAE283CC53600DAA4FA /* PostCell.xib in Resources */,
 				A5552BD5282D038900D97D5A /* SearchIngredientViewController.storyboard in Resources */,
 				A544C11C282A2A7700EAD7F6 /* ManagePictureViewController.storyboard in Resources */,
 				A5ADC75928377515001FD935 /* FavoriteCell.xib in Resources */,
+				A58EEBB3283CCFF700DAA4FA /* LoadableImageCell.xib in Resources */,
 				A57B9AB82822C33C00F93329 /* LaunchScreen.storyboard in Resources */,
+				A58EEBA8283CC4E100DAA4FA /* PostSearchViewController.storyboard in Resources */,
 				A544C126282A2F0B00EAD7F6 /* ImageCell.xib in Resources */,
 				A57B9AB52822C33C00F93329 /* Assets.xcassets in Resources */,
 				A502B1C2282C9FDC00CC3A0E /* NotSignedInMyPageViewController.storyboard in Resources */,
@@ -1432,9 +1480,11 @@
 				A5DC01DE2828CA9E00CC063A /* SignOutUseCase.swift in Sources */,
 				A5CD36E12824EB3F00A96B3E /* PictureIngredientDataStore.swift in Sources */,
 				A544C128282A318100EAD7F6 /* UICollectionViewCell+.swift in Sources */,
+				A58EEBB2283CCFF700DAA4FA /* LoadableImageCell.swift in Sources */,
 				A58398802825FEF700C5E3BD /* TokenDataStoreProtocol.swift in Sources */,
 				A5EC30CB282CC06800C551D7 /* SignedInMyPageViewModel.swift in Sources */,
 				A54816EA282CFC91006001FC /* FavoriteDataStoreProtocol.swift in Sources */,
+				A58EEBAD283CC53600DAA4FA /* PostCell.swift in Sources */,
 				A5DC01DB2828CA9E00CC063A /* RememberMeUseCase.swift in Sources */,
 				A5CD36E62824EB3F00A96B3E /* PictureIngredientRepository.swift in Sources */,
 				A5DC01DD2828CA9E00CC063A /* WithdrawalUseCase.swift in Sources */,
@@ -1483,7 +1533,9 @@
 				A5CE6E54282ABC4900C46BCC /* UIViewController+.swift in Sources */,
 				A57B9AAC2822C33B00F93329 /* AppDelegate.swift in Sources */,
 				A5DC01D72828CA9E00CC063A /* SignUpUseCase.swift in Sources */,
+				A5DBA5A5283D18BF00044D68 /* PostDataStore.swift in Sources */,
 				A5CC1AA1282BA8D900512D8B /* UserSessionDelegate.swift in Sources */,
+				A58EEBA9283CC4E100DAA4FA /* PostSearchViewController.swift in Sources */,
 				A54816E4282CFBE0006001FC /* FavoriteRepositoryProtocol.swift in Sources */,
 				A5DC01DC2828CA9E00CC063A /* SignedInUseCases.swift in Sources */,
 				A5EC30CF282CC4EB00C551D7 /* SignUpViewModel.swift in Sources */,

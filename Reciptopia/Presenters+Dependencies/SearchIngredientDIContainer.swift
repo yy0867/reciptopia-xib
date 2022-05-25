@@ -93,7 +93,8 @@ final class SearchIngredientDIContainer {
         return SearchIngredientViewController.create(
             searchIngredientViewModel: searchIngredientViewModel,
             searchHistoryViewModel: searchHistoryViewModel,
-            favoriteViewModel: favoriteViewModel
+            favoriteViewModel: favoriteViewModel,
+            postSearchViewControllerFactory: makePostSearchViewController
         )
     }
     
@@ -107,5 +108,30 @@ final class SearchIngredientDIContainer {
     
     func makeFavoriteViewModel() -> FavoriteViewModel {
         return FavoriteViewModel(repository: self.favoriteRepository)
+    }
+    
+    // MARK: - Post Search
+    func makePostSearchViewController(with ingredients: [Ingredient]) -> PostSearchViewController {
+        let viewModel = makePostSearchViewModel(with: ingredients)
+        return PostSearchViewController.create(with: viewModel)
+    }
+    
+    func makePostSearchViewModel(with ingredients: [Ingredient]) -> PostSearchViewModel {
+        let postRepository = makePostRepository()
+        
+        return PostSearchViewModel(
+            ingredients: ingredients,
+            postRepository: postRepository,
+            favoriteRepository: favoriteRepository
+        )
+    }
+    
+    func makePostRepository() -> PostRepositoryProtocol {
+        let dataStore = makePostDataStore()
+        return PostRepository(dataStore: dataStore)
+    }
+    
+    func makePostDataStore() -> PostDataStoreProtocol {
+        return PostDataStore()
     }
 }

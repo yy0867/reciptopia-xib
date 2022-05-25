@@ -13,6 +13,7 @@ final class PostSearchViewModel {
     
     // MARK: - Properties
     let posts = BehaviorRelay<[Post]>(value: [])
+    let isRefreshingPost = PublishRelay<Bool>()
     
     private let postRepository: PostRepositoryProtocol
     private let favoriteRepository: FavoriteRepositoryProtocol
@@ -33,34 +34,8 @@ final class PostSearchViewModel {
     
     func fetch() {
         paging = Paging(page: 0)
-        fetch(with: paging)
-    }
-    
-    func fetchNextPage() {
-        paging.nextPage()
-        fetch(with: paging)
-    }
-    
-    func addFavorite(at index: Int) {
-        subscription = favoriteRepository.save(makeFavorite(byPost: posts.value[index]))
-            .subscribe(
-                onNext: { [weak self] _ in self?.updateIsFavorite(at: index, status: true) },
-                onError: errorDetected,
-                onDisposed: disposeSubscription
-            )
-    }
-    
-    func removeFavorite(at index: Int) {
-        subscription = favoriteRepository.delete(makeFavorite(byPost: posts.value[index]))
-            .subscribe(
-                onNext: { [weak self] _ in self?.updateIsFavorite(at: index, status: false) },
-                onError: errorDetected,
-                onDisposed: disposeSubscription
-            )
-    }
-    
-    // MARK: - Private
-    private func fetch(with paging: Paging) {
+        isRefreshingPost.accept(true)
+        
         subscription = postRepository
             .fetch(ingredients, paging, Sorting(property: .id, order: .ascending))
             .subscribe(
@@ -70,15 +45,58 @@ final class PostSearchViewModel {
             )
     }
     
+    func fetchNextPage() {
+        paging.nextPage()
+        
+        subscription = postRepository
+            .fetch(ingredients, paging, Sorting(property: .id, order: .ascending))
+            .subscribe(
+                onNext: appendPost,
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
+    }
+    
+    func toggleFavorite(at index: Int) {
+        if posts.value[index].isFavorite {
+            removeFavorite(at: index)
+        } else {
+            addFavorite(at: index)
+        }
+    }
+    
+    func addFavorite(at index: Int) {
+        subscription = favoriteRepository.save(makeFavorite(byPost: posts.value[index]))
+            .subscribe(
+                onNext: { [weak self] _ in self?.updateIsFavorite(true, at: index) },
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
+    }
+    
+    func removeFavorite(at index: Int) {
+        subscription = favoriteRepository.delete(makeFavorite(byPost: posts.value[index]))
+            .subscribe(
+                onNext: { [weak self] _ in self?.updateIsFavorite(false, at: index) },
+                onError: errorDetected,
+                onDisposed: disposeSubscription
+            )
+    }
+    
+    // MARK: - Private
     private func updatePost(_ receivedPosts: [Post]) {
         posts.accept(receivedPosts)
+    }
+    
+    private func appendPost(_ receivedPosts: [Post]) {
+        posts.append(contentsOf: receivedPosts)
     }
     
     private func makeFavorite(byPost post: Post) -> Favorite {
         return Favorite(postId: post.id ?? 0, title: post.title)
     }
     
-    private func updateIsFavorite(at index: Int, status isFavorite: Bool) {
+    private func updateIsFavorite(_ isFavorite: Bool, at index: Int) {
         var mutablePosts = posts.value
         mutablePosts[index].isFavorite = isFavorite
         posts.accept(mutablePosts)
@@ -89,6 +107,7 @@ final class PostSearchViewModel {
     }
     
     private func disposeSubscription() {
+        isRefreshingPost.accept(false)
         subscription?.dispose()
     }
 }

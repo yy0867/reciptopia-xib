@@ -13,7 +13,7 @@ extension BehaviorRelay {
         self.accept(self.value + [element])
     }
     
-    func append<T>(contentsOf newElements: T...) where Element == [T] {
+    func append<T>(contentsOf newElements: [T]) where Element == [T] {
         self.accept(self.value + newElements)
     }
     
